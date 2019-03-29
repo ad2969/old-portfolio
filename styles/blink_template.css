@@ -1,0 +1,179 @@
+/*	HEADER 4
+*******************************************************************************/
+
+#th-h-list4 {
+  font-size: 35px;
+  padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+.home-header-4 {    /* Head Style */
+  position: absolute;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  text-decoration: none;
+	color: #fff;
+}
+
+.home-header-4:nth-child(1) {		/* Head Style 4 */
+  z-index: -1;
+  opacity: 1;
+}
+#th-h-list4:hover #blog-head-1 {
+	transform: scale(1.08);
+}
+.home-header-4:nth-child(2) {		/* Head Style 4 Anims */
+  z-index: 1;
+  left: 42px;
+  background-color: #2f2f2f;
+  text-shadow: -5px 0 rgb(156,98,238);
+  clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%);
+  opacity: 0;
+}
+#th-h-list4:hover #blog-head-2 {
+  opacity: 1;
+  animation: blinkonmax 16s infinite alternate-reverse;
+}
+
+.home-header-4:nth-child(3) {		/* Head Style 4 Anims */
+  z-index: 1;
+  left: 48px;
+  background-color: #2f2f2f;
+  text-shadow: 3px 0 rgb(238,106,98);
+  clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%);
+  opacity: 0;
+}
+#th-h-list4:hover #blog-head-3 {
+  opacity: 1;
+  animation: blinkonmax 22s infinite alternate-reverse;
+}
+
+.home-header-4:nth-child(4) {		/* Head Style 4 Anims */
+  z-index: 1;
+  left: 38px;
+  background-color: #2f2f2f;
+  text-shadow: -2px 0 green;
+  clip-path: polygon(0 68%, 100% 68%, 100% 80%, 0 80%);
+  opacity: 0;
+}
+#th-h-list4:hover #blog-head-4 {
+  opacity: 1;
+  animation: blinkonmax 19s infinite alternate-reverse;
+}
+
+.home-header-4:nth-child(5) {		/* Head Style 4 Anims */
+  z-index: 1;
+  left: 33px;
+  background-color: #2f2f2f;
+  text-shadow: 5px 0 rgb(98,238,156);
+  clip-path: polygon(0 32%, 100% 32%, 100% 44%, 0 44%);
+  opacity: 0;
+}
+#th-h-list4:hover #blog-head-5 {
+  opacity: 1;
+  animation: blinkonmax 13s infinite alternate-reverse;
+}
+
+.home-header-4:nth-child(6) {		/* Head Style 4 Anims */
+  z-index: 1;
+  left: 41px;
+  background-color: #2f2f2f;
+  text-shadow: -5px 0 rgb(238,106,98);
+  clip-path: polygon(0 56%, 100% 56%, 100% 68%, 0 68%);
+  opacity: 0;
+}
+#th-h-list4:hover #blog-head-6 {
+  opacity: 1;
+  animation: blinkonmax 15s infinite alternate-reverse;
+}
+
+
+/*	Content 2 CONTENT C
+*******************************************************************************/
+
+#th-c-list5 {
+	font-size: 23px;
+}
+
+.home-link-2c {    /* Content Style */
+  position: absolute;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  text-decoration: none;
+  color: #fff;
+}
+#th-c-list5:hover #other-work-link-1 {
+	transform: scale(1.08);
+}
+
+.home-link-2c:nth-child(1) {		/* Content Style 5 */
+  z-index: -1;
+  opacity: 1;
+}
+
+.home-link-2c:nth-child(2) {		/* Content Style 5 Anims */
+  z-index: 1;
+  left: 42px;
+  background-color: #2f2f2f;
+  text-shadow: -5px 0 rgb(156,98,238);
+  clip-path: polygon(0 0%, 100% 0%, 100% 20%, 0 20%);
+  opacity: 0;
+}
+#th-c-list5:hover #other-work-link-2 {
+  opacity: 1;
+  animation: blinkonmax 16s infinite alternate-reverse;
+}
+
+.home-link-2c:nth-child(3) {		/* Content Style 5 Anims */
+  z-index: 1;
+  left: 38px;
+  background-color: #2f2f2f;
+  text-shadow: 3px 0 rgb(238,106,98);
+  clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+  opacity: 0;
+}
+#th-c-list5:hover #other-work-link-3 {
+  opacity: 1;
+  animation: blinkonmax 22s infinite alternate-reverse;
+}
+
+.home-link-2c:nth-child(4) {		/* Content Style 5 Anims */
+  z-index: 1;
+  left: 42px;
+  background-color: #2f2f2f;
+  text-shadow: -2px 0 green;
+  clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+  opacity: 0;
+}
+#th-c-list5:hover #other-work-link-4 {
+  opacity: 1;
+  animation: blinkonmax 19s infinite alternate-reverse;
+}
+
+.home-link-2c:nth-child(5) {		/* Content Style 5 Anims */
+  z-index: 1;
+  left: 37px;
+  background-color: #2f2f2f;
+  text-shadow: 5px 0 rgb(98,238,156);
+  clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+  opacity: 0;
+}
+#th-c-list5:hover #other-work-link-5 {
+  opacity: 1;
+  animation: blinkonmax 13s infinite alternate-reverse;
+}
+
+.home-link-2c:nth-child(6) {		/* Content Style 5 Anims */
+  z-index: 1;
+  left: 43px;
+  background-color: #2f2f2f;
+  text-shadow: -5px 0 rgb(238,106,98);
+  clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
+  opacity: 0;
+}
+#th-c-list5:hover #other-work-link-6 {
+  opacity: 1;
+  animation: blinkonmax 15s infinite alternate-reverse;
+}
