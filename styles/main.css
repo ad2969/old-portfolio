@@ -32,7 +32,6 @@ Obtained from: patorjk.com/software/taag/
 
 													/* Document Start */
 
-
 /*******************************************************************************
   _   _  ___  __  __ _____ ____   _    ____ _____
  | | | |/ _ \|  \/  | ____|  _ \ / \  / ___| ____|
@@ -47,21 +46,21 @@ html, body {
 }
 
 #body-container {
-	width: 1500px;
-	height: 600px;
-	top: 50%;
-	left: 50%;
-	margin: -300px 0 0 -750px;
+	width: 99%;
+	height: 99%;
 	position: absolute;
 	z-index: 0;
 }
 
 /* Container for entire body, containing image and everything else */
 .container {
-	width: 700px;
-	height: 600px;
 	float: left;
 	position: relative;
+	display: flex;
+
+	width: 100%;
+	min-height: 250px;
+	height: 20%;
 }
 
 /*	Main Title Styles
@@ -69,12 +68,12 @@ html, body {
 
 /* Placeholder for all text */
 .header {
-	height: 140px;
+	height: 100px;
 	width: 280px;
+	right: 0px;
+	top: 120px;
 	position: absolute;
-	margin: 10px;
-	top: 275px;
-	right: 160px;
+	margin: 20px;
 }
 
 /* Placeholder for name text with glitch effect */
@@ -98,6 +97,9 @@ html, body {
   font-family: "Rokkitt", serif;
   font-size: 35px;
 	right: 0px;
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
   position: absolute;
 }
 
@@ -112,6 +114,9 @@ html, body {
 	overflow: visible;
 	visibility: hidden;
 	text-align: right;
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
 	line-height: 220%;
 	top: -20px;
 }
@@ -256,6 +261,9 @@ html, body {
   bottom: 0px;
 	left: 5px;
   float: left;
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
 }
 
 /* Scrolling word position cursor */
@@ -279,12 +287,10 @@ html, body {
 	width: 150px;
 	height: 150px;
 	position: absolute;
-	top: 260px;
 	right: 0px;
 }
 .load-holder.active {
-	animation: tracer 10s;
-	animation-timing-function: ease-in-out;
+	animation: unset;
 }
 .load-holder.infinite {
 	animation: rotate 2s infinite;
@@ -339,17 +345,18 @@ html, body {
 *******************************************************************************/
 
 .right-mainpage {		/* Main container for right side of page */
-	width: 750px;
-	height: 600px;
 	position: relative;
-	float: right;
+	float: left;
 	display: flex;
 	align-items: center;
+	width: 100%;
+	height: 75%;
+	padding-bottom: 100px;
 }
 
 .homelist-holder {		/* Centered div containing all text files */
-	left: 100px;
-	width: 600px;
+	left: 10%;
+	width: 80%;
 	position: relative;
 	clear: both;
 }
@@ -642,7 +649,7 @@ html, body {
 
 #th-h-list2 {
 	font-size: 35px;
-	padding-top: 50px;
+	padding-top 40px;
 	padding-bottom: 35px;
 }
 
@@ -991,7 +998,7 @@ html, body {
 
 #th-h-list3 {
   font-size: 35px;
-  padding-top: 50px;
+  padding-top 40px;
 	padding-bottom: 35px;
 }
 
@@ -1185,7 +1192,8 @@ html, body {
 *******************************************************************************/
 .contact-tab {		/* Placeholder for entire contact tab */
 	width: 100%;
-	height: 99%;
+	height: 100%;
+	left: 0%;
 	z-index: 1;
 	overflow: hidden;
 	color: #fff;
@@ -1193,44 +1201,45 @@ html, body {
 }
 
 .contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
-	width: 30%;								/**** Animation: pull-up/pull-down ****/
-	height: 100%;
-	bottom: 0;
+	width: 100%;								/**** Animation: pull-up/pull-down ****/
+	height: 40%;
 	position: fixed;
 	text-align: right;
 	visibility: hidden;
 }
 .contact-1.active {
-	left: 0;
+	top: 0;
 	background-color: rgba(0, 0, 0, 0.95);
 	visibility: visible;
-	animation: swipe-up 1s;
+	animation: swipe-right 1s;
 }
 .contact-1.hidden {
-	left: 0;
+	top: 0;
 	background-color: rgba(0, 0, 0, 0.95);
 	visibility: visible;
-	animation: swipe-down 2s;
+	animation: swipe-left 2s;
+}
+.contact-2 {
+	height: 30%
 }
 .contact-2.active {
-	left: 30%;
+	top: 40%;
 	background-color: rgba(17, 17, 17, 0.95);
 	visibility: visible;
-	animation: swipe-up 1s;
+	animation: swipe-right 1s;
 }
 .contact-2.hidden {
-	left: 30%;
+	top: 40%;
 	background-color: rgba(17, 17, 17, 0.95);
 	visibility: visible;
-	animation: swipe-down 2s;
+	animation: swipe-left 2s;
 	animation-delay: 100ms;
 }
 
 .contact-3 {		/* Box 3 - Map */
-	width: 40%;		/**** Animation: pull-up/pull-down ****/
-	height: 100%;
-	left: 60%;
-	bottom: 0;
+	width: 100%;		/**** Animation: pull-up/pull-down ****/
+	height: 30%;
+	top: 70%;
 	position: fixed;
 	text-align: right;
 	visibility: hidden;
@@ -1244,34 +1253,30 @@ html, body {
 }
 .contact-3.active {
 	visibility: visible;
-	animation: swipe-up 1s;
+	animation: swipe-right 1s;
 }
 .contact-3.hidden {
 	visibility: visible;
-	animation: swipe-down 2s;
+	animation: swipe-left 2s;
 	animation-delay: 200ms;
 }
 
 .contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
-	font-size: 45px;
-	top: 30%;
+	font-size: 10vw;
+	top: 10%;
 	right: 12%;
 	position: relative;
-}
-
-.contact-h3 {		/* Adjustmennt for 3rd Box Title */
-	top: 60%;
 }
 
 .contact-deets, .contact-deets-img {		/* Box Title Information Details */
 	color: #fff;
 	float: right;
 	text-decoration: none;
-	font-size: 23px;
-	top: 30%;
+	font-size: 5vw;
+	top: 7%;
 	right: 10%;
 	position: relative;
-	padding: 8px;
+	padding: 4px;
 }
 .contact-deets {
 	clear: right;
@@ -1280,11 +1285,11 @@ html, body {
 	transform: scale(1.08);
 }
 .contact-h3-deets {
-	font-size: 23px;
-	top: 60%;
+	font-size: 5vw;
+	top: 7%;
 	right: 10%;
 	position: relative;
-	padding: 8px;
+	padding: 4px;
 }
 
 /*	CONTACT TAB BUTTONS
@@ -1860,6 +1865,16 @@ html, body {
 	50% { top: 100%; opacity:0; }
 	to { top: 100%; opacity:0; }
 }
+@keyframes swipe-right {
+	from { right: 100%; }
+	to { right: 0; }
+}
+
+@keyframes swipe-left {
+	from { right: 0; opacity:1; }
+	50% { right: 100%; opacity:0; }
+	to { right: 100%; opacity:0; }
+}
 
 /* animation slide-in-fwd-center */
 @keyframes slide-in-fwd-center {
@@ -1871,4 +1886,369 @@ html, body {
     transform: translateZ(0);
     opacity: 1;
   }
+}
+
+/*******************************************************************************
+____  _____ ____  ____   ___  _   _ ____ _____     _______
+|  _ \| ____/ ___||  _ \ / _ \| \ | / ___|_ _\ \   / / ____|
+| |_) |  _| \___ \| |_) | | | |  \| \___ \| | \ \ / /|  _|
+|  _ <| |___ ___) |  __/| |_| | |\  |___) | |  \ V / | |___
+|_| \_\_____|____/|_|    \___/|_| \_|____/___|  \_/  |_____|
+
+// tags: responsive
+********************************************************************************/\
+
+/* Mobile (portrait mode) */
+@media only screen
+and (max-width : 420px) {
+	.container {
+		clear:left;
+		width: 100%;
+		height: 20%;
+		min-height: 250px;
+	}
+	.right-mainpage {
+		clear: both;
+		width: 100%;
+		height: 100%;
+		overflow:auto;
+		padding-bottom: 100px;
+	}
+	.header {
+		height: 100px;
+		width: 280px;
+		right: 0;
+		top: 150px;
+		position: absolute;
+		margin: 20px;
+	}
+}
+
+/* Mobile (landscape mode) */
+@media only screen
+and (min-width: 421px)
+and (max-width: 749px) 	{
+	.container {
+		clear:left;
+		width: 100%;
+		height: 20%;
+		min-height: 250px;
+	}
+	.right-mainpage {
+		clear: both;
+		width: 100%;
+		height: 100%;
+		overflow:auto;
+		padding-bottom: 100px;
+	}
+	.header {
+		height: 100px;
+		width: 280px;
+		right: 0;
+		top: 150px;
+		position: absolute;
+		margin: 20px;
+	}
+	.contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
+		width: 30%;								/**** Animation: pull-up/pull-down ****/
+		height: 100%;
+		bottom: 0;
+	}
+	.contact-1.active {
+		left: 0;
+		top: unset;
+		animation: swipe-up 1s;
+	}
+	.contact-1.hidden {
+		left: 0;
+		top: unset;
+		background-color: rgba(0, 0, 0, 0.95);
+		visibility: visible;
+		animation: swipe-down 2s;
+	}
+	.contact-2.active {
+		left: 30%;
+		top: unset;
+		animation: swipe-up 1s;
+	}
+	.contact-2.hidden {
+		left: 30%;
+		top: unset;
+		animation: swipe-down 2s;
+		animation-delay: 100ms;
+	}
+
+	.contact-3 {		/* Box 3 - Map */
+		width: 40%;		/**** Animation: pull-up/pull-down ****/
+		height: 100%;
+		left: 60%;
+		top: unset;
+		bottom: 0;
+	}
+	.contact-3.active {
+		animation: swipe-up 1s;
+	}
+	.contact-3.hidden {
+		animation: swipe-down 2s;
+		animation-delay: 200ms;
+	}
+
+	.contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
+		font-size: 4vw;
+		top: 30%;
+		right: 12%;
+		position: relative;
+	}
+
+	.contact-h3 {		/* Adjustmennt for 3rd Box Title */
+		top: 60%;
+	}
+
+	.contact-deets, .contact-deets-img {		/* Box Title Information Details */
+		font-size: 1.5vw;
+		top: 30%;
+		right: 10%;
+		position: relative;
+		padding: 8px;
+	}
+	.contact-h3-deets {
+		font-size: 1.5vw;
+		top: 60%;
+		right: 10%;
+		position: relative;
+		padding: 8px;
+	}
+}
+
+/* Tablets (portrait mode) */
+@media only screen
+and (min-width: 750px)
+and (max-width: 1023px) {
+	.container {
+		clear: left;
+		width: 100%;
+		height: 20%;
+		min-height: 250px;
+	}
+	.right-mainpage {
+		clear: both;
+		width: 100%;
+		height: 50%;
+		overflow:auto;
+		padding-bottom: 100px;
+	}
+	.header {
+		height: 100px;
+		width: 280px;
+		right: 0;
+		top: 150px;
+		position: absolute;
+		margin: 20px;
+	}
+	.contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
+		font-size: 8vw;
+	}
+	.contact-deets, .contact-h3-deets {		/* Box Title Information Details */
+			font-size: 4vw;
+	}
+}
+
+/* Tablets (landscape mode), Small Desktop */
+@media only screen
+and (min-width: 1024px) {
+	.container {
+		clear:  none;
+		width: 50%;
+		height: 100%;
+		min-height: unset;
+		align-items: center;
+	}
+	.right-mainpage {
+		clear: none;
+		width: 50%;
+		height: 100%;
+		overflow: hidden;
+		padding-bottom: 0;
+	}
+	.header {
+		height: 100px;
+		width: 280px;
+		right: 150px;
+		top: unset;
+		position: absolute;
+		margin: 20px;
+	}
+	.load-holder.active {
+		animation: tracer 10s;
+		animation-timing-function: ease-in-out;
+	}
+	.contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
+		width: 30%;								/**** Animation: pull-up/pull-down ****/
+		height: 100%;
+		bottom: 0;
+	}
+	.contact-1.active {
+		left: 0;
+		top: unset;
+		animation: swipe-up 1s;
+	}
+	.contact-1.hidden {
+		left: 0;
+		top: unset;
+		background-color: rgba(0, 0, 0, 0.95);
+		visibility: visible;
+		animation: swipe-down 2s;
+	}
+	.contact-2.active {
+		left: 30%;
+		top: unset;
+		animation: swipe-up 1s;
+	}
+	.contact-2.hidden {
+		left: 30%;
+		top: unset;
+		animation: swipe-down 2s;
+		animation-delay: 100ms;
+	}
+
+	.contact-3 {		/* Box 3 - Map */
+		width: 40%;		/**** Animation: pull-up/pull-down ****/
+		height: 100%;
+		left: 60%;
+		top: unset;
+		bottom: 0;
+	}
+	.contact-3.active {
+		animation: swipe-up 1s;
+	}
+	.contact-3.hidden {
+		animation: swipe-down 2s;
+		animation-delay: 200ms;
+	}
+
+	.contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
+		font-size: 35px;
+		top: 30%;
+		right: 12%;
+		position: relative;
+	}
+
+	.contact-h3 {		/* Adjustmennt for 3rd Box Title */
+		top: 60%;
+	}
+
+	.contact-deets, .contact-deets-img {		/* Box Title Information Details */
+		font-size: 18px;
+		top: 30%;
+		right: 10%;
+		position: relative;
+		padding: 8px;
+	}
+	.contact-h3-deets {
+		font-size: 18px;
+		top: 60%;
+		right: 10%;
+		position: relative;
+		padding: 8px;
+	}
+}
+
+/* Tablets (landscape mode), Small Desktop */
+@media only screen
+and (min-width: 1824px) {
+	.container {
+		clear:  none;
+		width: 50%;
+		height: 100%;
+		min-height: unset;
+		align-items: center;
+	}
+	.right-mainpage {
+		clear: none;
+		width: 50%;
+		height: 100%;
+		overflow: hidden;
+		padding-bottom: 0;
+	}
+	.header {
+		height: 100px;
+		width: 280px;
+		right: 150px;
+		top: unset;
+		position: absolute;
+		margin: 20px;
+	}
+	.load-holder.active {
+		animation: tracer 10s;
+		animation-timing-function: ease-in-out;
+	}
+	.contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
+		width: 30%;								/**** Animation: pull-up/pull-down ****/
+		height: 100%;
+		bottom: 0;
+	}
+	.contact-1.active {
+		left: 0;
+		top: unset;
+		animation: swipe-up 1s;
+	}
+	.contact-1.hidden {
+		left: 0;
+		top: unset;
+		background-color: rgba(0, 0, 0, 0.95);
+		visibility: visible;
+		animation: swipe-down 2s;
+	}
+	.contact-2.active {
+		left: 30%;
+		top: unset;
+		animation: swipe-up 1s;
+	}
+	.contact-2.hidden {
+		left: 30%;
+		top: unset;
+		animation: swipe-down 2s;
+		animation-delay: 100ms;
+	}
+
+	.contact-3 {		/* Box 3 - Map */
+		width: 40%;		/**** Animation: pull-up/pull-down ****/
+		height: 100%;
+		left: 60%;
+		top: unset;
+		bottom: 0;
+	}
+	.contact-3.active {
+		animation: swipe-up 1s;
+	}
+	.contact-3.hidden {
+		animation: swipe-down 2s;
+		animation-delay: 200ms;
+	}
+
+	.contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
+		font-size: 45px;
+		top: 30%;
+		right: 12%;
+		position: relative;
+	}
+
+	.contact-h3 {		/* Adjustmennt for 3rd Box Title */
+		top: 60%;
+	}
+
+	.contact-deets, .contact-deets-img {		/* Box Title Information Details */
+		font-size: 23px;
+		top: 30%;
+		right: 10%;
+		position: relative;
+		padding: 8px;
+	}
+	.contact-h3-deets {
+		font-size: 23px;
+		top: 60%;
+		right: 10%;
+		position: relative;
+		padding: 8px;
+	}
 }
