@@ -350,7 +350,10 @@ html, body {
 	display: flex;
 	align-items: center;
 	width: 100%;
-	height: 75%;
+	height: auto;
+	min-height: 100%;
+	overflow: auto;
+	padding-top: 20px;
 	padding-bottom: 100px;
 }
 
@@ -1910,8 +1913,10 @@ and (max-width : 420px) {
 	.right-mainpage {
 		clear: both;
 		width: 100%;
-		height: 100%;
+		height: auto;
 		overflow:auto;
+		min-height: 100%;
+		padding-top: 20px;
 		padding-bottom: 100px;
 	}
 	.header {
@@ -1937,8 +1942,10 @@ and (max-width: 749px) 	{
 	.right-mainpage {
 		clear: both;
 		width: 100%;
-		height: 100%;
-		overflow:auto;
+		height: auto;
+		overflow: auto;
+		min-height: 100%;
+		padding-top: 20px;
 		padding-bottom: 100px;
 	}
 	.header {
@@ -1949,8 +1956,8 @@ and (max-width: 749px) 	{
 		position: absolute;
 		margin: 20px;
 	}
-	.contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
-		width: 30%;								/**** Animation: pull-up/pull-down ****/
+	.contact-1, .contact-2 {
+		width: 30%;
 		height: 100%;
 		bottom: 0;
 	}
@@ -1977,9 +1984,8 @@ and (max-width: 749px) 	{
 		animation: swipe-down 2s;
 		animation-delay: 100ms;
 	}
-
-	.contact-3 {		/* Box 3 - Map */
-		width: 40%;		/**** Animation: pull-up/pull-down ****/
+	.contact-3 {
+		width: 40%;
 		height: 100%;
 		left: 60%;
 		top: unset;
@@ -1992,19 +1998,16 @@ and (max-width: 749px) 	{
 		animation: swipe-down 2s;
 		animation-delay: 200ms;
 	}
-
-	.contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
+	.contact-h1, .contact-h2, .contact-h3 {
 		font-size: 4vw;
 		top: 30%;
 		right: 12%;
 		position: relative;
 	}
-
-	.contact-h3 {		/* Adjustmennt for 3rd Box Title */
+	.contact-h3 {
 		top: 60%;
 	}
-
-	.contact-deets, .contact-deets-img {		/* Box Title Information Details */
+	.contact-deets, .contact-deets-img {
 		font-size: 1.5vw;
 		top: 30%;
 		right: 10%;
@@ -2033,8 +2036,10 @@ and (max-width: 1023px) {
 	.right-mainpage {
 		clear: both;
 		width: 100%;
-		height: 50%;
-		overflow:auto;
+		height: auto;
+		overflow: auto;
+		min-height: 100%;
+		padding-top: 20px;
 		padding-bottom: 100px;
 	}
 	.header {
@@ -2045,10 +2050,10 @@ and (max-width: 1023px) {
 		position: absolute;
 		margin: 20px;
 	}
-	.contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
+	.contact-h1, .contact-h2, .contact-h3 {
 		font-size: 8vw;
 	}
-	.contact-deets, .contact-h3-deets {		/* Box Title Information Details */
+	.contact-deets, .contact-h3-deets {
 			font-size: 4vw;
 	}
 }
@@ -2066,9 +2071,11 @@ and (min-width: 1024px) {
 	.right-mainpage {
 		clear: none;
 		width: 50%;
-		height: 100%;
-		overflow: hidden;
-		padding-bottom: 0;
+		height: auto;
+		overflow: auto;
+		min-height: 90%;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 	.header {
 		height: 100px;
@@ -2082,8 +2089,8 @@ and (min-width: 1024px) {
 		animation: tracer 10s;
 		animation-timing-function: ease-in-out;
 	}
-	.contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
-		width: 30%;								/**** Animation: pull-up/pull-down ****/
+	.contact-1, .contact-2 {
+		width: 30%;
 		height: 100%;
 		bottom: 0;
 	}
@@ -2110,9 +2117,8 @@ and (min-width: 1024px) {
 		animation: swipe-down 2s;
 		animation-delay: 100ms;
 	}
-
-	.contact-3 {		/* Box 3 - Map */
-		width: 40%;		/**** Animation: pull-up/pull-down ****/
+	.contact-3 {
+		width: 40%;
 		height: 100%;
 		left: 60%;
 		top: unset;
@@ -2126,18 +2132,16 @@ and (min-width: 1024px) {
 		animation-delay: 200ms;
 	}
 
-	.contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
+	.contact-h1, .contact-h2, .contact-h3 {
 		font-size: 35px;
 		top: 30%;
 		right: 12%;
 		position: relative;
 	}
-
-	.contact-h3 {		/* Adjustmennt for 3rd Box Title */
+	.contact-h3 {
 		top: 60%;
 	}
-
-	.contact-deets, .contact-deets-img {		/* Box Title Information Details */
+	.contact-deets, .contact-deets-img {
 		font-size: 18px;
 		top: 30%;
 		right: 10%;
@@ -2153,7 +2157,7 @@ and (min-width: 1024px) {
 	}
 }
 
-/* Tablets (landscape mode), Small Desktop */
+/* Large Desktop */
 @media only screen
 and (min-width: 1824px) {
 	.container {
@@ -2166,8 +2170,10 @@ and (min-width: 1824px) {
 	.right-mainpage {
 		clear: none;
 		width: 50%;
-		height: 100%;
+		height: auto;
+		min-height: 90%;
 		overflow: hidden;
+		padding-top: 0;
 		padding-bottom: 0;
 	}
 	.header {
@@ -2182,8 +2188,8 @@ and (min-width: 1824px) {
 		animation: tracer 10s;
 		animation-timing-function: ease-in-out;
 	}
-	.contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
-		width: 30%;								/**** Animation: pull-up/pull-down ****/
+	.contact-1, .contact-2 {
+		width: 30%;
 		height: 100%;
 		bottom: 0;
 	}
@@ -2210,9 +2216,8 @@ and (min-width: 1824px) {
 		animation: swipe-down 2s;
 		animation-delay: 100ms;
 	}
-
-	.contact-3 {		/* Box 3 - Map */
-		width: 40%;		/**** Animation: pull-up/pull-down ****/
+	.contact-3 {
+		width: 40%;
 		height: 100%;
 		left: 60%;
 		top: unset;
@@ -2225,19 +2230,16 @@ and (min-width: 1824px) {
 		animation: swipe-down 2s;
 		animation-delay: 200ms;
 	}
-
-	.contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
+	.contact-h1, .contact-h2, .contact-h3 {
 		font-size: 45px;
 		top: 30%;
 		right: 12%;
 		position: relative;
 	}
-
-	.contact-h3 {		/* Adjustmennt for 3rd Box Title */
+	.contact-h3 {
 		top: 60%;
 	}
-
-	.contact-deets, .contact-deets-img {		/* Box Title Information Details */
+	.contact-deets, .contact-deets-img {
 		font-size: 23px;
 		top: 30%;
 		right: 10%;
