@@ -850,7 +850,7 @@ html, body {
   clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%);
   opacity: 0;
 }
-#th-c-list4:hover #finanx-link-2 {
+#th-c-list4:hover #oven-link-2 {
   opacity: 1;
   animation: blinkonmax 16s infinite alternate-reverse;
 }
@@ -863,7 +863,7 @@ html, body {
   clip-path: polygon(0 68%, 100% 68%, 100% 80%, 0 80%);
   opacity: 0;
 }
-#th-c-list4:hover #finanx-link-3 {
+#th-c-list4:hover #oven-link-3 {
   opacity: 1;
   animation: blinkonmax 22s infinite alternate-reverse;
 }
@@ -876,7 +876,7 @@ html, body {
   clip-path: polygon(0 56%, 100% 56%, 100% 68%, 0 68%);
   opacity: 0;
 }
-#th-c-list4:hover #finanx-link-4 {
+#th-c-list4:hover #oven-link-4 {
   opacity: 1;
   animation: blinkonmax 19s infinite alternate-reverse;
 }
@@ -889,7 +889,7 @@ html, body {
   clip-path: polygon(0 32%, 100% 32%, 100% 44%, 0 44%);
   opacity: 0;
 }
-#th-c-list4:hover #finanx-link-5 {
+#th-c-list4:hover #oven-link-5 {
   opacity: 1;
   animation: blinkonmax 13s infinite alternate-reverse;
 }
@@ -902,7 +902,7 @@ html, body {
   clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%);
   opacity: 0;
 }
-#th-c-list4:hover #finanx-link-6 {
+#th-c-list4:hover #oven-link-6 {
   opacity: 1;
   animation: blinkonmax 15s infinite alternate-reverse;
 }
