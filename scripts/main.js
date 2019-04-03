@@ -97,7 +97,7 @@ setTimeout(function() {blinky.classList.toggle('active');}, 14000);
 
 for(let i = 0; i < 9; i++) {
   let j = 8500;
-  j += i * 350;
+  j += i * 200;
   setTimeout(function() {textholder[i].classList.toggle('active');}, j);
 }
 

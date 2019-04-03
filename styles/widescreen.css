@@ -1,34 +1,23 @@
 /******************************************************************************/
 /* Author: Clarence Adrian 																										*/
 /* File_Type: CSS Stylesheet   																								*/
-/* File_Name: main.css 																									    	*/
-/* Additional_Files_Libraries: none 																					*/
+/* File_Name: widescreen.css																						    	*/
+/* Additional_Files_Libraries: widescreen.css, mobile.css, landscape.css   	  */
 /******************************************************************************/
 
 /* COMMENT STYLES
 Obtained from: patorjk.com/software/taag/
 
 /*******************************************************************************
-/  ____ _____  _    _   _ ____    _    ____  ____
-/ / ___|_   _|/ \  | \ | |  _ \  / \  |  _ \|  _ \
-/ \___ \ | | / _ \ |  \| | | | |/ _ \ | |_) | | | |
-/  ___) || |/ ___ \| |\  | |_| / ___ \|  _ <| |_| |
-/ |____/ |_/_/   \_\_| \_|____/_/   \_\_| \_\____/
-/
-/	  (HEADING 1)
-*******************************************************************************/
-/*
-/   .-. .----.   .----. .----.   .--.   .---. .-. .-..----..---.
-/.-.| |{ {__     | {}  }| {}  } / {} \ /  ___}| |/ / | {_ {_   _}
-/| {} |.-._} }   | {}  }| .-. \/  /\  \\     }| |\ \ | {__  | |
-/`----'`----'    `----' `-' `-'`-'  `-' `---' `-' `-'`----' `-'
-/
-/		(SUBHEADING 1)
-*******************************************************************************/
-/*
-/*	(SUBHEADING 2)
-*******************************************************************************/
+********************************************************************************
+__        _____ ____  _____ ____   ____ ____  _____ _____ _   _        ____ ____ ____
+\ \      / /_ _|  _ \| ____/ ___| / ___|  _ \| ____| ____| \ | |      / ___/ ___/ ___|
+ \ \ /\ / / | || | | |  _| \___ \| |   | |_) |  _| |  _| |  \| |     | |   \___ \___ \
+	\ V  V /  | || |_| | |___ ___) | |___|  _ <| |___| |___| |\  |  _  | |___ ___) |__) |
+	 \_/\_/  |___|____/|_____|____/ \____|_| \_\_____|_____|_| \_| (_)  \____|____/____/
 
+********************************************************************************
+*******************************************************************************/
 
 													/* Document Start */
 
@@ -57,10 +46,10 @@ html, body {
 	float: left;
 	position: relative;
 	display: flex;
-
-	width: 100%;
-	min-height: 250px;
-	height: 20%;
+	clear: none;
+	width: 50%;
+	height: 100%;
+	align-items: center;
 }
 
 /*	Main Title Styles
@@ -70,8 +59,7 @@ html, body {
 .header {
 	height: 100px;
 	width: 280px;
-	right: 0px;
-	top: 120px;
+	right: 150px;
 	position: absolute;
 	margin: 20px;
 }
@@ -290,7 +278,8 @@ html, body {
 	right: 0px;
 }
 .load-holder.active {
-	animation: unset;
+	animation: tracer 10s;
+	animation-timing-function: ease-in-out;
 }
 .load-holder.infinite {
 	animation: rotate 2s infinite;
@@ -349,12 +338,13 @@ html, body {
 	float: left;
 	display: flex;
 	align-items: center;
-	width: 100%;
+	width: 50%;
 	height: auto;
-	min-height: 100%;
-	overflow: auto;
-	padding-top: 20px;
-	padding-bottom: 100px;
+	min-height: 90%;
+	overflow: hidden;
+	clear: none;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 .homelist-holder {		/* Centered div containing all text files */
@@ -362,6 +352,7 @@ html, body {
 	width: 80%;
 	position: relative;
 	clear: both;
+	direction: ltr;
 }
 
 .text-holder {		/* General style for all text */
@@ -1204,45 +1195,44 @@ html, body {
 }
 
 .contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
-	width: 100%;								/**** Animation: pull-up/pull-down ****/
-	height: 40%;
+	width: 30%;								/**** Animation: pull-up/pull-down ****/
+	height: 100%;
+	bottom: 0;
 	position: fixed;
 	text-align: right;
 	visibility: hidden;
 }
 .contact-1.active {
-	top: 0;
+	left: 0;
 	background-color: rgba(0, 0, 0, 0.95);
 	visibility: visible;
-	animation: swipe-right 1s;
+	animation: swipe-up 1s;
 }
 .contact-1.hidden {
-	top: 0;
+	left: 0;
 	background-color: rgba(0, 0, 0, 0.95);
 	visibility: visible;
-	animation: swipe-left 2s;
-}
-.contact-2 {
-	height: 30%
+	animation: swipe-down 2s;
 }
 .contact-2.active {
-	top: 40%;
+	left: 30%;
 	background-color: rgba(17, 17, 17, 0.95);
 	visibility: visible;
-	animation: swipe-right 1s;
+	animation: swipe-up 1s;
 }
 .contact-2.hidden {
-	top: 40%;
+	left: 30%;
 	background-color: rgba(17, 17, 17, 0.95);
 	visibility: visible;
-	animation: swipe-left 2s;
+	animation: swipe-down 2s;
 	animation-delay: 100ms;
 }
 
 .contact-3 {		/* Box 3 - Map */
-	width: 100%;		/**** Animation: pull-up/pull-down ****/
-	height: 30%;
-	top: 70%;
+	width: 40%;		/**** Animation: pull-up/pull-down ****/
+	height: 100%;
+	left: 60%;
+	bottom: 0;
 	position: fixed;
 	text-align: right;
 	visibility: hidden;
@@ -1256,30 +1246,33 @@ html, body {
 }
 .contact-3.active {
 	visibility: visible;
-	animation: swipe-right 1s;
+	animation: swipe-up 1s;
 }
 .contact-3.hidden {
 	visibility: visible;
-	animation: swipe-left 2s;
+	animation: swipe-down 2s;
 	animation-delay: 200ms;
 }
 
 .contact-h1, .contact-h2, .contact-h3 {		/* Box Titles */
-	font-size: 10vw;
-	top: 10%;
+	font-size: 45px;
+	top: 30%;
 	right: 12%;
 	position: relative;
+}
+.contact-h3 {
+	top: 60%;
 }
 
 .contact-deets, .contact-deets-img {		/* Box Title Information Details */
 	color: #fff;
 	float: right;
 	text-decoration: none;
-	font-size: 5vw;
-	top: 7%;
+	font-size: 23px;
+	top: 30%;
 	right: 10%;
 	position: relative;
-	padding: 4px;
+	padding: 8px;
 }
 .contact-deets {
 	clear: right;
@@ -1288,11 +1281,11 @@ html, body {
 	transform: scale(1.08);
 }
 .contact-h3-deets {
-	font-size: 5vw;
-	top: 7%;
+	font-size: 23px;
+	top: 60%;
 	right: 10%;
 	position: relative;
-	padding: 4px;
+	padding: 8px;
 }
 
 /*	CONTACT TAB BUTTONS
@@ -1606,78 +1599,6 @@ html, body {
 	}
 }
 
-@keyframes blinkon {
-  0% {
-		opacity: 0;
-	}
-	5% {
-		opacity: 0;
-	}
-	6% {
-		opacity: 1;
-	}
-	7% {
-		opacity: 0;
-	}
-	15% {
-		opacity: 0;
-	}
-	16% {
-		opacity: 1;
-	}
-	17% {
-		opacity: 0;
-	}
-	35% {
-		opacity: 0;
-	}
-	36% {
-		opacity: 1;
-	}
-	37% {
-		opacity: 0;
-	}
-	40% {
-		opacity: 0;
-	}
-	41% {
-		opacity: 1;
-	}
-	42% {
-		opacity: 0;
-	}
-	90% {
-		opacity: 0;
-	}
-	91% {
-		opacity: 1;
-	}
-	92% {
-		opacity: 0;
-	}
-	98% {
-		opacity: 0;
-	}
-	99% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-
-@-webkit-keyframes redPulse {
-  from { background-color: #9a0202; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #bd0909; -webkit-box-shadow: 0 0 18px #bd0909; }
-  to { background-color: #9a0202; -webkit-box-shadow: 0 0 9px #333; }
-}
-
-@-webkit-keyframes redPulseLarge {
-	from { background-color: #9a0202; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #bd0909; -webkit-box-shadow: 0 0 38px #bd0909; }
-  to { background-color: #9a0202; -webkit-box-shadow: 0 0 9px #333; }
-}
-
 @keyframes singlePulse {
   0% {
     -moz-box-shadow: 0 0 0 0 rgba(189, 9, 9, 0.4);
@@ -1848,35 +1769,38 @@ html, body {
 	to { opacity:1; }
 }
 
-@keyframes fadehalf {
-	from { opacity:0.5; }
-	to { opacity:1; }
-}
-
 @keyframes fadeout {
 	from { opacity:1; }
 	to { opacity:0; }
 }
 
 @keyframes swipe-up {
-	from { top: 100%; }
-	to { top: 0; }
+	from {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+	}
+	to {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+ }
 }
 
 @keyframes swipe-down {
-	from { top: 0; opacity:1; }
-	50% { top: 100%; opacity:0; }
-	to { top: 100%; opacity:0; }
-}
-@keyframes swipe-right {
-	from { right: 100%; }
-	to { right: 0; }
-}
-
-@keyframes swipe-left {
-	from { right: 0; opacity:1; }
-	50% { right: 100%; opacity:0; }
-	to { right: 100%; opacity:0; }
+	from {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		opacity:1;
+	}
+	50% {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+		opacity:0;
+	}
+	to {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+		opacity:0;
+	}
 }
 
 /* animation slide-in-fwd-center */
@@ -1899,358 +1823,20 @@ ____  _____ ____  ____   ___  _   _ ____ _____     _______
 |_| \_\_____|____/|_|    \___/|_| \_|____/___|  \_/  |_____|
 
 // tags: responsive
-********************************************************************************/\
-
-/* Mobile (portrait mode) */
-@media only screen
-and (max-width : 420px) {
-	.container {
-		clear:left;
-		width: 100%;
-		height: 20%;
-		min-height: 250px;
-	}
-	.right-mainpage {
-		clear: both;
-		width: 100%;
-		height: auto;
-		overflow:auto;
-		min-height: 100%;
-		padding-top: 20px;
-		padding-bottom: 100px;
-	}
-	.header {
-		height: 100px;
-		width: 280px;
-		right: 0;
-		top: 150px;
-		position: absolute;
-		margin: 20px;
-	}
-}
-
-/* Mobile (landscape mode) */
-@media only screen
-and (min-width: 421px)
-and (max-width: 749px) 	{
-	.container {
-		clear:left;
-		width: 100%;
-		height: 20%;
-		min-height: 250px;
-	}
-	.right-mainpage {
-		clear: both;
-		width: 100%;
-		height: auto;
-		overflow: auto;
-		min-height: 100%;
-		padding-top: 20px;
-		padding-bottom: 100px;
-	}
-	.header {
-		height: 100px;
-		width: 280px;
-		right: 0;
-		top: 150px;
-		position: absolute;
-		margin: 20px;
-	}
-	.contact-1, .contact-2 {
-		width: 30%;
-		height: 100%;
-		bottom: 0;
-	}
-	.contact-1.active {
-		left: 0;
-		top: unset;
-		animation: swipe-up 1s;
-	}
-	.contact-1.hidden {
-		left: 0;
-		top: unset;
-		background-color: rgba(0, 0, 0, 0.95);
-		visibility: visible;
-		animation: swipe-down 2s;
-	}
-	.contact-2.active {
-		left: 30%;
-		top: unset;
-		animation: swipe-up 1s;
-	}
-	.contact-2.hidden {
-		left: 30%;
-		top: unset;
-		animation: swipe-down 2s;
-		animation-delay: 100ms;
-	}
-	.contact-3 {
-		width: 40%;
-		height: 100%;
-		left: 60%;
-		top: unset;
-		bottom: 0;
-	}
-	.contact-3.active {
-		animation: swipe-up 1s;
-	}
-	.contact-3.hidden {
-		animation: swipe-down 2s;
-		animation-delay: 200ms;
-	}
-	.contact-h1, .contact-h2, .contact-h3 {
-		font-size: 4vw;
-		top: 30%;
-		right: 12%;
-		position: relative;
-	}
-	.contact-h3 {
-		top: 60%;
-	}
-	.contact-deets, .contact-deets-img {
-		font-size: 1.5vw;
-		top: 30%;
-		right: 10%;
-		position: relative;
-		padding: 8px;
-	}
-	.contact-h3-deets {
-		font-size: 1.5vw;
-		top: 60%;
-		right: 10%;
-		position: relative;
-		padding: 8px;
-	}
-}
-
-/* Tablets (portrait mode) */
-@media only screen
-and (min-width: 750px)
-and (max-width: 1023px) {
-	.container {
-		clear: left;
-		width: 100%;
-		height: 20%;
-		min-height: 250px;
-	}
-	.right-mainpage {
-		clear: both;
-		width: 100%;
-		height: auto;
-		overflow: auto;
-		min-height: 100%;
-		padding-top: 20px;
-		padding-bottom: 100px;
-	}
-	.header {
-		height: 100px;
-		width: 280px;
-		right: 0;
-		top: 150px;
-		position: absolute;
-		margin: 20px;
-	}
-	.contact-h1, .contact-h2, .contact-h3 {
-		font-size: 8vw;
-	}
-	.contact-deets, .contact-h3-deets {
-			font-size: 4vw;
-	}
-}
+********************************************************************************/
 
 /* Tablets (landscape mode), Small Desktop */
 @media only screen
 and (min-width: 1024px) {
-	.container {
-		clear:  none;
-		width: 50%;
-		height: 100%;
-		min-height: unset;
-		align-items: center;
-	}
 	.right-mainpage {
-		clear: none;
-		width: 50%;
-		height: auto;
 		overflow: auto;
-		min-height: 90%;
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
-	.header {
-		height: 100px;
-		width: 280px;
-		right: 150px;
-		top: unset;
-		position: absolute;
-		margin: 20px;
-	}
-	.load-holder.active {
-		animation: tracer 10s;
-		animation-timing-function: ease-in-out;
-	}
-	.contact-1, .contact-2 {
-		width: 30%;
-		height: 100%;
-		bottom: 0;
-	}
-	.contact-1.active {
-		left: 0;
-		top: unset;
-		animation: swipe-up 1s;
-	}
-	.contact-1.hidden {
-		left: 0;
-		top: unset;
-		background-color: rgba(0, 0, 0, 0.95);
-		visibility: visible;
-		animation: swipe-down 2s;
-	}
-	.contact-2.active {
-		left: 30%;
-		top: unset;
-		animation: swipe-up 1s;
-	}
-	.contact-2.hidden {
-		left: 30%;
-		top: unset;
-		animation: swipe-down 2s;
-		animation-delay: 100ms;
-	}
-	.contact-3 {
-		width: 40%;
-		height: 100%;
-		left: 60%;
-		top: unset;
-		bottom: 0;
-	}
-	.contact-3.active {
-		animation: swipe-up 1s;
-	}
-	.contact-3.hidden {
-		animation: swipe-down 2s;
-		animation-delay: 200ms;
-	}
-
 	.contact-h1, .contact-h2, .contact-h3 {
 		font-size: 35px;
-		top: 30%;
-		right: 12%;
-		position: relative;
 	}
-	.contact-h3 {
-		top: 60%;
-	}
-	.contact-deets, .contact-deets-img {
+	.contact-deets, .contact-h3-deets {
 		font-size: 18px;
-		top: 30%;
-		right: 10%;
-		position: relative;
-		padding: 8px;
-	}
-	.contact-h3-deets {
-		font-size: 18px;
-		top: 60%;
-		right: 10%;
-		position: relative;
-		padding: 8px;
-	}
-}
-
-/* Large Desktop */
-@media only screen
-and (min-width: 1824px) {
-	.container {
-		clear:  none;
-		width: 50%;
-		height: 100%;
-		min-height: unset;
-		align-items: center;
-	}
-	.right-mainpage {
-		clear: none;
-		width: 50%;
-		height: auto;
-		min-height: 90%;
-		overflow: hidden;
-		padding-top: 0;
-		padding-bottom: 0;
-	}
-	.header {
-		height: 100px;
-		width: 280px;
-		right: 150px;
-		top: unset;
-		position: absolute;
-		margin: 20px;
-	}
-	.load-holder.active {
-		animation: tracer 10s;
-		animation-timing-function: ease-in-out;
-	}
-	.contact-1, .contact-2 {
-		width: 30%;
-		height: 100%;
-		bottom: 0;
-	}
-	.contact-1.active {
-		left: 0;
-		top: unset;
-		animation: swipe-up 1s;
-	}
-	.contact-1.hidden {
-		left: 0;
-		top: unset;
-		background-color: rgba(0, 0, 0, 0.95);
-		visibility: visible;
-		animation: swipe-down 2s;
-	}
-	.contact-2.active {
-		left: 30%;
-		top: unset;
-		animation: swipe-up 1s;
-	}
-	.contact-2.hidden {
-		left: 30%;
-		top: unset;
-		animation: swipe-down 2s;
-		animation-delay: 100ms;
-	}
-	.contact-3 {
-		width: 40%;
-		height: 100%;
-		left: 60%;
-		top: unset;
-		bottom: 0;
-	}
-	.contact-3.active {
-		animation: swipe-up 1s;
-	}
-	.contact-3.hidden {
-		animation: swipe-down 2s;
-		animation-delay: 200ms;
-	}
-	.contact-h1, .contact-h2, .contact-h3 {
-		font-size: 45px;
-		top: 30%;
-		right: 12%;
-		position: relative;
-	}
-	.contact-h3 {
-		top: 60%;
-	}
-	.contact-deets, .contact-deets-img {
-		font-size: 23px;
-		top: 30%;
-		right: 10%;
-		position: relative;
-		padding: 8px;
-	}
-	.contact-h3-deets {
-		font-size: 23px;
-		top: 60%;
-		right: 10%;
-		position: relative;
-		padding: 8px;
 	}
 }
