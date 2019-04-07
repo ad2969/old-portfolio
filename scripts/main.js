@@ -16,6 +16,7 @@ var nameholder2 = document.getElementById('fn_main2');
 var nameholder  = document.getElementsByClassName('name-holder')[0];
 var loadholder = document.getElementsByClassName('load-holder')[0];
 var textholder = document.getElementsByClassName('text-holder');
+var load2holder  = document.getElementsByClassName('extended-welcome-holder')[0];
 
 // CONTACT MENU
 
@@ -76,6 +77,7 @@ loadholder.classList.toggle('active');
 setTimeout(function() {
   loadholder.classList.toggle('active');
   loadholder.classList.toggle('infinite');
+  load2holder.classList.toggle('infinite');
 }, 10000);
 setTimeout(function() {
   nameholder1.classList.toggle('active');
