@@ -8,7 +8,7 @@ var poly = document.getElementById('Polygon1');
 
 var blinky = document.getElementsByClassName('blinky')[0];
 
-// MAIN MENU ACTIVATIONS
+// MAIN MENU VARIABLES
 
 var nameglitch = document.getElementById('fn_main');
 var nameholder1 = document.getElementById('fn_main1');
@@ -17,6 +17,9 @@ var nameholder  = document.getElementsByClassName('name-holder')[0];
 var loadholder = document.getElementsByClassName('load-holder')[0];
 var textholder = document.getElementsByClassName('text-holder');
 var load2holder  = document.getElementsByClassName('extended-welcome-holder')[0];
+
+/*******************************************************************************
+*******************************************************************************/
 
 // CONTACT MENU
 
@@ -62,9 +65,10 @@ var pullContactMenu = function() {
   }
 }
 
+/*******************************************************************************
+*******************************************************************************/
 
-
-
+// MAIN MEDU LOAD ANIMATIONS
 
 // Load Main Menu
 oc.classList.toggle('active');
@@ -74,16 +78,17 @@ for(let i = 0; i < 4; i++) {
   poly = poly.nextElementSibling;
 }
 loadholder.classList.toggle('active');
-setTimeout(function() {
-  loadholder.classList.toggle('active');
-  loadholder.classList.toggle('infinite');
-  load2holder.classList.toggle('infinite');
-}, 10000);
+setTimeout(function() {load2holder.classList.toggle('active')}, 7000);
 setTimeout(function() {
   nameholder1.classList.toggle('active');
   nameholder2.classList.toggle('active');
-}, 7000);
-setTimeout(function() {}, 7000);
+}, 6500);
+setTimeout(function() {
+  loadholder.classList.toggle('active');
+  load2holder.classList.toggle('active');
+  loadholder.classList.toggle('infinite');
+  load2holder.classList.toggle('infinite');
+}, 12000);
 setTimeout(function() {
   nameholder1.classList.toggle('active');
   nameholder2.classList.toggle('active');
@@ -93,19 +98,19 @@ setTimeout(function() {
 setTimeout(function() {
   contactbutt.classList.toggle('active');
   document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
-}, 11000);
+}, 8000);
 setTimeout(function() {blinky.classList.toggle('active');}, 14000);
 
-
 for(let i = 0; i < 9; i++) {
-  let j = 8500;
+  let j = 7000;
   j += i * 200;
   setTimeout(function() {textholder[i].classList.toggle('active');}, j);
 }
 
+/*******************************************************************************
+*******************************************************************************/
 
-
-
+// INFINITE ANIMATIONS
 
 // Typing animation text
 const printWords = ["    Programmer.          ", "    Electrical Engineer.          "];

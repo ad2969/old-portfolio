@@ -4,7 +4,6 @@
 /* File_Name: mobile.css 																								    	*/
 /* Additional_Files_Libraries: widescreen.css, mobile.css, landscape.css   	  */
 /******************************************************************************/
-
 /* COMMENT STYLES
 Obtained from: patorjk.com/software/taag/
 
@@ -19,7 +18,7 @@ __  __  ___  ____ ___ _     _____        ____ ____ ____
 ********************************************************************************
 *******************************************************************************/
 
-													/* Document Start */
+                              /* Document Start */
 
 
 /*******************************************************************************
@@ -30,7 +29,6 @@ __  __  ___  ____ ___ _     _____        ____ ____ ____
  |_| |_|\___/|_|  |_|_____|_| /_/   \_\____|_____|
 
 *******************************************************************************/
-
 html, body {
 	background-color: #1a1a1a;
 }
@@ -649,7 +647,7 @@ html, body {
 
 #th-h-list2 {
 	font-size: 35px;
-	padding-top 40px;
+	padding-top: 40px;
 	padding-bottom: 35px;
 }
 
@@ -998,7 +996,7 @@ html, body {
 
 #th-h-list3 {
   font-size: 35px;
-  padding-top 40px;
+  padding-top: 40px;
 	padding-bottom: 35px;
 }
 
