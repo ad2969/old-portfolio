@@ -18,6 +18,8 @@ var loadholder = document.getElementsByClassName('load-holder')[0];
 var textholder = document.getElementsByClassName('text-holder');
 var load2holder  = document.getElementsByClassName('extended-welcome-holder')[0];
 
+var brandimg = document.getElementsByClassName('brand-img')[0];
+
 /*******************************************************************************
 *******************************************************************************/
 
@@ -94,14 +96,15 @@ setTimeout(function() {
   nameholder2.classList.toggle('active');
   nameholder.classList.toggle('active');
   nameglitch.classList.toggle('active');
-}, 12000);
+}, 10000);
 setTimeout(function() {
   contactbutt.classList.toggle('active');
+  brandimg.classList.toggle('active');
   document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
 }, 8000);
 setTimeout(function() {blinky.classList.toggle('active');}, 14000);
 
-for(let i = 0; i < 9; i++) {
+for(let i = 0; i < 11; i++) {
   let j = 7000;
   j += i * 200;
   setTimeout(function() {textholder[i].classList.toggle('active');}, j);
