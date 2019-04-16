@@ -1,4 +1,4 @@
-# personal-website ⦿○•
+﻿# personal-website ⦿○•
 Prototype for my personal website, all hard-coded using HTML, JavaScript, and CSS.\
 The project was started as an attempt to self-learn the basic concepts of web development and design, sparked by my interest in JavaScript during a separate personal project involving script injection. With plans to eventually branch out to the use of SQL and PHP to build a more complex site, I have listed below the following languages, concepts, and libraries learnt during the building of the website:
 
@@ -13,7 +13,7 @@ The project was started as an attempt to self-learn the basic concepts of web de
   • CSS Sprites
   • Website Responsiveness (RWD, Media Queries)
   • Cross-Browser Compatibility
-  • (in progress) Sass & SCSS
+  • Sass & SCSS
   • (in progress) Bootstrap
   
 ⦿ JavaScript, ECMAScript 6

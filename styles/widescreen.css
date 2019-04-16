@@ -280,7 +280,15 @@ html, body {
 .load-holder.infinite:hover {
   transform: scale(1.03);
   animation-play-state: running; }
-
+.load-holder.infinite:hover .cls-1.active {
+  stroke-width: 40px;
+}
+.load-holder.infinite:hover .cls-2.active {
+  stroke-width: 40px;
+}
+.load-holder.infinite:hover .cls-3.active {
+  stroke-width: 30px;
+}
 .load-holder.infinite:hover + .extended-welcome-holder.infinite {
   animation-play-state: running; }
 
@@ -666,14 +674,14 @@ html, body {
   width: 50%;
   height: auto;
   min-height: 90%;
-  overflow: hidden;
+  overflow: auto;
   clear: none;
-  padding-top: 0;
-  padding-bottom: 0; }
+  padding-top: 20px;
+  padding-bottom: 20px; }
 
 .homelist-holder {
   /* Centered div containing all text files */
-  left: 30%;
+  left: 200px;
   width: 80%;
   max-width: 250px;
   position: relative;
@@ -683,7 +691,7 @@ html, body {
 .text-holder {
   /* General style for all text */
   color: #fff;
-  font-family: "Rokkitt", serif;
+  font-family: "PT Sans", sans-serif;
   visibility: hidden;
   list-style-type: none;
   padding-top: 20px;
@@ -780,7 +788,7 @@ html, body {
 /*	Content 1 CONTENT A
 *******************************************************************************/
 #th-c-list1 {
-  font-size: 20px;
+  font-size: 18px;
   cursor: url(../media/maintenance-cursor.png), not-allowed; }
 
 .home-link-1a {
@@ -867,7 +875,7 @@ html, body {
 /*	Content 1 CONTENT B
 *******************************************************************************/
 #th-c-list2 {
-  font-size: 20px;
+  font-size: 18px;
   cursor: url(../media/maintenance-cursor.png), not-allowed; }
 
 .home-link-1b {
@@ -1037,7 +1045,7 @@ html, body {
 /*	Content 2 CONTENT A
 *******************************************************************************/
 #th-c-list3 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-2a {
   /* Content Style */
@@ -1123,7 +1131,7 @@ html, body {
 /*	Content 2 CONTENT B
 *******************************************************************************/
 #th-c-list4 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-2b {
   /* Content Style */
@@ -1209,7 +1217,7 @@ html, body {
 /*	Content 2 CONTENT C
 *******************************************************************************/
 #th-c-list5 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-2c {
   /* Content Style */
@@ -1378,7 +1386,7 @@ html, body {
 /*	Content 3 CONTENT A
 *******************************************************************************/
 #th-c-list6 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-3a {
   /* Content Style */
@@ -1464,7 +1472,7 @@ html, body {
 /*	Content 3 CONTENT B
 *******************************************************************************/
 #th-c-list7 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-3b {
   /* Content Style */
@@ -1653,7 +1661,7 @@ html, body {
   z-index: 1;
   overflow: hidden;
   color: #fff;
-  font-family: "Rokkitt", serif; }
+  font-family: "PT Sans", sans-serif; }
 
 .contact-1, .contact-2 {
   /* Box 1 - Contact Me and 2 - Link to Works */
@@ -1720,7 +1728,7 @@ html, body {
 
 .contact-h1, .contact-h2, .contact-h3 {
   /* Box Titles */
-  font-size: 45px;
+  font-size: 35px;
   top: 30%;
   right: 12%;
   position: relative; }
@@ -1733,7 +1741,7 @@ html, body {
   color: #fff;
   float: right;
   text-decoration: none;
-  font-size: 23px;
+  font-size: 18px;
   top: 30%;
   right: 10%;
   position: relative;
@@ -1748,7 +1756,7 @@ html, body {
   transform: scale(1.08); }
 
 .contact-h3-deets {
-  font-size: 23px;
+  font-size: 18px;
   top: 60%;
   right: 10%;
   position: relative;
@@ -1788,7 +1796,7 @@ html, body {
   padding-bottom: 5px; }
 
 .close-contact-tab:nth-child(2) {
-  padding-bottom: 10px; }
+  padding-bottom: 15px; }
 
 .close-contact-tab:hover {
   transform: scale(1.08); }
@@ -2331,26 +2339,5 @@ html, body {
     stroke-dashoffset: 100; }
   to {
     stroke-dashoffset: 0; } }
-/*******************************************************************************
-____  _____ ____  ____   ___  _   _ ____ _____     _______
-|  _ \| ____/ ___||  _ \ / _ \| \ | / ___|_ _\ \   / / ____|
-| |_) |  _| \___ \| |_) | | | |  \| \___ \| | \ \ / /|  _|
-|  _ <| |___ ___) |  __/| |_| | |\  |___) | |  \ V / | |___
-|_| \_\_____|____/|_|    \___/|_| \_|____/___|  \_/  |_____|
-
-// tags: responsive
-********************************************************************************/
-/* Tablets (landscape mode), Small Desktop */
-@media only screen and (min-width: 1024px) {
-  .right-mainpage {
-    overflow: auto;
-    padding-top: 20px;
-    padding-bottom: 20px; }
-
-  .contact-h1, .contact-h2, .contact-h3 {
-    font-size: 35px; }
-
-  .contact-deets, .contact-h3-deets {
-    font-size: 18px; } }
 
 /*# sourceMappingURL=widescreen.css.map */

@@ -350,7 +350,7 @@ html, body {
 .text-holder {
   /* General style for all text */
   color: #fff;
-  font-family: "Rokkitt", serif;
+  font-family: "PT Sans", sans-serif;
   visibility: hidden;
   list-style-type: none;
   padding-top: 20px;
@@ -447,7 +447,7 @@ html, body {
 /*	Content 1 CONTENT A
 *******************************************************************************/
 #th-c-list1 {
-  font-size: 20px;
+  font-size: 18px;
   cursor: url(../media/maintenance-cursor.png), not-allowed; }
 
 .home-link-1a {
@@ -534,7 +534,7 @@ html, body {
 /*	Content 1 CONTENT B
 *******************************************************************************/
 #th-c-list2 {
-  font-size: 20px;
+  font-size: 18px;
   cursor: url(../media/maintenance-cursor.png), not-allowed; }
 
 .home-link-1b {
@@ -704,7 +704,7 @@ html, body {
 /*	Content 2 CONTENT A
 *******************************************************************************/
 #th-c-list3 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-2a {
   /* Content Style */
@@ -791,7 +791,7 @@ html, body {
 /*	Content 2 CONTENT B
 *******************************************************************************/
 #th-c-list4 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-2b {
   /* Content Style */
@@ -877,7 +877,7 @@ html, body {
 /*	Content 2 CONTENT C
 *******************************************************************************/
 #th-c-list5 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-2c {
   /* Content Style */
@@ -1050,7 +1050,7 @@ html, body {
 /*	Content 3 CONTENT A
 *******************************************************************************/
 #th-c-list6 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-3a {
   /* Content Style */
@@ -1136,7 +1136,7 @@ html, body {
 /*	Content 3 CONTENT B
 *******************************************************************************/
 #th-c-list7 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-3b {
   /* Content Style */
@@ -1324,7 +1324,7 @@ html, body {
   z-index: 1;
   overflow: hidden;
   color: #fff;
-  font-family: "Rokkitt", serif; }
+  font-family: "PT Sans", sans-serif; }
 
 .contact-1, .contact-2 {
   /* Box 1 - Contact Me and 2 - Link to Works */
@@ -1461,7 +1461,7 @@ html, body {
   padding-bottom: 2px; }
 
 .close-contact-tab:nth-child(2) {
-  padding-bottom: 10px; }
+  padding-bottom: 15px; }
 
 .close-contact-tab:hover {
   transform: scale(1.08); }
@@ -1881,5 +1881,3 @@ html, body {
   100% {
     transform: translateZ(0);
     opacity: 1; } }
-
-/*# sourceMappingURL=landscape.css.map */

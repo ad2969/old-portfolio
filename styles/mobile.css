@@ -360,7 +360,7 @@ html, body {
 
 .text-holder {		/* General style for all text */
 	color: #fff;
-  font-family: "Rokkitt", serif;
+  font-family: "PT Sans", sans-serif;
 	visibility: hidden;
 	list-style-type: none;
 	padding-top: 15px;
@@ -461,7 +461,7 @@ html, body {
 *******************************************************************************/
 
 #th-c-list1 {
-	font-size: 20px;
+	font-size: 18px;
 	cursor: url(../media/maintenance-cursor.png), not-allowed;
 }
 
@@ -551,7 +551,7 @@ html, body {
 *******************************************************************************/
 
 #th-c-list2 {
-	font-size: 20px;
+	font-size: 18px;
 	cursor: url(../media/maintenance-cursor.png), not-allowed;
 }
 
@@ -725,7 +725,7 @@ html, body {
 *******************************************************************************/
 
 #th-c-list3 {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .home-link-2a {    /* Content Style */
@@ -814,7 +814,7 @@ html, body {
 *******************************************************************************/
 
 #th-c-list4 {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .home-link-2b {    /* Content Style */
@@ -903,7 +903,7 @@ html, body {
 *******************************************************************************/
 
 #th-c-list5 {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .home-link-2c {    /* Content Style */
@@ -1079,7 +1079,7 @@ html, body {
 /*	Content 3 CONTENT A
 *******************************************************************************/
 #th-c-list6 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-3a {
   /* Content Style */
@@ -1100,7 +1100,7 @@ html, body {
 .home-link-3a:nth-child(2) {
   /* Content Style 6 Anims */
   z-index: 1;
-  left: 42px;
+  right: 52px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #9c62ee;
   clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%);
@@ -1113,7 +1113,7 @@ html, body {
 .home-link-3a:nth-child(3) {
   /* Content Style 6 Anims */
   z-index: 1;
-  left: 38px;
+  right: 48px;
   background-color: #1a1a1a;
   text-shadow: 3px 0 #ee6a62;
   clip-path: polygon(0 68%, 100% 68%, 100% 80%, 0 80%);
@@ -1126,7 +1126,7 @@ html, body {
 .home-link-3a:nth-child(4) {
   /* Content Style 6 Anims */
   z-index: 1;
-  left: 42px;
+  right: 52px;
   background-color: #1a1a1a;
   text-shadow: -2px 0 green;
   clip-path: polygon(0 56%, 100% 56%, 100% 68%, 0 68%);
@@ -1139,7 +1139,7 @@ html, body {
 .home-link-3a:nth-child(5) {
   /* Content Style 6 Anims */
   z-index: 1;
-  left: 37px;
+  right: 47px;
   background-color: #1a1a1a;
   text-shadow: 5px 0 #62ee9c;
   clip-path: polygon(0 32%, 100% 32%, 100% 44%, 0 44%);
@@ -1152,7 +1152,7 @@ html, body {
 .home-link-3a:nth-child(6) {
   /* Content Style 6 Anims */
   z-index: 1;
-  left: 43px;
+  right: 53px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #ee6a62;
   clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%);
@@ -1165,7 +1165,7 @@ html, body {
 /*	Content 3 CONTENT B
 *******************************************************************************/
 #th-c-list7 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .home-link-3b {
   /* Content Style */
@@ -1186,7 +1186,7 @@ html, body {
 .home-link-3b:nth-child(2) {
   /* Content Style 7 Anims */
   z-index: 1;
-  left: 42px;
+  right: 52px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #9c62ee;
   clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%);
@@ -1199,7 +1199,7 @@ html, body {
 .home-link-3b:nth-child(3) {
   /* Content Style 7 Anims */
   z-index: 1;
-  left: 38px;
+  right: 48px;
   background-color: #1a1a1a;
   text-shadow: 3px 0 #ee6a62;
   clip-path: polygon(0 68%, 100% 68%, 100% 80%, 0 80%);
@@ -1212,7 +1212,7 @@ html, body {
 .home-link-3b:nth-child(4) {
   /* Content Style 7 Anims */
   z-index: 1;
-  left: 42px;
+  right: 52px;
   background-color: #1a1a1a;
   text-shadow: -2px 0 green;
   clip-path: polygon(0 56%, 100% 56%, 100% 68%, 0 68%);
@@ -1225,7 +1225,7 @@ html, body {
 .home-link-3b:nth-child(5) {
   /* Content Style 7 Anims */
   z-index: 1;
-  left: 37px;
+  right: 47px;
   background-color: #1a1a1a;
   text-shadow: 5px 0 #62ee9c;
   clip-path: polygon(0 32%, 100% 32%, 100% 44%, 0 44%);
@@ -1238,7 +1238,7 @@ html, body {
 .home-link-3b:nth-child(6) {
   /* Content Style 7 Anims */
   z-index: 1;
-  left: 43px;
+  right: 53px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #ee6a62;
   clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%);
@@ -1358,7 +1358,7 @@ html, body {
 	z-index: 1;
 	overflow: visible;
 	color: #fff;
-	font-family: "Rokkitt", serif;
+	font-family: "PT Sans", sans-serif;
 }
 
 .contact-1, .contact-2 {		/* Box 1 - Contact Me and 2 - Link to Works */
@@ -1433,7 +1433,7 @@ html, body {
 	color: #fff;
 	float: right;
 	text-decoration: none;
-	font-size: 3vh;
+	font-size: 2.5vh;
 	top: 7%;
 	right: 10%;
 	position: relative;
@@ -1448,7 +1448,7 @@ html, body {
 	transform: scale(1.08);
 }
 .contact-h3-deets {
-	font-size: 3vh;
+	font-size: 2.5vh;
 	top: 7%;
 	right: 10%;
 	position: relative;
