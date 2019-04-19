@@ -140,7 +140,6 @@ html, body {
 
 #fn_anim1 {
   /* Name Text - HOVER glitch variation 1 */
-  right: 2px;
   background-color: #1a1a1a;
   text-shadow: -2px 0 purple;
   clip-path: polygon(0 0%, 100% 0%, 100% 10%, 0 10%);
@@ -153,7 +152,6 @@ html, body {
 
 #fn_anim2 {
   /* Name Text - HOVER glitch variation 2 */
-  right: -2px;
   background-color: #1a1a1a;
   text-shadow: 2px 0 green;
   clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
@@ -2340,4 +2338,4 @@ html, body {
   to {
     stroke-dashoffset: 0; } }
 
-/*# sourceMappingURL=widescreen.css.map */
+/*# sourceMappingURL=main_widescreen.css.map */

@@ -10,8 +10,8 @@ var contact1 = document.getElementsByClassName('contact-1')[0];
 var contact2 = document.getElementsByClassName('contact-2')[0];
 var contact3 = document.getElementsByClassName('contact-3')[0];
 
-var contactimg1 = document.getElementsByClassName('close-contact-tab-img')[0];
-var contactimg2 = document.getElementsByClassName('close-contact-tab-img')[1];
+var contactimg1 = document.getElementsByClassName('close-contact-tab-img-1')[0];
+var contactimg2 = document.getElementsByClassName('close-contact-tab-img-2')[0];
 var contacthandler = true;
 
 var pullContactMenu = function() {
