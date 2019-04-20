@@ -1,8 +1,7 @@
 var brandimg = document.getElementsByClassName('brand-img')[0];
-var logo = document.getElementsByClassName('full-welcome-holder')[0];
-var logo1 = document.getElementsByClassName('welcome-holder')[0];
-var name1 = document.getElementsByClassName('name-anims')[0];
-var blinky = document.getElementsByClassName('blinky')[0];
+var header = document.getElementsByClassName('header')[0];
+var title = document.getElementsByClassName('title');
+var caption = document.getElementsByClassName('caption');
 
 /*******************************************************************************
 *******************************************************************************/
@@ -44,11 +43,11 @@ var pullContactMenu = function() {
       contactimg2.classList.toggle('hidden');
 
       // remove hidden
-      setTimeout(() => {contact1.classList.toggle('hidden')}, 1100);
-      setTimeout(() => {contact2.classList.toggle('hidden')}, 1100);
-      setTimeout(() => {contact3.classList.toggle('hidden')}, 1100);
-      setTimeout(() => {contactimg1.classList.toggle('hidden')}, 500);
-      setTimeout(() => {contactimg2.classList.toggle('hidden')}, 500);
+      setTimeout(function() {contact1.classList.toggle('hidden')}, 1100);
+      setTimeout(function() {contact2.classList.toggle('hidden')}, 1100);
+      setTimeout(function() {contact3.classList.toggle('hidden')}, 1100);
+      setTimeout(function() {contactimg1.classList.toggle('hidden')}, 500);
+      setTimeout(function() {contactimg2.classList.toggle('hidden')}, 500);
 
     }
   }
@@ -58,58 +57,17 @@ brandimg.classList.toggle('active');
 setTimeout(() => {
   contactbutt.classList.toggle('active');
   document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
-  logo.classList.toggle('active');
-}, 3000);
-setTimeout(() => {name1.classList.toggle('active')}, 4000);
-setTimeout(() => {logo1.classList.toggle('active')}, 5000);
-setTimeout(() => {
-  logo1.classList.toggle('active');
-  logo1.classList.toggle('infinite');
-  blinky.classList.toggle('active');
-}, 6000);
+}, 0);
+setTimeout(() => {header.classList.toggle('active')}, 0);
 
-/*******************************************************************************
-*******************************************************************************/
-
-// INFINITE ANIMATIONS
-
-// Typing animation text
-const printWords = ["    Programmer.          ", "    Electrical Engineer.          "];
-let i=0;
-let timer;
-
-// function to completely type out
-function typeOut() {
-  let printWord = printWords[i].split("");
-  var typeLoop = function() {
-    if(printWord.length > 0) {   // check if word has all been printed out
-      document.getElementById("scrolling-word").innerHTML += printWord.shift();
-    }
-    else {
-      deleteType();       // start deleting if all words printed out
-      return false;               // exit function
-    }
-    timer = setTimeout(typeLoop, 200);      // callback when done 1 letter
-  };
-  typeLoop();                    // backup1
+for(let i = 0; i < 4; i++) {
+  let j = 500;
+  j += i * 200;
+  setTimeout(() => {title[i].classList.toggle('active')}, j);
 }
 
-function deleteType() {
-  let printWord = printWords[i].split("");
-  var deleteLoop = function() {
-    if(printWord.length > 0) {   // check if still have words
-      printWord.pop();           // remove last letter in word
-      document.getElementById("scrolling-word").innerHTML = printWord.join("");
-    }
-    else {
-      if(i+1 < printWords.length) i++;
-      else i=0;
-      typeOut();                 // start typing again if all words removed
-      return false;               // exit function
-    }
-    timer = setTimeout(deleteLoop, 30);      // callback when done 1 letter
-  };
-  deleteLoop();                  // backup1
+for(let i = 0; i < 7; i++) {
+  let j = 1000;
+  j += i * 200;
+  setTimeout(() => {caption[i].classList.toggle('active')}, j);
 }
-
-setTimeout(typeOut, 7000); // start
