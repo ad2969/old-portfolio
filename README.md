@@ -29,7 +29,7 @@ The project was started as an attempt to self-learn the basic concepts of web de
 </pre>
 **Tasks:**
 - [x] Build Main Page
-- [ ] Build Project Page (use grids)
+- [x] Build Project Page (use grids)
 - [ ] Build Timeline Page (parallax scrolling)
 - [ ] Start Blog Posts
 - [ ] File Hosting (projects)
