@@ -47,6 +47,7 @@ function rotateCarousel() {
 var prevButton = document.querySelector('.previous-button');
 var nextButton = document.querySelector('.next-button');
 
+carousel.classList.toggle('active');
 setTimeout(() => {
   title[focusPage].classList.toggle('active');
   description[focusPage].classList.toggle('active');
@@ -56,7 +57,7 @@ setTimeout(() => {
     navButton[i].classList.toggle('active');
   }
   navUpdate();
-}, 2000);
+}, 4000);
 
 function navHandler(input) {
   if(checkRotate == 0) {

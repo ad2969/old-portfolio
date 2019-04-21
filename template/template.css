@@ -143,7 +143,10 @@ html, body {
   padding: 1%;
   clear: right; }
 
-#contact-LI, #contact-git {
+.contact-deets.logo {
+  clear: unset; }
+
+#contact-LI, #contact-git, #contact-codepen {
   max-height: 5vh;
   max-width: 5vh; }
 
