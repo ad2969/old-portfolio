@@ -71,8 +71,8 @@ html, body {
   right: 0;
   text-align: right;
   opacity: 0;
-  -webkit-transition: opacity 1.5s linear;
-  transition: opacity 1.5s linear; }
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear; }
 .description.active {
   opacity: 1; }
 
@@ -83,8 +83,8 @@ html, body {
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: opacity 1.5s linear;
-  transition: opacity 1.5s linear; }
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear; }
 .title.active {
   visibility: visible;
   opacity: 1; }
@@ -274,7 +274,7 @@ html, body {
   position: absolute;
   transform: translateZ(-1207px) rotateY(-90deg);
   transform-style: preserve-3d;
-  transition: transform 3s ease-in-out;
+  transition: transform 1.5s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,7 +282,7 @@ html, body {
 
 .carousel.active {
   visibility: visible;
-  animation: carousel_e 4s ease-in-out;
+  animation: carousel_e 2s ease-in-out;
 }
 
 .carousel_page {
@@ -294,9 +294,9 @@ html, body {
   font-weight: bold;
   color: white;
   display: grid;
-  backface-visibility: visible;
-  grid-template-columns: 16% 16% 16% 16% 16% 16%;
-  grid-template-rows: 33% 33% 33%;
+  backface-visibility: hidden;
+  grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+  grid-template-rows: 33.3% 33.3% 33.3%;
   grid-gap: 0.8% 0.33%;
   /* background-color: #fff; */ }
 
@@ -339,7 +339,7 @@ html, body {
   top: 600px; }
 
 .previous-button, .next-button {
-  height: 450px;
+  height: 500px;
   width: 300px;
   top: 5%;
   position: absolute;
@@ -361,7 +361,7 @@ html, body {
 .next-button.active:hover #arrow-right {
   fill: #fff; }
 .next-button.active, .previous-button.active {
-  opacity: 0.7;
+  opacity: 1;
   visibility: visible; }
 
 #arrow-left, #arrow-right {
@@ -418,7 +418,8 @@ html, body {
   height: 100%;
   z-index: 3;
   overflow: hidden;
-  position: unset;
+  position: fixed;
+  display: none;
   color: #fff;
   font-family: "PT Sans", sans-serif; }
 
@@ -434,25 +435,25 @@ html, body {
 
 .contact-1.active {
   left: 0;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.98);
   visibility: visible;
   animation: swipe-up 1s; }
 
 .contact-1.hidden {
   left: 0;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.98);
   visibility: visible;
   animation: swipe-down 2s; }
 
 .contact-2.active {
   left: 30%;
-  background-color: rgba(17, 17, 17, 0.95);
+  background-color: rgba(17, 17, 17, 0.98);
   visibility: visible;
   animation: swipe-up 1s; }
 
 .contact-2.hidden {
   left: 30%;
-  background-color: rgba(17, 17, 17, 0.95);
+  background-color: rgba(17, 17, 17, 0.98);
   visibility: visible;
   animation: swipe-down 2s;
   animation-delay: 100ms; }
@@ -473,7 +474,7 @@ html, body {
   height: 100%;
   position: absolute;
   left: 0;
-  opacity: 0.95; }
+  opacity: 0.98; }
 
 .contact-3.active {
   visibility: visible;
@@ -509,7 +510,8 @@ html, body {
 .contact-deets.logo {
   clear: unset; }
 
-#contact-LI, #contact-git, #contact-codepen {
+#contact-LI, #contact-git, #contact-codepen, #contact-twit {
+  padding-top: 3vh;
   max-height: 5vh;
   max-width: 5vh; }
 

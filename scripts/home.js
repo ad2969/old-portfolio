@@ -19,6 +19,7 @@ var contacthandler = true;
 
 var pullContactMenu = function() {
   if(contact1.classList.length == 1) {  // if bar hidden
+    document.getElementsByClassName("contact-tab")[0].style.display = "block";
     contact1.classList.toggle('active');
     setTimeout(function() {contact2.classList.toggle('active')}, 100);
     setTimeout(function() {contact3.classList.toggle('active')}, 200);
@@ -46,6 +47,7 @@ var pullContactMenu = function() {
       setTimeout(function() {contact1.classList.toggle('hidden')}, 1100);
       setTimeout(function() {contact2.classList.toggle('hidden')}, 1100);
       setTimeout(function() {contact3.classList.toggle('hidden')}, 1100);
+      setTimeout(function() {document.getElementsByClassName("contact-tab")[0].style.display = "none"}, 1100);
       setTimeout(function() {contactimg1.classList.toggle('hidden')}, 500);
       setTimeout(function() {contactimg2.classList.toggle('hidden')}, 500);
 
@@ -62,12 +64,12 @@ setTimeout(() => {header.classList.toggle('active')}, 0);
 
 for(let i = 0; i < 4; i++) {
   let j = 500;
-  j += i * 200;
+  j += i * 100;
   setTimeout(() => {title[i].classList.toggle('active')}, j);
 }
 
 for(let i = 0; i < 7; i++) {
   let j = 1000;
-  j += i * 200;
+  j += i * 100;
   setTimeout(() => {caption[i].classList.toggle('active')}, j);
 }

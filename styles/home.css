@@ -111,7 +111,7 @@ html, body {
   font-weight: bold; }
 .title.active {
   visibility: visible;
-  animation: slide-in 3s ease-in-out, fade 2s ease-in-out; }
+  animation: slide-in 1.5s ease-in-out, fade 2s ease-in-out; }
 
 .caption {
   color: #fff;
@@ -124,7 +124,7 @@ html, body {
   position: relative; }
 .caption.active {
   visibility: visible;
-  animation: slide-in 3s ease-in-out, fade 2s ease-in-out;}
+  animation: slide-in 1.5s ease-in-out, fade 2s ease-in-out;}
 
 .textanim {
   position: absolute;
@@ -886,7 +886,8 @@ html, body {
   z-index: 2;
   overflow: hidden;
   color: #fff;
-  position: unset;
+  position: fixed;
+  display: none;
   font-family: "PT Sans", sans-serif; }
 
 .contact-1, .contact-2 {
@@ -901,25 +902,25 @@ html, body {
 
 .contact-1.active {
   left: 0;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.97);
   visibility: visible;
   animation: swipe-up 1s; }
 
 .contact-1.hidden {
   left: 0;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.97);
   visibility: visible;
   animation: swipe-down 2s; }
 
 .contact-2.active {
   left: 30%;
-  background-color: rgba(17, 17, 17, 0.95);
+  background-color: rgba(17, 17, 17, 0.97);
   visibility: visible;
   animation: swipe-up 1s; }
 
 .contact-2.hidden {
   left: 30%;
-  background-color: rgba(17, 17, 17, 0.95);
+  background-color: rgba(17, 17, 17, 0.97);
   visibility: visible;
   animation: swipe-down 2s;
   animation-delay: 100ms; }
@@ -940,7 +941,7 @@ html, body {
   height: 100%;
   position: absolute;
   left: 0;
-  opacity: 0.95; }
+  opacity: 0.97; }
 
 .contact-3.active {
   visibility: visible;
@@ -976,10 +977,10 @@ html, body {
 .contact-deets.logo {
   clear: unset; }
 
-#contact-LI, #contact-git, #contact-codepen {
+#contact-LI, #contact-git, #contact-codepen, #contact-twit {
   max-height: 5vh;
   max-width: 5vh;
-  padding-top: 5%; }
+  padding-top: 3vh; }
 
 .contact-deets:hover, .contact-deets-img:hover {
   transform: scale(1.08); }

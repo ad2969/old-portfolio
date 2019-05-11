@@ -39,8 +39,8 @@ function rotateCarousel() {
   setTimeout(() => {
     title[focusPage].classList.toggle('active');
     title[focusPage].style.setProperty('opacity', '1');
-  }, 1600);
-  setTimeout(() => {description[focusPage].classList.toggle('active')}, 2000);
+  }, 1300);
+  setTimeout(() => {description[focusPage].classList.toggle('active')}, 1400);
   navUpdate();
 }
 
@@ -57,16 +57,16 @@ setTimeout(() => {
     navButton[i].classList.toggle('active');
   }
   navUpdate();
-}, 4000);
+}, 2000);
 
 function navHandler(input) {
   if(checkRotate == 0) {
     title[focusPage].style.setProperty('opacity', '0');
-    temp = focusPage - input ;
-    setTimeout(() => {title[focusPage + temp].classList.toggle('active')}, 1500);
+    temp = focusPage;
+    setTimeout(() => {title[temp].classList.toggle('active')}, 1000);
     description[focusPage].classList.toggle('active');
     checkRotate = 1;
-    setTimeout(() => {checkRotate = 0}, 3000);
+    setTimeout(() => {checkRotate = 0}, 1500);
     focusPage = input;
     rotateCarousel();
   }
@@ -81,12 +81,12 @@ function navUpdate() {
 
 prevButton.addEventListener( 'click', function() {
   rotate = 1;
-  calc = focusPage - 1 < 0 ? activeCells : focusPage - 1;
+  calc = (focusPage - 1) < 0 ? activeCells : focusPage - 1;
   navHandler(calc);
 });
 nextButton.addEventListener( 'click', () => {
   rotate = 0;
-  calc = focusPage + 1 == activeCells ? 0 : focusPage + 1;
+  calc = (focusPage + 1) >= activeCells ? 0 : focusPage + 1;
   navHandler(calc);
 });
 for(let i = 0; i < activeCells; i++) {
@@ -113,6 +113,7 @@ var contacthandler = true;
 
 var pullContactMenu = function() {
   if(contact1.classList.length == 1) {  // if bar hidden
+    document.getElementsByClassName("contact-tab")[0].style.display = "block";
     contact1.classList.toggle('active');
     setTimeout(function() {contact2.classList.toggle('active')}, 100);
     setTimeout(function() {contact3.classList.toggle('active')}, 200);
@@ -140,8 +141,10 @@ var pullContactMenu = function() {
       setTimeout(function() {contact1.classList.toggle('hidden')}, 1100);
       setTimeout(function() {contact2.classList.toggle('hidden')}, 1100);
       setTimeout(function() {contact3.classList.toggle('hidden')}, 1100);
+      setTimeout(function() {document.getElementsByClassName("contact-tab")[0].style.display = "none"}, 1100);
       setTimeout(function() {contactimg1.classList.toggle('hidden')}, 500);
       setTimeout(function() {contactimg2.classList.toggle('hidden')}, 500);
+
 
     }
   }
