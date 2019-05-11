@@ -93,7 +93,7 @@ html, body {
 .homelist-holder {
   /* Centered div containing all text files */
   left: 15%;
-  width: 50%;
+  width: 60%;
   position: relative;
   top: -5%;
   clear: both;
@@ -105,8 +105,8 @@ html, body {
   visibility: hidden;
   list-style-type: none;
   text-decoration: none;
-  padding-bottom: 10%;
-  padding-top: 10%;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
   font-size: 4vh;
   font-weight: bold; }
 .title.active {
@@ -118,8 +118,8 @@ html, body {
   font-family: "PT Sans", sans-serif;
   visibility: hidden;
   list-style-type: none;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
   font-size: 2.5vh;
   position: relative; }
 .caption.active {
@@ -1310,7 +1310,9 @@ and (min-height: 501px) {
     position: relative;
     float: unset;
     width: 100%;
-    min-height: 100%;
+    max-height: 80%;
+    padding-top: 10%;
+    padding-bottom: 10%;
     z-index: 1;
     clear: both;
     display: flex;
@@ -1343,13 +1345,11 @@ and (min-height: 501px) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end; }
-
   .contact-button-img-holder {
     height: 100%;
     float: right;
     padding-right: 5%;
     position: unset; }
-
   .contact-button-img {
     height: 100%;
     width: auto; }
@@ -1440,10 +1440,9 @@ and (min-height: 501px) {
   	position: relative;
   	padding: 4px;
   	clear: right; }
-  #contact-LI, #contact-git {
+  #contact-LI, #contact-git, #contact-codepen, #contact-twit {
   	max-height: 5vw;
   	max-width: 5vw; }
-
   .contact-h3-deets {
   	font-size: 2vh;
   	top: 7%;
@@ -1452,11 +1451,9 @@ and (min-height: 501px) {
   	padding: 4px; }
 
   .intro {
-    font-size: 15vw;
-  }
+    font-size: 15vw; }
   .description {
-    font-size: 4.5vw;
-  }
+    font-size: 4.5vw; }
   .header {
     text-align: right;
     position: relative;
@@ -1464,14 +1461,172 @@ and (min-height: 501px) {
     width: 75%; }
   .homelist-holder {
     width: 100%; }
-  .title {
-    padding-top: 8%;
-    padding-bottom: 8%; }
-  .caption {
-    padding-top: 5%;
-    padding-bottom: 5%; }
-
 }
+
+@media only screen
+and (min-width: 651px)
+and (max-width: 800px) {
+  html, body {
+    overflow: auto;
+  }
+  .left-mainpage {
+    position: relative;
+    float: unset;
+    width: 100%;
+    max-height: 80%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    z-index: 1;
+    clear: both;
+    display: flex;
+    align-items: center;
+    justify-content: right; }
+
+  .right-mainpage {
+    position: relative;
+    float: unset;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    z-index: 1;
+    clear: both;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-bottom: 10%; }
+
+  .top-brand {
+    left: 5%;
+    top: 3%;
+    width: 10%; }
+
+  .contact-button {
+    left: 5%;
+    bottom: 3%;
+    width: 25%;
+    height: 6%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end; }
+  .contact-button-img-holder {
+    height: 100%;
+    float: right;
+    padding-right: 5%;
+    position: unset; }
+  .contact-button-img {
+    height: 100%;
+    width: auto; }
+
+  .contact-tab {
+    position: fixed;
+  }
+  .close-contact-tab {
+  /* Placeholder (span) for Exit Contact Menu Button */
+    height: 100%;
+    width: 20%;
+    padding-bottom: unset;
+    float: right; }
+  .close-contact-tab:hover {
+    transform: scale(1.08); }
+
+  .close-contact-tab-img {
+    /* Exit Contact Menu Button Arrows */
+    /**** Animation: pull-up/pull-down ****/
+    height: 50%;
+    top: 25%;
+    width: auto;
+    left: unset;
+    padding-bottom: unset;
+    transform: rotate(90deg);
+    position: absolute;
+    visibility: hidden;
+    width: unset; }
+  .close-contact-tab-img.active {
+    visibility: visible;
+    animation: swipe-right-r 0.5s, fade 0.5s; }
+  .close-contact-tab-img.hidden {
+    visibility: visible;
+    animation: swipe-left-r 0.5s, fadeout 0.5s;
+    animation-delay: 50ms; }
+
+  .contact-1, .contact-2 {
+    width: 100%;
+    height: 40%;
+    left: unset;
+    position: fixed;
+    text-align: right;
+    visibility: hidden; }
+  .contact-1.active {
+    top: 0;
+    left: unset;
+    animation: swipe-right 1s; }
+  .contact-1.hidden {
+    top: 0;
+    left: unset;
+    animation: swipe-left 2s; }
+  .contact-2 {
+    height: 30% }
+  .contact-2.active {
+    top: 40%;
+    left: unset;
+    animation: swipe-right 1s; }
+  .contact-2.hidden {
+    top: 40%;
+    left: unset;
+    animation: swipe-left 2s;
+    animation-delay: 100ms; }
+
+  .contact-3 {
+    width: 100%;
+    height: 30%;
+    top: 70%;
+    left: unset;
+    bottom: unset; }
+  .contact-3.active {
+    visibility: visible;
+    animation: swipe-right 1s; }
+  .contact-3.hidden {
+    visibility: visible;
+    animation: swipe-left 2s;
+    animation-delay: 200ms; }
+
+  .contact-h1, .contact-h2, .contact-h3 {
+    font-size: 4.5vh;
+    top: 10%;
+    right: 12%;
+    position: relative; }
+
+  .contact-deets {
+    font-size: 2vh;
+    top: 7%;
+    right: 10%;
+    position: relative;
+    padding: 4px;
+    clear: right; }
+  #contact-LI, #contact-git, #contact-codepen, #contact-twit {
+    max-height: 5vw;
+    max-width: 5vw; }
+  .contact-h3-deets {
+    font-size: 2vh;
+    top: 7%;
+    right: 10%;
+    position: relative;
+    padding: 4px; }
+
+  .intro {
+    font-size: 12vw; }
+  .description {
+    font-size: 3.5vw; }
+  .header {
+    text-align: right;
+    position: relative;
+    right: 10%;
+    width: 75%; }
+  .homelist-holder {
+    width: 100%; }
+}
+
+
 
 
 /* 3000px and onwards (4K Screens and all) */
