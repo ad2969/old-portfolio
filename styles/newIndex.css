@@ -848,8 +848,8 @@ and (min-height: 501px) {
   	padding: 4px;
   	clear: right; }
   #contact-LI, #contact-git, #contact-twit, #contact-codepen {
-  	max-height: 6vw;
-  	max-width: 6vw; }
+  	max-height: 7vw;
+  	max-width: 7vw; }
 
   .contact-h3-deets {
   	font-size: 2vh;

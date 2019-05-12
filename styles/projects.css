@@ -46,16 +46,18 @@ html, body {
 *******************************************************************************/
 
 .full-holder {
-  width: 1500px;
-  height: 800px;
+  width: 100%;
+  height: 100%;
+  max-width: 1600px;
+  max-height: 800px;
   position: absolute;
   z-index: 1;
   display: flex;
   justify-content: center; }
 
 .title-holder {
-  top: 525px;
-  right: 400px;
+  top: 70%;
+  right: 25%;
   width: 900px;
   height: 200px;
   z-index: 2;
@@ -65,9 +67,9 @@ html, body {
 .description {
   color: #fff;
   font-family: "PT Sans", sans-serif;
-  font-size: 20px;
+  font-size: 2.5vh;
   position: absolute;
-  top: 80px;
+  top: 8vh;
   right: 0;
   text-align: right;
   opacity: 0;
@@ -77,7 +79,7 @@ html, body {
   opacity: 1; }
 
 .title {
-  height: 80px;
+  max-height: 80px;
   width: 100%;
   direction: rtl;
   position: absolute;
@@ -92,7 +94,7 @@ html, body {
 .title-anims {
   color: #fff;
   font-family: "PT Sans", sans-serif;
-  font-size: 60px;
+  font-size: 8vh;
   margin: 0;
   font-weight: bold;
   position: absolute; }
@@ -259,14 +261,27 @@ html, body {
 /*    GENERAL CLASSES
 ********************************************************************************/
 
-.scene {
+.scene-div {
   /* border: 1px solid #CCC; */
   position: relative;
-  width: 900px;
-  height: 450px;
+  width: 56vw;
+  height: 28vw;
+  max-width: 900px;
+  max-height: 450px;
   margin: 5% auto;
   perspective: 1000px;
   z-index: 1; }
+
+.scene {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+  border-width: 1px;
+  margin: 0 auto;
+  border-color: white;
+  border-style: none;
+}
 
 .carousel {
   width: 100%;
@@ -339,8 +354,10 @@ html, body {
   top: 600px; }
 
 .previous-button, .next-button {
-  height: 500px;
-  width: 300px;
+  height: 35vw;
+  width: 21vw;
+  max-height: 500px;
+  max-width: 300px;
   top: 5%;
   position: absolute;
   z-index: 2;
@@ -351,13 +368,13 @@ html, body {
 .previous-button {
   left: 0; }
 .previous-button.active:hover {
-  opacity: 0.95; }
+  opacity: 0.8; }
 .previous-button.active:hover #arrow-left {
   fill: #fff; }
 .next-button {
   right: 0; }
 .next-button.active:hover {
-  opacity: 0.95; }
+  opacity: 0.8; }
 .next-button.active:hover #arrow-right {
   fill: #fff; }
 .next-button.active, .previous-button.active {
@@ -365,30 +382,32 @@ html, body {
   visibility: visible; }
 
 #arrow-left, #arrow-right {
-  width: 50px;
+  width: 25%;
   fill: #919191;
   height: auto;
   position: absolute;
   top: 50%; }
 #arrow-left {
-  left: 50px;
+  left: 25%;
   transform: rotateY(180deg);}
-#arrow-right {right: 50px;}
+#arrow-right {right: 25%;}
 
 
 .nav-holder {
-  width: 400px;
-  height: 30px;
+  width: 40%;
+  height: 5vh;
   position: absolute;
-  top: 60px;
+  top: 3vw;
   display: flex;
   justify-content: center; }
 
 .nav-button {
   border-radius: 100%;
   background-color: #919191;
-  width: 10px;
-  height: 10px;
+  height: 0.8vw;
+  width: 0.8vw;
+  max-width: 10px;
+  max-height: 10px;
   margin-left: 5px;
   margin-right: 5px;
   opacity: 0;
@@ -999,9 +1018,9 @@ and (min-height: 501px) {
   	position: relative;
   	padding: 4px;
   	clear: right; }
-  #contact-LI, #contact-git {
-  	max-height: 5vw;
-  	max-width: 5vw; }
+  #contact-LI, #contact-git, #contact-codepen, #contact-twit {
+  	max-height: 7vw;
+  	max-width: 7vw; }
 
   .contact-h3-deets {
   	font-size: 2vh;
@@ -1009,11 +1028,56 @@ and (min-height: 501px) {
   	right: 10%;
   	position: relative;
   	padding: 4px; }
+
+  .scene-div {
+    /* border: 1px solid #CCC; */
+    position: relative;
+    height: 60vh;
+    width: 30vh;
+    max-width: unset;
+    max-height: unset;
+    margin: 10vh auto; }
+  .carousel_page {
+    grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-gap: 0.33% 0.8%; }
+
+  .previous-button, .next-button {
+    height: 65vh;
+    top: 9vh; }
+
+  .nav-holder {
+    height: 10vh;
+    top: 7vh; }
+  .nav-button {
+    height: 10vh;
+    width: 10vh; }
+
+  .title-holder {
+    width: 54%;
+    top: 75vh;
+    right: 23%; }
+  .title-anims {
+    font-size: 7.5vw; }
+
+  .description {
+    top: 8.5vw;
+    font-size: 3.5vw;
+  }
 }
 
 
 /* 3000px and onwards (4K Screens and all) */
 @media only screen
 and (min-width: 3000px) {
+  .title-holder {
+    top: 550px; }
+  .title-anims {
+    font-size: 60px; }
+  .description {
+    font-size: 20px;
+    top: 60px; }
 
+  #arrow-left, #arrow-right {
+    width: 50px; }
 }

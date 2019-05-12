@@ -5,6 +5,7 @@ var brandimg = document.getElementsByClassName('brand-img')[0];
 
 var carousel = document.querySelector('.carousel');
 var carouselpage = document.getElementsByClassName('carousel_page');
+var scene = document.querySelector('.scene');
 var cellNum = 8;
 var activeCells = 5;
 
@@ -150,8 +151,9 @@ var pullContactMenu = function() {
   }
 }
 
-brandimg.classList.toggle('active');
 setTimeout(() => {
+  brandimg.classList.toggle('active');
   contactbutt.classList.toggle('active');
   document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
-}, 0);
+}, 2000);
+setTimeout(() => {scene.style.borderStyle = 'solid'}, 2500);
