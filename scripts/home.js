@@ -55,6 +55,23 @@ var pullContactMenu = function() {
   }
 }
 
+/*******************************************************************
+      PARTICLE.JS STUFF
+*******************************************************************/
+
+function loadParticles() {
+  particlesJS.load('particles-js', 'assets/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+}); }
+
+var particles = document.getElementById('particles-js');
+
+/*******************************************************************
+      FUNCTION CALLS
+*******************************************************************/
+
+loadParticles();
+
 brandimg.classList.toggle('active');
 setTimeout(() => {
   contactbutt.classList.toggle('active');
@@ -73,3 +90,5 @@ for(let i = 0; i < 7; i++) {
   j += i * 100;
   setTimeout(() => {caption[i].classList.toggle('active')}, j);
 }
+
+setTimeout(() => {particles.style.opacity = "1"}, 2000);

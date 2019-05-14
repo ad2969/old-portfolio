@@ -269,6 +269,17 @@ function onDocumentMouseMove( event ) {
 }
 
 /*******************************************************************
+      PARTICLE.JS STUFF
+*******************************************************************/
+
+function loadParticles() {
+  particlesJS.load('particles-js', 'assets/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+}); }
+
+var particles = document.getElementById('particles-js');
+
+/*******************************************************************
       MAIN 3D INITIALIZATION FUNCTION CALLS
 *******************************************************************/
 
@@ -282,6 +293,8 @@ setTimeout(() => {
   update();
 }, 1000 );
 
+loadParticles();
+setTimeout(() => {particles.style.opacity = "1"}, 4500);
 
 /*******************************************************************************
 *******************************************************************************/

@@ -384,13 +384,13 @@ html, body {
 #arrow-left, #arrow-right {
   width: 25%;
   fill: #919191;
-  height: auto;
+  height: 20%;
   position: absolute;
-  top: 50%; }
+  top: 40%; }
 #arrow-left {
-  left: 25%;
+  right: 15%;
   transform: rotateY(180deg);}
-#arrow-right {right: 25%;}
+#arrow-right {left: 15%;}
 
 
 .nav-holder {
@@ -1034,8 +1034,8 @@ and (min-height: 501px) {
     position: relative;
     height: 60vh;
     width: 30vh;
-    max-width: unset;
-    max-height: unset;
+    max-width: 56vw;
+    max-height: 112vw;
     margin: 10vh auto; }
   .carousel_page {
     grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
