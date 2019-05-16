@@ -5,6 +5,10 @@ var play = document.getElementsByClassName('play')[0];
 var backbrand = document.getElementById('back-brand');
 var canvasdiv = document.getElementById('canvas-div');
 var credsbox = document.getElementsByClassName('creds-box')[0];
+var glitchback1 = document.getElementsByClassName('glitch-back')[0];
+var glitchback2 = document.getElementsByClassName('glitch-back-2')[0];
+var namediv = document.getElementsByClassName('name-div')[0];
+var typeanims = document.getElementsByClassName('typeAnims')[0];
 
 /*******************************************************************************
 *******************************************************************************/
@@ -71,7 +75,7 @@ var ring, ringG, ringM;
 /*******************************************************************************
 *******************************************************************************/
 //  VARIABLE PARAMETERS
-var limitRot = 0;
+var limitRot = 1;
 var modelNum = 0;
 var modelNumNext = 0;
 /*******************************************************************************
@@ -91,20 +95,24 @@ function init() {
 
   // Allow scene to change with resizing of the window
   window.addEventListener( 'resize', () => {
-    if ( window.innerWidth <= 600 ) {
+    if ( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
       object.position.x = 1;
-      object.position.y = -3.5;
-      object.scale.set( 0.5, 0.5, 0.5 );
-      ring.position.x = 1;
+      object.position.y = -5.5;
+      object.scale.set( 0.8, 0.8, 0.8 );
+      limitRot = 0;
+      // ring.position.x = 1;
     }
     else {
-      object.position.x = 4;
-      object.position.y = -3;
-      object.scale.set( 0.7, 0.7, 0.7 );
-      ring.position.x = 3;
+      object.position.x = 0.5;
+      object.position.y = -5.5;
+      object.scale.set( 1, 1, 1 );
+      limitRot = 1;
+      // ring.position.x = 0;
     }
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    camera.aspect = window.innerWidth / window.innerHeight;
+    if( window.innerWidth <= 2000 ) {
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      camera.aspect = window.innerWidth / window.innerHeight;
+    }
     camera.updateProjectionMatrix();
   }, false );
 
@@ -130,13 +138,15 @@ function loadModel() {
       setTimeout( () => {   // allow model to load first
         if ( window.innerWidth <= 600 ) {
           object.position.x = 1;
-          object.position.y = -3.5;
-          object.scale.set( 0.5, 0.5, 0.5 );
+          object.position.y = -5.5;
+          object.scale.set( 0.8, 0.8, 0.8 );
+          limitRot = 0;
         }
         else {
-          object.position.x = 4;
-          object.position.y = -3;
-          object.scale.set( 0.7, 0.7, 0.7 );
+          object.position.x = 0.5;
+          object.position.y = -5.5;
+          object.scale.set( 1, 1, 1 );
+          limitRot = 1;
         }
         object.position.z = -2;
         object.castShadow = true;
@@ -145,6 +155,7 @@ function loadModel() {
           if( node instanceof THREE.Mesh ) {
             node.castShadow = true;
             node.receiveShadow = true;
+            node.material.wireframe = false;
           }
         })
         scene.add( object );
@@ -175,7 +186,7 @@ function loadRing() {
     ring.scale.set( 0.4, 0.4, 0.4 );
   }
   else {
-    ring.position.x = 3;
+    ring.position.x = 0;
     ring.scale.set( 0.5, 0.5, 0.5 );
   }
 
@@ -206,9 +217,9 @@ function ringGlow() {
 
 function addLighting() {
   var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 1 );
-  scene.add( ambientLight );
+  // scene.add( ambientLight );
 
-  var spotlightDown1 = new THREE.SpotLight( 0xFFFFFF, 1);
+  var spotlightDown1 = new THREE.SpotLight( 0xFFFFFF, 0.5);
   spotlightDown1.position.y = 10;
   spotlightDown1.position.x = 10;
   spotlightDown1.position.z = 10;
@@ -234,8 +245,8 @@ var update = () => {
     else if(object.rotation.y + Math.atan(10*mouseX)/100 < -0.4 && limitRot == 1 ) object.rotation.y = -0.4;
     else object.rotation.y += Math.atan(10*mouseX)/100;
 
-    if( object.rotation.x + Math.atan(10*mouseY)/200 > 0) object.rotation.x = 0;
-    else if(object.rotation.x + Math.atan(10*mouseY)/200 < -0.15) object.rotation.x = -0.15;
+    if( object.rotation.x + Math.atan(10*mouseY)/200 > 0.05) object.rotation.x = 0.05;
+    else if(object.rotation.x + Math.atan(10*mouseY)/200 < -0.05) object.rotation.x = -0.05;
     else object.rotation.x += Math.atan(10*mouseY)/200;
 
     if(camera.position.y + Math.atan(10*mouseX)/1000 > 0.1) camera.position.y = 0.1;
@@ -285,21 +296,75 @@ var particles = document.getElementById('particles-js');
 
 init();
 loadModel();
-loadRing();
+// loadRing();
 addLighting();
 setTimeout(() => {
   if( limitRot == 1) initMouseAnims();
-  ringGlow();
+// ringGlow();
   update();
 }, 1000 );
 
-loadParticles();
-setTimeout(() => {particles.style.opacity = "1"}, 4500);
+// loadParticles();
+// setTimeout(() => {particles.style.opacity = "1"}, 4500);
 
 /*******************************************************************************
 *******************************************************************************/
 
-// INFINITE ANIMATIONS
+/*******************************************************************
+      Hover Animations
+*******************************************************************/
+
+var line = document.getElementsByClassName('line')[0];
+var st1 = document.getElementsByClassName('st1')[0];
+var playclick_active = 0;
+var playclicked = 0;
+var playclick_ready = 0;
+var timer1 = 0;
+
+function checkLoad() {
+  timer1 += 1000;
+  if( playclick_active == 0) return;
+  else if( timer1 == 5000 ) {
+    st1.classList.toggle('active');
+    playclick_ready = 1;
+  }
+  else { setTimeout(checkLoad, 1000) }
+  return;
+};
+
+function initPlay() {
+  play.onmouseover = () => {
+    line.style.width = "100vw";
+    playclick_active = 1;
+    timer1 = 0;
+    playclick_ready = 0;
+    checkLoad();
+  };
+  play.onmouseout = () => {
+    if( playclicked == 0 ) line.style.width = "0%";
+    if( playclick_ready == 1 ) st1.classList.toggle('active');
+    playclick_active = 0;
+    timer1 = 0;
+    playclick_ready = 0;
+  };
+  play.onclick = () => {
+    if( playclick_ready == 1 ) {
+      playclicked = 1;
+      nextPageTransition();
+    }
+  };
+}
+
+if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
+  play.onclick = () => {
+    nextPageTransition();
+  }
+}
+else initPlay();
+
+/*******************************************************************
+      Infinite Typing Anims
+*******************************************************************/
 
 // Typing animation text
 const printWords = ["    Enthusiastic Programmer.          ", "    Electrical Engineer.          ", "    Aspiring Entrepreneur.          "];
@@ -340,11 +405,82 @@ function deleteType() {
   deleteLoop();                  // backup1
 }
 
-// FUNCTION CALLS
+/*******************************************************************
+      Fadeout Animations
+*******************************************************************/
+
+function nextPageTransition() {
+  if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {}
+  else line.classList.toggle('quick');
+
+  play.classList.add('fadeout-anims');
+  play.classList.remove('active');
+  glitchback1.classList.add('fadeout');
+  glitchback2.classList.add('fadeout');
+  setTimeout(() => {
+    typeanims.classList.add('fadeout');
+    backbrand.classList.add('fadeout');
+    namediv.classList.add('fadeout');
+  }, 500);
+  if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
+    setTimeout(() => { window.location.href = "./home.html" }, 1200);
+  }
+  else {
+    setTimeout(() => { line.style.width = "10vw" }, 1500);
+    setTimeout(() => { line.style.transform = "translate(-50%, -50%) rotate(450deg)" }, 2200);
+    setTimeout(() => { line.style.width = "75vh" }, 3100);
+    setTimeout(() => { window.location.href = "./home.html" }, 4000);
+  }
+}
+
+/*******************************************************************
+      FULL FUNCTION CALLS
+*******************************************************************/
+
+function glitchEffect() {
+  glitchback1.classList.toggle('active-inf');
+  glitchback2.classList.toggle('active-inf');
+
+  setTimeout(() => {
+    glitchback1.classList.toggle('active-inf');
+    glitchback2.classList.toggle('active-inf');
+  }, 1000);
+
+  setTimeout(() => {
+    glitchEffect();
+  }, 10000);
+}
 
 brandimg.classList.toggle('active');
-
+// GLITCH EFFECT ON MAIN LOGO
 setTimeout(() => {
+  document.getElementsByClassName('brand-img-left')[0].classList.toggle('active');
+  document.getElementsByClassName('brand-img-right')[0].classList.toggle('active');
+  glitchback1.classList.toggle('active');
+  glitchback2.classList.toggle('active');
+}, 2700);
+setTimeout(() => {
+  document.getElementsByClassName('brand-img-left')[0].classList.toggle('active');
+  document.getElementsByClassName('brand-img-right')[0].classList.toggle('active');
+  glitchback1.classList.toggle('active');
+  glitchback2.classList.toggle('active');
+}, 2900);
+setTimeout(() => {
+  document.getElementsByClassName('brand-img-left')[0].classList.toggle('active2');
+  document.getElementsByClassName('brand-img-right')[0].classList.toggle('active2');
+  glitchback1.classList.toggle('active');
+  glitchback2.classList.toggle('active');
+}, 3300);
+setTimeout(() => {
+  document.getElementsByClassName('brand-img-left')[0].classList.toggle('active2');
+  document.getElementsByClassName('brand-img-right')[0].classList.toggle('active2');
+  glitchback1.classList.toggle('active');
+  glitchback2.classList.toggle('active');
+}, 3800);
+
+// OTHER FADEIN ANIMATIONS
+setTimeout(() => {
+  glitchEffect();
   contactbutt.classList.toggle('active');
   document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
 }, 4400);

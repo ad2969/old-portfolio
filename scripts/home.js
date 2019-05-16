@@ -2,6 +2,9 @@ var brandimg = document.getElementsByClassName('brand-img')[0];
 var header = document.getElementsByClassName('header')[0];
 var title = document.getElementsByClassName('title');
 var caption = document.getElementsByClassName('caption');
+var line = document.getElementsByClassName('line')[0];
+var left = document.getElementsByClassName('left-mainpage')[0];
+var right = document.getElementsByClassName('right-mainpage')[0];
 
 /*******************************************************************************
 *******************************************************************************/
@@ -66,11 +69,21 @@ function loadParticles() {
 
 var particles = document.getElementById('particles-js');
 
+
+/*******************************************************************
+      FADEOUT ANIMATiONS
+*******************************************************************/
+
+function nextPageTransition() {
+  right.classList.add('fadeout');
+  left.classList.add('fadeout');
+}
+
 /*******************************************************************
       FUNCTION CALLS
 *******************************************************************/
 
-loadParticles();
+// loadParticles();
 
 brandimg.classList.toggle('active');
 setTimeout(() => {
@@ -86,9 +99,13 @@ for(let i = 0; i < 4; i++) {
 }
 
 for(let i = 0; i < 7; i++) {
-  let j = 1000;
-  j += i * 100;
+  let j = 800;
+  j += i * 50;
   setTimeout(() => {caption[i].classList.toggle('active')}, j);
 }
 
-setTimeout(() => {particles.style.opacity = "1"}, 2000);
+setTimeout(() => {
+  line.classList.add('quick');
+  line.style.height = "0";
+}, 2100);
+// setTimeout(() => { particles.style.opacity = "1" }, 3500);

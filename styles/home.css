@@ -45,19 +45,21 @@ html, body {
 
 .left-mainpage {
   float: left;
-  width: 50%;
+  width: 47%;
   height: 100%;
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: right; }
+  justify-content: right;
+  transition: all 1s ease; }
 
 .header {
   text-align: right;
   width: 60%;
   position: relative;
   visibility: hidden;
-  z-index: 1;}
+  z-index: 1;
+  padding-right: 5%; }
 .header.active {
   visibility: visible;
   animation: fade 3s ease-in-out; }
@@ -88,11 +90,12 @@ html, body {
   height: 100%;
   z-index: 1;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  transition: all 1s ease; }
 
 .homelist-holder {
   /* Centered div containing all text files */
-  left: 15%;
+  padding-left: 5%;
   width: 60%;
   position: relative;
   top: -5%;
@@ -111,7 +114,7 @@ html, body {
   font-weight: bold; }
 .title.active {
   visibility: visible;
-  animation: slide-in 1.5s ease-in-out, fade 2s ease-in-out; }
+  animation: slide-in 1s ease-in-out, fade 2s ease-in-out; }
 
 .caption {
   color: #fff;
@@ -124,7 +127,7 @@ html, body {
   position: relative; }
 .caption.active {
   visibility: visible;
-  animation: slide-in 1.5s ease-in-out, fade 2s ease-in-out;}
+  animation: slide-in 1s ease-in-out, fade 2s ease-in-out;}
 
 .textanim {
   position: absolute;
@@ -870,6 +873,16 @@ html, body {
   animation: blinkonmax 15s infinite alternate-reverse; }
 
 
+.line {
+  height: 75vh;
+  width: 0.5vh;
+  position: absolute;
+  background: #999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 2s ease; }
+
 /*
 .----..-..-.  .-..----..----.    .----. .-. .----..----. .-.     .--..-.  .-..----.
 | {_  | | \ \/ / | {_  | {}  \   | {}  \| |{ {__  | {}  }| |    / {} \ \/ /{ {__
@@ -1100,6 +1113,12 @@ html, body {
 
 	tag: animation section
 *******************************************************************************/
+
+.quick {
+  transition: 1s ease; }
+.fadeout {
+  opacity: 0; }
+
 @keyframes fade {
   from {
     opacity: 0; }
@@ -1327,7 +1346,8 @@ and (min-height: 501px) {
   .right-mainpage {
     position: relative;
     float: unset;
-    width: 100%;
+    width: 90%;
+    padding-left: 10%;
     height: auto;
     min-height: 100%;
     z-index: 1;
@@ -1465,12 +1485,17 @@ and (min-height: 501px) {
     right: 10%;
     width: 75%; }
   .homelist-holder {
-    width: 100%; }
+    width: 100%;
+    padding-left: unset; }
+
+  .line {
+    display: none; }
 }
 
 @media only screen
 and (min-width: 651px)
-and (max-width: 800px) {
+and (max-width: 800px)
+and (min-height: 501px) {
   html, body {
     overflow: auto;
   }
@@ -1628,7 +1653,8 @@ and (max-width: 800px) {
     right: 10%;
     width: 75%; }
   .homelist-holder {
-    width: 100%; }
+    width: 100%;
+    padding-left: unset; }
 
   .title {
     font-size: 8vw;
@@ -1641,26 +1667,24 @@ and (max-width: 800px) {
 }
 
 
-
-
-/* 3000px and onwards (4K Screens and all) */
+/* 2000px and onwards (4K Screens and all) */
 @media only screen
-and (min-width: 3000px) {
+and (min-width: 2000px) {
   #body-container {
     width: 2000px;
-    height: 1500px;
+    height: 1000px;
     left: unset;
     top: unset;
     margin: 0 auto;
     position: relative; }
   .header {
-    width: 90%; }
+    width: 60%; }
   .intro {
     font-size: 75px; }
   .description {
     font-size: 30px; }
   .homelist-holder {
-    top: -50px; }
+     }
   .title {
     font-size: 40px;
     padding-bottom: 50px;
