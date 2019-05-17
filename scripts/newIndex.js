@@ -219,7 +219,7 @@ function addLighting() {
   var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 1 );
   // scene.add( ambientLight );
 
-  var spotlightDown1 = new THREE.SpotLight( 0xFFFFFF, 0.5);
+  var spotlightDown1 = new THREE.SpotLight( 0xFFFFFF, 0.7);
   spotlightDown1.position.y = 10;
   spotlightDown1.position.x = 10;
   spotlightDown1.position.z = 10;
@@ -282,13 +282,13 @@ function onDocumentMouseMove( event ) {
 /*******************************************************************
       PARTICLE.JS STUFF
 *******************************************************************/
-
-function loadParticles() {
-  particlesJS.load('particles-js', 'assets/particles.json', function() {
-  console.log('callback - particles.js config loaded');
-}); }
-
-var particles = document.getElementById('particles-js');
+//
+// function loadParticles() {
+//   particlesJS.load('particles-js', 'assets/particles.json', function() {
+//   console.log('callback - particles.js config loaded');
+// }); }
+//
+// var particles = document.getElementById('particles-js');
 
 /*******************************************************************
       MAIN 3D INITIALIZATION FUNCTION CALLS
@@ -303,9 +303,6 @@ setTimeout(() => {
 // ringGlow();
   update();
 }, 1000 );
-
-// loadParticles();
-// setTimeout(() => {particles.style.opacity = "1"}, 4500);
 
 /*******************************************************************************
 *******************************************************************************/

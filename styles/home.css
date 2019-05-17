@@ -39,13 +39,12 @@ html, body {
   top: 0;
   position: absolute; }
 
-
 /*	Left Placeholder
 *******************************************************************************/
 
 .left-mainpage {
   float: left;
-  width: 47%;
+  width: 50%;
   height: 100%;
   z-index: 1;
   display: flex;
@@ -59,14 +58,14 @@ html, body {
   position: relative;
   visibility: hidden;
   z-index: 1;
-  padding-right: 5%; }
+  padding-right: 8%; }
 .header.active {
   visibility: visible;
   animation: fade 3s ease-in-out; }
 
 .intro {
   color: #fff;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 8vh;
   font-weight: bold;
   margin: 0; }
@@ -104,14 +103,14 @@ html, body {
 
 .title {
   color: #fff;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   visibility: hidden;
   list-style-type: none;
   text-decoration: none;
   padding-bottom: 4vh;
   padding-top: 4vh;
   font-size: 4vh;
-  font-weight: bold; }
+  font-weight: 900; }
 .title.active {
   visibility: visible;
   animation: slide-in 1s ease-in-out, fade 2s ease-in-out; }
@@ -151,7 +150,7 @@ html, body {
 
 #aboutme-h2 {
   /* Header Style 1 Anims */
-  left: 42px;
+  left: 82px;
   background-color: #1a1a1a;
   text-shadow: 3px 0 purple;
   clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%); }
@@ -162,7 +161,7 @@ html, body {
 
 #aboutme-h3 {
   /* Header Style 1 Anims */
-  left: 38px;
+  left: 78px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #ee6a62;
   clip-path: polygon(0 32%, 100% 32%, 100% 44%, 0 44%); }
@@ -173,7 +172,7 @@ html, body {
 
 #aboutme-h4 {
   /* Header Style 1 Anims */
-  left: 42px;
+  left: 82px;
   background-color: #1a1a1a;
   text-shadow: 3px 0 green;
   clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%); }
@@ -184,7 +183,7 @@ html, body {
 
 #aboutme-h5 {
   /* Header Style 1 Anims */
-  left: 37px;
+  left: 77px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #62ee9c;
   clip-path: polygon(0 56%, 100% 56%, 100% 68%, 0 68%);}
@@ -195,7 +194,7 @@ html, body {
 
 #aboutme-h6 {
   /* Header Style 1 Anims */
-  left: 43px;
+  left: 83px;
   background-color: #1a1a1a;
   text-shadow: 5px 0 #ee6a62;
   clip-path: polygon(0 68%, 100% 68%, 100% 80%, 0 80%); }
@@ -353,7 +352,7 @@ html, body {
 
 #projects-h2 {
   /* Head Style 2 Anims */
-  left: 32px;
+  left: 72px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #9c62ee;
   clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%); }
@@ -364,7 +363,7 @@ html, body {
 
 #projects-h3 {
   /* Head Style 2 Anims */
-  left: 38px;
+  left: 78px;
   background-color: #1a1a1a;
   text-shadow: 3px 0 #ee6a62;
   clip-path: polygon(0 56%, 100% 56%, 100% 68%, 0 68%); }
@@ -375,7 +374,7 @@ html, body {
 
 #projects-h4 {
   /* Head Style 2 Anims */
-  left: 32px;
+  left: 82px;
   background-color: #1a1a1a;
   text-shadow: -2px 0 green;
   clip-path: polygon(0 68%, 100% 68%, 100% 80%, 0 80%); }
@@ -386,7 +385,7 @@ html, body {
 
 #projects-h5 {
   /* Head Style 2 Anims */
-  left: 37px;
+  left: 77px;
   background-color: #1a1a1a;
   text-shadow: 5px 0 #62ee9c;
   clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%); }
@@ -397,7 +396,7 @@ html, body {
 
 #projects-h6 {
   /* Head Style 2 Anims */
-  left: 43px;
+  left: 83px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #ee6a62;
   clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%); }
@@ -616,7 +615,7 @@ html, body {
 
 #resume-h2 {
   /* Head Style 3 Anims */
-  left: 42px;
+  left: 82px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #9c62ee;
   clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%); }
@@ -627,7 +626,7 @@ html, body {
 
 #resume-h3 {
   /* Head Style 3 Anims */
-  left: 38px;
+  left: 78px;
   background-color: #1a1a1a;
   text-shadow: 3px 0 #ee6a62;
   clip-path: polygon(0 68%, 100% 68%, 100% 80%, 0 80%); }
@@ -638,7 +637,7 @@ html, body {
 
 #resume-h4 {
   /* Head Style 3 Anims */
-  left: 38px;
+  left: 88px;
   background-color: #1a1a1a;
   text-shadow: -2px 0 green;
   clip-path: polygon(0 32%, 100% 32%, 100% 44%, 0 44%); }
@@ -649,7 +648,7 @@ html, body {
 
 #resume-h5 {
   /* Head Style 3 Anims */
-  left: 43px;
+  left: 83px;
   background-color: #1a1a1a;
   text-shadow: 5px 0 #62ee9c;
   clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%); }
@@ -660,7 +659,7 @@ html, body {
 
 #resume-h6 {
   /* Head Style 3 Anims */
-  left: 31px;
+  left: 71px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #ee6a62;
   clip-path: polygon(0 56%, 100% 56%, 100% 68%, 0 68%); }
@@ -819,7 +818,7 @@ html, body {
 
 #blog-h2 {
   /* Head Style 4 Anims */
-  left: 42px;
+  left: 82px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #9c62ee;
   clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%); }
@@ -830,7 +829,7 @@ html, body {
 
 #blog-h3 {
   /* Head Style 4 Anims */
-  left: 48px;
+  left: 88px;
   background-color: #1a1a1a;
   text-shadow: 3px 0 #ee6a62;
   clip-path: polygon(0 20%, 100% 20%, 100% 32%, 0 32%); }
@@ -841,7 +840,7 @@ html, body {
 
 #blog-h4 {
   /* Head Style 4 Anims */
-  left: 38px;
+  left: 78px;
   background-color: #1a1a1a;
   text-shadow: -2px 0 green;
   clip-path: polygon(0 68%, 100% 68%, 100% 80%, 0 80%); }
@@ -852,7 +851,7 @@ html, body {
 
 #blog-h5 {
   /* Head Style 4 Anims */
-  left: 33px;
+  left: 73px;
   background-color: #1a1a1a;
   text-shadow: 5px 0 #62ee9c;
   clip-path: polygon(0 32%, 100% 32%, 100% 44%, 0 44%); }
@@ -863,7 +862,7 @@ html, body {
 
 #blog-h6 {
   /* Head Style 4 Anims */
-  left: 41px;
+  left: 81px;
   background-color: #1a1a1a;
   text-shadow: -5px 0 #ee6a62;
   clip-path: polygon(0 56%, 100% 56%, 100% 68%, 0 68%); }
@@ -1014,7 +1013,7 @@ html, body {
   left: 3%;
   width: 3.5%;
   height: 15%;
-  visibility: hidden;
+  visibility: visible;
   z-index: 5; }
 
 .contact-button-img {
@@ -1028,7 +1027,7 @@ html, body {
 
 .contact-button.active {
   visibility: visible;
-  animation: fade 2.5s;
+  /* animation: fade 2.5s; */
   transition: all 300ms; }
 
 .contact-button.active:hover {
@@ -1218,7 +1217,7 @@ html, body {
 
 @keyframes slide-in {
   from {
-    transform: translateX(-50px); }
+    transform: translateX(-100px); }
   to {
     transform: translateX(0px); } }
 
@@ -1476,12 +1475,13 @@ and (min-height: 501px) {
   	padding: 4px; }
 
   .intro {
-    font-size: 15vw; }
+    font-size: 13vw; }
   .description {
     font-size: 4.5vw; }
   .header {
     text-align: right;
     position: relative;
+    padding-right: unset;
     right: 10%;
     width: 75%; }
   .homelist-holder {
@@ -1490,6 +1490,50 @@ and (min-height: 501px) {
 
   .line {
     display: none; }
+
+  #aboutme-h2 {
+    left: 42px; }
+  #aboutme-h3 {
+    left: 38px; }
+  #aboutme-h4 {
+    left: 42px; }
+  #aboutme-h5 {
+    left: 37px; }
+  #aboutme-h6 {
+    left: 43px; }
+
+  #projects-h2 {
+    left: 32px; }
+  #projects-h3 {
+    left: 38px; }
+  #projects-h4 {
+    left: 42px; }
+  #projects-h5 {
+    left: 37px; }
+  #projects-h6 {
+    left: 43px; }
+
+  #resume-h2 {
+    left: 42px; }
+  #resume-h3 {
+    left: 38px; }
+  #resume-h4 {
+    left: 48px; }
+  #resume-h5 {
+    left: 43px; }
+  #resume-h6 {
+    left: 31px; }
+
+  #blog-h2 {
+    left: 42px; }
+  #blog-h3 {
+    left: 48px; }
+  #blog-h4 {
+    left: 38px; }
+  #blog-h5 {
+    left: 33px; }
+  #blog-h6 {
+    left: 41px; }
 }
 
 @media only screen
@@ -1644,9 +1688,9 @@ and (min-height: 501px) {
     padding: 4px; }
 
   .intro {
-    font-size: 12vw; }
+    font-size: 10vh; }
   .description {
-    font-size: 3.5vw; }
+    font-size: 2.5vh; }
   .header {
     text-align: right;
     position: relative;
@@ -1657,13 +1701,13 @@ and (min-height: 501px) {
     padding-left: unset; }
 
   .title {
-    font-size: 8vw;
-    padding-top: 8vw;
-    padding-bottom: 8vw; }
+    font-size: 4vh;
+    padding-top: 4vh;
+    padding-bottom: 4vh; }
   .caption {
-    font-size: 4.5vw;
-    padding-top: 4.5vw;
-    padding-bottom: 4.5vw; }
+    font-size: 2.5vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh; }
 }
 
 

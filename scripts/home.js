@@ -86,10 +86,8 @@ function nextPageTransition() {
 // loadParticles();
 
 brandimg.classList.toggle('active');
-setTimeout(() => {
-  contactbutt.classList.toggle('active');
-  document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
-}, 0);
+contactbutt.classList.toggle('active');
+document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
 setTimeout(() => {header.classList.toggle('active')}, 0);
 
 for(let i = 0; i < 4; i++) {
@@ -108,4 +106,3 @@ setTimeout(() => {
   line.classList.add('quick');
   line.style.height = "0";
 }, 2100);
-// setTimeout(() => { particles.style.opacity = "1" }, 3500);
