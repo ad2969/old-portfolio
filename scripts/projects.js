@@ -119,6 +119,7 @@ var buttons = document.getElementsByClassName('flex');
 var modalback = document.getElementsByClassName("modal-back")[0];
 var modal = document.getElementsByClassName("modal")[0];
 var close = document.getElementsByClassName("close")[0];
+var tempNode;
 
 /*    FUNCTIONS
 ********************************************************************************/
@@ -138,6 +139,7 @@ function closeModal() {
 }
 
 function buttonEvent( event ) {
+  tempNode = event.currentTarget;
   event.currentTarget.removeEventListener( "click", buttonEvent );
   insertNode( event.currentTarget.info );
   openModal();
@@ -151,7 +153,7 @@ function closeModalEvent( event ) {
   setTimeout(() => {
     close.removeEventListener( "click", closeModalEvent );
     window.removeEventListener( "click", closeModalEvent2 );
-    event.currentTarget.addEventListener( "click", buttonEvent );
+    tempNode.addEventListener( "click", buttonEvent );
   }, 2500);
   closeModal();
 }
@@ -162,7 +164,7 @@ function closeModalEvent2( event ) {
       close.removeEventListener( "click", closeModalEvent );
       window.removeEventListener( "click", closeModalEvent2 );
       removeNodes();
-      event.currentTarget.addEventListener( "click", buttonEvent );
+      tempNode.addEventListener( "click", buttonEvent );
     }, 2500);
     closeModal();
   }
