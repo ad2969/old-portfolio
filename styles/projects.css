@@ -1,7 +1,7 @@
 /******************************************************************************/
 /* Author: Clarence Adrian 																										*/
 /* File_Type: CSS Stylesheet   																								*/
-/* File_Name: template.css  																						    	*/
+/* File_Name: projects.css  																						    	*/
 /* Additional_Files_Libraries:                                             	  */
 /******************************************************************************/
 /* COMMENT STYLES
@@ -9,11 +9,11 @@ Obtained from: patorjk.com/software/taag/
 
 /*******************************************************************************
 ********************************************************************************
-_____ _____ __  __ ____  _        _  _____ _____        ____ ____ ____
-|_   _| ____|  \/  |  _ \| |      / \|_   _| ____|      / ___/ ___/ ___|
- | | |  _| | |\/| | |_) | |     / _ \ | | |  _|       | |   \___ \___ \
- | | | |___| |  | |  __/| |___ / ___ \| | | |___   _  | |___ ___) |__) |
- |_| |_____|_|  |_|_|   |_____/_/   \_\_| |_____| (_)  \____|____/____/
+ ____  ____   ___      _ _____ ____ _____ ____         ____ ____ ____
+|  _ \|  _ \ / _ \    | | ____/ ___|_   _/ ___|       / ___/ ___/ ___|
+| |_) | |_) | | | |_  | |  _|| |     | | \___ \      | |   \___ \___ \
+|  __/|  _ <| |_| | |_| | |__| |___  | |  ___) |  _  | |___ ___) |__) |
+|_|   |_| \_\\___/ \___/|_____\____| |_| |____/  (_)  \____|____/____/
 
 ********************************************************************************
 *******************************************************************************/
@@ -39,7 +39,8 @@ html, body {
   top: 0;
   position: absolute;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 
 /*	Main Screen
@@ -432,174 +433,6 @@ html, body {
 `-'   `-'`-'  `-'`----'`----'    `----' `-'`----' `-'    `----'`-'  `-'`--' `----'
 
 ********************************************************************************/
-/*		CONTACT PULL UP TAB (bottom left corner)
-*******************************************************************************/
-.contact-tab {
-  /* Placeholder for entire contact tab */
-  width: 100%;
-  height: 100%;
-  z-index: 4;
-  overflow: hidden;
-  position: fixed;
-  display: none;
-  color: #fff;
-  font-family: "PT Sans", sans-serif; }
-
-.contact-1, .contact-2 {
-  /* Box 1 - Contact Me and 2 - Link to Works */
-  width: 30%;
-  height: 100%;
-  bottom: 0;
-  position: fixed;
-  text-align: right;
-  visibility: hidden;
-  z-index: 4; }
-
-.contact-1.active {
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.98);
-  visibility: visible;
-  animation: swipe-up 1s; }
-
-.contact-1.hidden {
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.98);
-  visibility: visible;
-  animation: swipe-down 2s; }
-
-.contact-2.active {
-  left: 30%;
-  background-color: rgba(17, 17, 17, 0.98);
-  visibility: visible;
-  animation: swipe-up 1s; }
-
-.contact-2.hidden {
-  left: 30%;
-  background-color: rgba(17, 17, 17, 0.98);
-  visibility: visible;
-  animation: swipe-down 2s;
-  animation-delay: 100ms; }
-
-.contact-3 {
-  /* Box 3 - Map */
-  width: 40%;
-  height: 100%;
-  left: 60%;
-  bottom: 0;
-  position: fixed;
-  text-align: right;
-  visibility: hidden;
-  z-index: 4; }
-
-.contact-3-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  opacity: 0.98; }
-
-.contact-3.active {
-  visibility: visible;
-  animation: swipe-up 1s; }
-
-.contact-3.hidden {
-  visibility: visible;
-  animation: swipe-down 2s;
-  animation-delay: 200ms; }
-
-.contact-h1, .contact-h2, .contact-h3 {
-  /* Box Titles */
-  font-size: 5vh;
-  top: 30%;
-  right: 12%;
-  position: relative; }
-
-.contact-h3 {
-  top: 60%; }
-
-.contact-deets, .contact-deets-img {
-  /* Box Title Information Details */
-  color: #fff;
-  float: right;
-  text-decoration: none;
-  font-size: 2.5vh;
-  top: 30%;
-  right: 10%;
-  position: relative;
-  padding: 1%;
-  clear: right; }
-
-.contact-deets.logo {
-  clear: unset; }
-
-#contact-LI, #contact-git, #contact-codepen, #contact-twit {
-  padding-top: 3vh;
-  max-height: 5vh;
-  max-width: 5vh; }
-
-.contact-deets:hover, .contact-deets-img:hover {
-  transform: scale(1.08); }
-
-.contact-h3-deets {
-  font-size: 2.5vh;
-  top: 60%;
-  right: 10%;
-  position: relative;
-  padding: 1%; }
-
-/*	CONTACT TAB BUTTONS
-********************************************************************************/
-.contact-button {
-  /* Placeholder for Contact Button */
-  position: fixed;
-  bottom: 5%;
-  left: 3%;
-  width: 3.5%;
-  height: 15%;
-  visibility: hidden;
-  z-index: 5; }
-
-.contact-button-img {
-  height: auto;
-  width: 100%; }
-
-.contact-button-img-holder {
-  height: 40%; }
-.contact-button-img-holder:hover {
-  transform: scale(1.08); }
-
-.contact-button.active {
-  visibility: visible;
-  animation: fade 2s ease-in-out; }
-
-.contact-button.active:hover {
-  cursor: pointer; }
-
-.close-contact-tab {
-  /* Placeholder for Exit Contact Menu Button */
-  height: 20%;
-  padding-bottom: 10%; }
-
-.close-contact-tab:hover {
-  transform: scale(1.08); }
-
-.close-contact-tab-img {
-  /* Exit Contact Menu Button Arrow 1 */
-  /**** Animation: pull-up/pull-down ****/
-  width: 60%;
-  left: 20%;
-  padding-bottom: 20%;
-  position: absolute;
-  visibility: hidden; }
-
-.close-contact-tab-img.active {
-  visibility: visible;
-  animation: swipe-up 0.5s, fade 0.5s; }
-
-.close-contact-tab-img.hidden {
-  visibility: visible;
-  animation: swipe-down 0.5s, fadeout 0.5s;
-  animation-delay: 50ms; }
 
 /*		BRAND LOGO (top left corner)
 *******************************************************************************/
@@ -613,8 +446,7 @@ html, body {
 
 .top-brand:hover {
   transform: scale(1.08);
-  cursor: pointer;
-}
+  cursor: pointer; }
 .brand-img {
   stroke-dasharray:4500;
   fill: #3caea3;
@@ -802,7 +634,7 @@ bp-c1, bp-c2, bp-c3, bp-c4 : points
   align-items: center;
   box-sizing: border-box; }
 .img-responsive {
-  max-width: 75%;
+  width: 75%;
   height: auto;
   display: block;
   box-sizing: border-box;
@@ -814,8 +646,8 @@ bp-c1, bp-c2, bp-c3, bp-c4 : points
   align-items: center;
   flex-direction: column;
   box-sizing: border-box; }
-.row-desc {
-  padding-bottom: 10%; }
+.row-desc { padding-bottom: 10%; }
+.row-heading { text-align: center; }
 
 .heading {
   width: 75%; }
@@ -827,11 +659,11 @@ bp-c1, bp-c2, bp-c3, bp-c4 : points
 .col-75, .col-25 {
   float: left; }
 .col-75 {
-  width: 70%; }
+  width: 70%;
+  text-align: justify; }
 .col-25 {
-  width: 20%;
-  padding-left: 5%;
-  padding-right: 5%; }
+  width: 25%;
+  padding-left: 5%; }
 
 .social-ul {
   list-style: none;
@@ -845,7 +677,7 @@ bp-c1, bp-c2, bp-c3, bp-c4 : points
   padding: 0;
   box-sizing: border-box; }
 .social-logo {
-  max-width: 3vw;
+  max-width: 2.4vw;
   padding-right: 0.5vw; }
 
 @media only screen
@@ -860,11 +692,6 @@ and (max-width: 600px) {
   box-sizing: border-box; }
 .h-10 {
   height: 10px; }
-
-
-/*    Layout
-*******************************************************************************/
-
 
 /*******************************************************************************
      _    _   _ ___ __  __    _  _____ ___ ___  _   _ ____
@@ -885,54 +712,7 @@ and (max-width: 600px) {
     opacity: 1; }
   to {
     opacity: 0; } }
-@keyframes swipe-up {
-  from {
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%); }
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); } }
-@keyframes swipe-down {
-  from {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1; }
-  50% {
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-    opacity: 0; }
-  to {
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-    opacity: 0; } }
-@keyframes swipe-right {
-	from {
-		-webkit-transform: translateX(-100%);
-		transform: translateX(-100%);
-	}
-	to {
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-}
 
-@keyframes swipe-left {
-	from {
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-		opacity:1;
-	}
-	50% {
-		-webkit-transform: translateX(-100%);
-		transform: translateX(-100%);
-		opacity:0;
-	}
-	to {
-		-webkit-transform: translateX(-100%);
-		transform: translateX(-100%);
-		opacity:0;
-	}
-}
 @keyframes tracerbrand {
   from {
     stroke-dashoffset: 4500;
@@ -943,34 +723,7 @@ and (max-width: 600px) {
     stroke-dashoffset: 0; }
   to {
     fill-opacity: 1; }}
-@keyframes swipe-right-r {
-	from {
-		-webkit-transform: rotate(90deg) translateY(100%);
-		transform: rotate(90deg) translateY(100%);
-	}
-	to {
-		-webkit-transform: rotate(90deg) translateY(0);
-		transform: rotate(90deg) translateY(0);
-	}
-}
 
-@keyframes swipe-left-r {
-	from {
-		-webkit-transform: rotate(90deg) translateY(0);
-		transform: rotate(90deg) translateY(0);
-		opacity:1;
-	}
-	50% {
-		-webkit-transform: rotate(90deg) translateY(100%);
-		transform: rotate(90deg) translateY(100%);
-		opacity:0;
-	}
-	to {
-		-webkit-transform: rotate(90deg) translateY(100%);
-		transform: rotate(90deg) translateY(100%);
-		opacity:0;
-	}
-}
 @keyframes blinkonmax {
   0% {
     opacity: 0; }
@@ -1152,120 +905,7 @@ and (min-height: 501px) {
   .top-brand {
     left: 5%;
     top: 3%;
-    width: 10%; }
-
-  .contact-button {
-    left: 5%;
-    bottom: 3%;
-    width: 25%;
-    height: 6%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end; }
-
-  .contact-button-img-holder {
-    height: 100%;
-    float: right;
-    padding-right: 5%;
-    position: unset; }
-
-  .contact-button-img {
-    height: 100%;
-    width: auto; }
-
-  .close-contact-tab {
-  /* Placeholder (span) for Exit Contact Menu Button */
-    height: 100%;
-    width: 20%;
-    padding-bottom: unset;
-    float: right; }
-  .close-contact-tab:hover {
-    transform: scale(1.08); }
-
-  .close-contact-tab-img {
-    /* Exit Contact Menu Button Arrows */
-    /**** Animation: pull-up/pull-down ****/
-    height: 50%;
-    top: 25%;
-    width: auto;
-    left: unset;
-    padding-bottom: unset;
-    transform: rotate(90deg);
-    position: absolute;
-    visibility: hidden;
-    width: unset; }
-  .close-contact-tab-img.active {
-    visibility: visible;
-    animation: swipe-right-r 0.5s, fade 0.5s; }
-  .close-contact-tab-img.hidden {
-    visibility: visible;
-    animation: swipe-left-r 0.5s, fadeout 0.5s;
-    animation-delay: 50ms; }
-
-  .contact-1, .contact-2 {
-  	width: 100%;
-  	height: 40%;
-    left: unset;
-  	position: fixed;
-  	text-align: right;
-  	visibility: hidden; }
-  .contact-1.active {
-  	top: 0;
-    left: unset;
-  	animation: swipe-right 1s; }
-  .contact-1.hidden {
-  	top: 0;
-    left: unset;
-  	animation: swipe-left 2s; }
-  .contact-2 {
-  	height: 30% }
-  .contact-2.active {
-  	top: 40%;
-    left: unset;
-  	animation: swipe-right 1s; }
-  .contact-2.hidden {
-  	top: 40%;
-    left: unset;
-  	animation: swipe-left 2s;
-  	animation-delay: 100ms; }
-
-  .contact-3 {
-  	width: 100%;
-  	height: 30%;
-  	top: 70%;
-    left: unset;
-    bottom: unset; }
-  .contact-3.active {
-  	visibility: visible;
-  	animation: swipe-right 1s; }
-  .contact-3.hidden {
-  	visibility: visible;
-  	animation: swipe-left 2s;
-  	animation-delay: 200ms; }
-
-  .contact-h1, .contact-h2, .contact-h3 {
-  	font-size: 4.5vh;
-  	top: 10%;
-  	right: 12%;
-  	position: relative; }
-
-  .contact-deets, .contact-deets-img {
-  	font-size: 2vh;
-  	top: 7%;
-  	right: 10%;
-  	position: relative;
-  	padding: 4px;
-  	clear: right; }
-  #contact-LI, #contact-git, #contact-codepen, #contact-twit {
-  	max-height: 7vw;
-  	max-width: 7vw; }
-
-  .contact-h3-deets {
-  	font-size: 2vh;
-  	top: 7%;
-  	right: 10%;
-  	position: relative;
-  	padding: 4px; }
+    width: 12%; }
 
   .scene-div {
     /* border: 1px solid #CCC; */
@@ -1308,13 +948,22 @@ and (min-height: 501px) {
   }
   .col-25 {
     width: 100%;
+    padding-left: 0;
   }
 }
 
 
-/* 3000px and onwards (4K Screens and all) */
+/* 2000px and onwards (4K Screens and all) */
 @media only screen
-and (min-width: 3000px) {
+and (min-width: 2000px) {
+  #body-container {
+    width: 2000px;
+    height: 1000px;
+    left: unset;
+    top: unset;
+    margin: 0 auto;
+    position: relative; }
+
   .title-holder {
     top: 550px; }
   .title-anims {

@@ -16,13 +16,14 @@ var contacthandler = true;
 
 var pullContactMenu = function() {
   if(contact1.classList.length == 1) {  // if bar hidden
+    document.getElementsByClassName("contact-tab")[0].style.display = "block";
     contact1.classList.toggle('active');
     setTimeout(function() {contact2.classList.toggle('active')}, 100);
     setTimeout(function() {contact3.classList.toggle('active')}, 200);
     setTimeout(function() {contactimg1.classList.toggle('active')}, 50);
     contactimg2.classList.toggle('active');
     contacthandler = false;
-    setTimeout(function() {contacthandler = true}, 1100);
+    setTimeout(function() {contacthandler = true}, 800);
   }
   else {  // if bar is being shown
     if(contact1.classList[1].indexOf('hidden') > -1 | contacthandler == false) {} // bug fix
@@ -40,9 +41,10 @@ var pullContactMenu = function() {
       contactimg2.classList.toggle('hidden');
 
       // remove hidden
-      setTimeout(function() {contact1.classList.toggle('hidden')}, 1100);
-      setTimeout(function() {contact2.classList.toggle('hidden')}, 1100);
-      setTimeout(function() {contact3.classList.toggle('hidden')}, 1100);
+      setTimeout(function() {contact1.classList.toggle('hidden')}, 800);
+      setTimeout(function() {contact2.classList.toggle('hidden')}, 800);
+      setTimeout(function() {contact3.classList.toggle('hidden')}, 800);
+      setTimeout(function() {document.getElementsByClassName("contact-tab")[0].style.display = "none"}, 800);
       setTimeout(function() {contactimg1.classList.toggle('hidden')}, 500);
       setTimeout(function() {contactimg2.classList.toggle('hidden')}, 500);
 
@@ -51,7 +53,5 @@ var pullContactMenu = function() {
 }
 
 brandimg.classList.toggle('active');
-setTimeout(() => {
-  contactbutt.classList.toggle('active');
-  document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
-}, 3000);
+contactbutt.classList.toggle('active');
+document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);

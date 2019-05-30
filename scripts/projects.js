@@ -126,7 +126,7 @@ var tempNode;
 
 function openModal() {
   modalback.style.display = "block";
-  setTimeout(() => { modalback.style.opacity = "1"}, 50);
+  setTimeout(() => { modalback.style.opacity = "1" }, 50);
   setTimeout(() => { modal.style.height = "80%" }, 550);
   setTimeout(() => { modal.style.width = "80%" }, 1500);
 }
@@ -134,7 +134,7 @@ function openModal() {
 function closeModal() {
   modal.style.height = "0";
   setTimeout(() => { modal.style.width = "0" }, 1000);
-  setTimeout(() => { modalback.style.opacity = "0"}, 2000);
+  setTimeout(() => { modalback.style.opacity = "0" }, 2000);
   setTimeout(() => { modalback.style.display = "none" }, 2500);
 }
 
@@ -375,7 +375,7 @@ var pullContactMenu = function() {
     setTimeout(function() {contactimg1.classList.toggle('active')}, 50);
     contactimg2.classList.toggle('active');
     contacthandler = false;
-    setTimeout(function() {contacthandler = true}, 1100);
+    setTimeout(function() {contacthandler = true}, 800);
   }
   else {  // if bar is being shown
     if(contact1.classList[1].indexOf('hidden') > -1 | contacthandler == false) {} // bug fix
@@ -393,10 +393,10 @@ var pullContactMenu = function() {
       contactimg2.classList.toggle('hidden');
 
       // remove hidden
-      setTimeout(function() {contact1.classList.toggle('hidden')}, 1100);
-      setTimeout(function() {contact2.classList.toggle('hidden')}, 1100);
-      setTimeout(function() {contact3.classList.toggle('hidden')}, 1100);
-      setTimeout(function() {document.getElementsByClassName("contact-tab")[0].style.display = "none"}, 1100);
+      setTimeout(function() {contact1.classList.toggle('hidden')}, 800);
+      setTimeout(function() {contact2.classList.toggle('hidden')}, 800);
+      setTimeout(function() {contact3.classList.toggle('hidden')}, 800);
+      setTimeout(function() {document.getElementsByClassName("contact-tab")[0].style.display = "none"}, 800);
       setTimeout(function() {contactimg1.classList.toggle('hidden')}, 500);
       setTimeout(function() {contactimg2.classList.toggle('hidden')}, 500);
 
@@ -405,9 +405,9 @@ var pullContactMenu = function() {
   }
 }
 
+contactbutt.addEventListener( 'click', pullContactMenu, false);
+
 setTimeout(() => {
   brandimg.classList.toggle('active');
-  contactbutt.classList.toggle('active');
-  document.getElementsByClassName('contact-button active')[0].addEventListener( 'click', pullContactMenu, false);
 }, 2000);
 setTimeout(() => {scene.style.borderStyle = 'solid'}, 2500);

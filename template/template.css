@@ -53,17 +53,17 @@ html, body {
   /* Placeholder for entire contact tab */
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 4;
+  display: none;
   overflow: hidden;
-  position: unset;
   color: #fff;
+  position: fixed;
   font-family: "PT Sans", sans-serif; }
 
 .contact-1, .contact-2 {
   /* Box 1 - Contact Me and 2 - Link to Works */
   width: 30%;
   height: 100%;
-  bottom: 0;
   position: fixed;
   text-align: right;
   visibility: hidden;
@@ -71,27 +71,25 @@ html, body {
 
 .contact-1.active {
   left: 0;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.97);
   visibility: visible;
-  animation: swipe-up 1s; }
-
+  animation: swipe-up 0.75s; }
 .contact-1.hidden {
   left: 0;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.97);
   visibility: visible;
-  animation: swipe-down 2s; }
+  animation: swipe-down 1.5s; }
 
 .contact-2.active {
   left: 30%;
-  background-color: rgba(17, 17, 17, 0.95);
+  background-color: rgba(17, 17, 17, 0.97);
   visibility: visible;
-  animation: swipe-up 1s; }
-
+  animation: swipe-up 0.75s; }
 .contact-2.hidden {
   left: 30%;
-  background-color: rgba(17, 17, 17, 0.95);
+  background-color: rgba(17, 17, 17, 0.97);
   visibility: visible;
-  animation: swipe-down 2s;
+  animation: swipe-down 1.5s;
   animation-delay: 100ms; }
 
 .contact-3 {
@@ -110,15 +108,14 @@ html, body {
   height: 100%;
   position: absolute;
   left: 0;
-  opacity: 0.95; }
+  opacity: 0.97; }
 
 .contact-3.active {
   visibility: visible;
-  animation: swipe-up 1s; }
-
+  animation: swipe-up 0.75s; }
 .contact-3.hidden {
   visibility: visible;
-  animation: swipe-down 2s;
+  animation: swipe-down 1.5s;
   animation-delay: 200ms; }
 
 .contact-h1, .contact-h2, .contact-h3 {
@@ -131,7 +128,7 @@ html, body {
 .contact-h3 {
   top: 60%; }
 
-.contact-deets, .contact-deets-img {
+.contact-deets {
   /* Box Title Information Details */
   color: #fff;
   float: right;
@@ -146,9 +143,10 @@ html, body {
 .contact-deets.logo {
   clear: unset; }
 
-#contact-LI, #contact-git, #contact-codepen {
-  max-height: 5vh;
-  max-width: 5vh; }
+#contact-LI, #contact-git, #contact-codepen, #contact-twit {
+  height: 5vh;
+  width: 5vh;
+  padding-top: 3vh; }
 
 .contact-deets:hover, .contact-deets-img:hover {
   transform: scale(1.08); }
@@ -168,9 +166,9 @@ html, body {
   bottom: 5%;
   left: 3%;
   width: 3.5%;
-  height: 15%;
-  visibility: hidden;
-  z-index: 5; }
+  height: 20%;
+  z-index: 5;
+  visibility: hidden; }
 
 .contact-button-img {
   height: auto;
@@ -190,26 +188,23 @@ html, body {
   cursor: pointer; }
 
 .close-contact-tab {
-  /* Placeholder for Exit Contact Menu Button */
+/* Placeholder (span) for Exit Contact Menu Button */
   height: 20%;
   padding-bottom: 10%; }
-
 .close-contact-tab:hover {
   transform: scale(1.08); }
 
 .close-contact-tab-img {
-  /* Exit Contact Menu Button Arrow 1 */
+  /* Exit Contact Menu Button Arrows */
   /**** Animation: pull-up/pull-down ****/
   width: 60%;
   left: 20%;
   padding-bottom: 20%;
   position: absolute;
   visibility: hidden; }
-
 .close-contact-tab-img.active {
   visibility: visible;
   animation: swipe-up 0.5s, fade 0.5s; }
-
 .close-contact-tab-img.hidden {
   visibility: visible;
   animation: swipe-down 0.5s, fadeout 0.5s;
@@ -219,27 +214,27 @@ html, body {
 *******************************************************************************/
 .top-brand {
   position: fixed;
-  z-index: 1;
   top: 5%;
+  z-index: 1;
   left: 3%;
   height: auto;
   width: 3.5%; }
 
 .top-brand:hover {
   transform: scale(1.08);
-  cursor: pointer;
-}
+  cursor: pointer; }
 .brand-img {
   stroke-dasharray:4500;
-  fill: #FFFFFF;
-  stroke: #FFFFFF;
+  fill: #3caea3;
+  stroke: #3caea3;
   stroke-width: 20px;
   stroke-miterlimit: 10;
   visibility: hidden; }
 
 .brand-img.active {
   visibility: visible;
-  animation: tracerbrand 5s; }
+  /* animation: tracerbrand 5s; */
+  animation: fade 2s ease-in-out; }
 
 .back-brand {
   position: fixed;
@@ -248,6 +243,8 @@ html, body {
   height: 100%;
   width: 100%;
   z-index: 0; }
+
+/* Usually remove */
 .back-brand-img {
   height: 100%;
   opacity: 0.3;
@@ -378,7 +375,7 @@ and (min-height: 501px) {
   .top-brand {
     left: 5%;
     top: 3%;
-    width: 10%; }
+    width: 12%; }
 
   .contact-button {
     left: 5%;
@@ -430,7 +427,7 @@ and (min-height: 501px) {
 
   .contact-1, .contact-2 {
   	width: 100%;
-  	height: 40%;
+  	height: 30%;
     left: unset;
   	position: fixed;
   	text-align: right;
@@ -438,35 +435,33 @@ and (min-height: 501px) {
   .contact-1.active {
   	top: 0;
     left: unset;
-  	animation: swipe-right 1s; }
+  	animation: swipe-right 0.75s; }
   .contact-1.hidden {
   	top: 0;
     left: unset;
-  	animation: swipe-left 2s; }
-  .contact-2 {
-  	height: 30% }
+  	animation: swipe-left 1.5s; }
   .contact-2.active {
-  	top: 40%;
+  	top: 30%;
     left: unset;
-  	animation: swipe-right 1s; }
+  	animation: swipe-right 0.75s; }
   .contact-2.hidden {
-  	top: 40%;
+  	top: 30%;
     left: unset;
-  	animation: swipe-left 2s;
+  	animation: swipe-left 1.5s;
   	animation-delay: 100ms; }
 
   .contact-3 {
   	width: 100%;
-  	height: 30%;
-  	top: 70%;
+  	height: 40%;
+  	top: 60%;
     left: unset;
     bottom: unset; }
   .contact-3.active {
   	visibility: visible;
-  	animation: swipe-right 1s; }
+  	animation: swipe-right 0.75s; }
   .contact-3.hidden {
   	visibility: visible;
-  	animation: swipe-left 2s;
+  	animation: swipe-left 1.5s;
   	animation-delay: 200ms; }
 
   .contact-h1, .contact-h2, .contact-h3 {
@@ -474,6 +469,8 @@ and (min-height: 501px) {
   	top: 10%;
   	right: 12%;
   	position: relative; }
+  .contact-h3 {
+    top: 20%; }
 
   .contact-deets, .contact-deets-img {
   	font-size: 2vh;
@@ -482,21 +479,27 @@ and (min-height: 501px) {
   	position: relative;
   	padding: 4px;
   	clear: right; }
-  #contact-LI, #contact-git {
-  	max-height: 5vw;
-  	max-width: 5vw; }
+  #contact-LI, #contact-git, #contact-twit, #contact-codepen {
+  	max-height: 7vw;
+  	max-width: 7vw; }
 
   .contact-h3-deets {
   	font-size: 2vh;
-  	top: 7%;
+  	top: 20%;
   	right: 10%;
   	position: relative;
   	padding: 4px; }
 }
 
 
-/* 3000px and onwards (4K Screens and all) */
+/* 2000px and onwards (4K Screens and all) */
 @media only screen
-and (min-width: 3000px) {
-
+and (min-width: 2000px) {
+  #body-container {
+    width: 2000px;
+    height: 1000px;
+    left: unset;
+    top: unset;
+    margin: 0 auto;
+    position: relative; }
 }
