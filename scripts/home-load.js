@@ -34,8 +34,12 @@ window.onload = () => {
     createCookie("loaded", "1", 1000);
   }
   else {
-    setTimeout(() => { play.classList.toggle('active') }, 3000);
-    drawScene();
+    if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
+      setTimeout(() => { play.classList.toggle('active') }, 1500); }
+    else { setTimeout(() => { play.classList.toggle('active') }, 3000); }
+    menu.style.display = "flex";
+    updateScene();
+    window.addEventListener('resize', updateScene);
     glitchEffect();
   }
 }

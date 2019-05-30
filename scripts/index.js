@@ -357,6 +357,11 @@ if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
     nextPageTransition();
   }
 }
+else if( window.innerWidth >= 501 && window.innerHeight <= 800 ) {
+  play.onclick = () => {
+    nextPageTransition();
+  }
+}
 else initPlay();
 
 /*******************************************************************
