@@ -161,12 +161,21 @@ window.addEventListener('resize', () => {
     Transition Anims
 *******************************************************************************/
 
+function returnIndex() {
+  window.location.href = "./index.html";
+  return false;
+}
+function redirectProjects() {
+  window.location.href = "./projects.html";
+  return false;
+}
+
 menuItem = document.getElementsByClassName('menu-item');
 
 play.onclick = () => { prevPageTransition() };
 menuItem[1].onclick = () => {
   nextPageTransition();
-  setTimeout(() => { window.location.href = "./projects.html"}, 1200);
+  setTimeout(() => { redirectProjects() }, 1200);
 };
 
 /*******************************************************************************
@@ -182,7 +191,7 @@ function prevPageTransition() {
     setTimeout(() => { menu.style.display = "none" }, 500)
   }, 500);
 
-  setTimeout(() => { window.location.href = "./index.html" }, 1200);
+  setTimeout(() => { returnIndex() }, 1200);
 
 }
 
