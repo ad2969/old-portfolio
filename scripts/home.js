@@ -260,11 +260,11 @@ function updateScene() {
 *******************************************************************************/
 
 function returnIndex() {
-  window.location = "./index.html";
+  location.href = "./index.html";
   return false;
 }
 function redirectProjects() {
-  window.location = "./projects.html";
+  location.href = "./projects.html";
   return false;
 }
 

@@ -412,7 +412,7 @@ function deleteType() {
 *******************************************************************/
 
 function returnHome() {
-  window.location = "./home.html";
+  location.href = "./home.html";
   return false;
 }
 
