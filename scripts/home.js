@@ -28,6 +28,7 @@ var pullContactMenu = function() {
     setTimeout(function() {contacthandler = true}, 800);
   }
   else {  // if bar is being shown
+    contactH1.classList.remove('special-highlight');
     if(contact1.classList[1].indexOf('hidden') > -1 | contacthandler == false) {} // bug fix
     else if(contact1.classList[1].indexOf('active') > -1) {
       contact1.classList.toggle('active');
@@ -53,6 +54,88 @@ var pullContactMenu = function() {
     }
   }
 }
+
+
+/*******************************************************************************
+    Title Scripts
+*******************************************************************************/
+
+/*	Customizable
+*******************************************************************************/
+var words = ["An Electrical Engineer  ",
+             "A Passionate Programmer ",
+             "An Aspiring Entrepreneur"];
+// 24 Characters in each
+var maxLength;  // Maximum number of letters in 'words'
+var wipeTime = 5;  // Time to delay between wiping letters
+var printTime = 10;  // Time delay when showing letters
+var switchDelay = 5000;  // Time to pause between switches
+
+/*	Variables
+*******************************************************************************/
+
+var position = 0;
+
+var title = document.getElementsByClassName( 'title' )[0];
+var newSpan = document.createElement( 'span' );
+var mainDiv = document.getElementById( 'st' );
+
+/*	Functions
+*******************************************************************************/
+
+function findLength() {
+  let length = 0;
+  for( let i = 0; i < words.length; i++ ) {
+    if( words[i].length > length ) length = words[i].length;
+  }
+  return length;
+}
+
+function initializeDivs( length ) {
+  mainDiv.innerHtml = "";
+  for( let i = 0; i < length; i++ ) {
+    newSpan = document.createElement('span');
+    newSpan.className = "letter";
+    mainDiv.appendChild( newSpan );
+  }
+}
+
+function showText( node, string, length ) {
+  let letters = string.toString().split("");
+  for( let i = 0; i < length; i++ ) {
+    node.children[i].textContent = letters[i];
+    setTimeout( () => {
+      node.children[i].classList.add('scaling-text__letter--show')
+    }, i * printTime );
+  }
+}
+
+function removeText( node, length ) {
+  for( let i = 0; i < length; i++ ) {
+    setTimeout( () => {node.children[i].classList.remove('scaling-text__letter--show')}, i * wipeTime );
+  }
+}
+
+function switchText( ) {
+  removeText( mainDiv, maxLength );
+  if(position == words.length - 1) {
+    setTimeout( () => { showText( mainDiv, words[0], maxLength ) }, maxLength * wipeTime );
+    position = 0;
+  }
+  else {
+    position++;
+    setTimeout( () => { showText( mainDiv, words[position], maxLength ) }, maxLength * wipeTime );
+   }
+  setTimeout( () => { switchText() }, switchDelay );
+}
+
+/*	Initialization and function calls
+*******************************************************************************/
+
+maxLength = findLength();
+console.log( maxLength );
+initializeDivs( maxLength );
+
 
 /*******************************************************************************
     Animation and Picture Data (Base64)
@@ -177,11 +260,11 @@ function updateScene() {
 *******************************************************************************/
 
 function returnIndex() {
-  window.location.href = "./index.html";
+  window.location = "./index.html";
   return false;
 }
 function redirectProjects() {
-  window.location.href = "./projects.html";
+  window.location = "./projects.html";
   return false;
 }
 
@@ -192,6 +275,7 @@ menuItem[1].onclick = () => {
   nextPageTransition();
   setTimeout(() => { redirectProjects() }, 1200);
 };
+menuItem[2].onclick = () => { openModal() };
 
 /*******************************************************************************
     Page Transitions
@@ -202,10 +286,10 @@ function prevPageTransition() {
   play.classList.remove('active');
 
   setTimeout(() => {
+    title.classList.add('fadeout-anims');
     menu.classList.add('fadeout-anims');
-    setTimeout(() => { menu.style.display = "none" }, 500)
   }, 500);
-
+  setTimeout(() => { menu.style.display = "none" }, 1000)
   setTimeout(() => { returnIndex() }, 1200);
 }
 
@@ -213,9 +297,10 @@ function nextPageTransition() {
   play.classList.add('fadeout-anims');
   play.classList.remove('active');
   setTimeout(() => {
+    title.classList.add('fadeout-anims');
     menu.classList.add('fadeout-anims');
-    setTimeout(() => { menu.style.display = "none" }, 500)
   }, 500);
+  setTimeout(() => { menu.style.display = "none" }, 1000)
 }
 
 /*******************************************************************************
@@ -224,31 +309,98 @@ function nextPageTransition() {
 
 var modalback = document.getElementsByClassName("modal-back")[0];
 var modal = document.getElementsByClassName("modal")[0];
-var close = document.getElementsByClassName("close")[0];
+var modalClosedFlag = 1;
 
 function openModal() {
+  modalback.style.display = "block";
+  modalback.style.opacity = "1";
+  initializeColors();
   setTimeout(() => { modalback.style.backgroundColor = "rgba(0,0,0,0.8)"}, 50);
   setTimeout(() => { modal.style.height = "100%" }, 750);
   setTimeout(() => { modal.style.width = "100%" }, 750);
   setTimeout(() => {
-    close.addEventListener( "click", closeModal);
-    close.style.cursor = "pointer";
+    modal.addEventListener( "click", closeModal);
+    modal.style.cursor = "pointer";
    }, 1500);
+  setTimeout(() => { initializeModal() }, 1500);
 }
 
 function closeModal() {
-  close.style.cursor = "unset";
-  close.removeEventListener( "click", closeModal );
+  modal.style.cursor = "unset";
+  modal.removeEventListener( "click", closeModal );
   modal.style.height = "0";
   modal.style.width = "0";
   setTimeout(() => { modalback.style.opacity = "0" }, 1000);
   setTimeout(() => { modalback.style.display = "none" }, 1500);
-  if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
-    setTimeout(() => { play.classList.toggle('active') }, 1500); }
-  else { setTimeout(() => { play.classList.toggle('active') }, 3000); }
-  window.addEventListener('resize', updateScene);
-  updateScene();
-  glitchEffect();
+  setTimeout(() => { resetModal() }, 1500);
+
+  if( modalClosedFlag == 0 ) {
+    if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
+      setTimeout( () => { title.style.opacity = "1" }, 100 );
+      setTimeout( () => { showText( mainDiv, words[0], maxLength ) }, 1000 );
+      setTimeout( () => { switchText() }, switchDelay + 1000 );
+      setTimeout( () => { play.classList.add('active') }, 1500); }
+    else {
+      setTimeout( () => { title.style.opacity = "1" }, 1500 );
+      setTimeout( () => { showText( mainDiv, words[0], maxLength ) }, 2000 );
+      setTimeout( () => { switchText() }, switchDelay + 2000 );
+      setTimeout( () => { play.classList.add('active') }, 3000 );
+    }
+    setTimeout(() => {
+      menu.style.display = "flex";
+      updateScene();
+      window.addEventListener('resize', updateScene);
+    }, 2000);
+    glitchEffect();
+  }
+  modalClosedFlag = 1;
+}
+
+/*******************************************************************************
+    Modal Contents
+*******************************************************************************/
+
+var colorArray = [
+  '#7f00ff',
+  '#ff00ff',
+  '#0000ff',
+  '#007fff',
+  '#00ffff'
+];
+var covers = document.getElementsByClassName('cover');
+var texts = document.getElementsByClassName('text');
+function randomColor() {
+  return colorArray[Math.floor(Math.random()*colorArray.length)];
+}
+function initializeColors() {
+  for( let i = 0; i < covers.length; i++ ) {
+    covers[i].style.backgroundColor = randomColor();
+  }
+}
+function initializeModal() {
+  for( let i = 0; i < covers.length; i++ ) {
+    setTimeout( () => {
+      covers[i].classList.add('active');
+      texts[i].classList.add('active');
+    }, i * 50);
+  }
+}
+
+function resetModal() {
+  for( let i = 0; i < covers.length; i++ ) {
+    covers[i].classList.remove('active');
+    texts[i].classList.remove('active');
+  }
+}
+
+/*	Contact Link
+*******************************************************************************/
+var contactLink = document.getElementById('contact-link');
+var contactH1 = document.getElementsByClassName('contact-h1')[0];
+contactLink.onclick = () => {
+  closeModal();
+  setTimeout( () => { pullContactMenu() }, 1500 );
+  setTimeout( () => { contactH1.classList.add('special-highlight') }, 2000 );
 }
 
 /*******************************************************************************

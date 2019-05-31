@@ -357,7 +357,7 @@ if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
     nextPageTransition();
   }
 }
-else if( window.innerWidth >= 501 && window.innerHeight <= 800 ) {
+else if( window.innerWidth <= 850 && window.innerHeight <= 500 ) {
   play.onclick = () => {
     nextPageTransition();
   }
@@ -369,7 +369,7 @@ else initPlay();
 *******************************************************************/
 
 // Typing animation text
-const printWords = ["    Enthusiastic Programmer.          ", "    Electrical Engineer.          ", "    Aspiring Entrepreneur.          "];
+const printWords = [" Welcome to my profile.             ", "    Feel free to take a browse.          ", "   This website is a work in progress.          "];
 let i=0;
 let timer;
 
@@ -384,7 +384,7 @@ function typeOut() {
       deleteType();       // start deleting if all words printed out
       return false;               // exit function
     }
-    timer = setTimeout(typeLoop, 200);      // callback when done 1 letter
+    timer = setTimeout(typeLoop, 100);      // callback when done 1 letter
   };
   typeLoop();                    // backup1
 }
@@ -412,7 +412,7 @@ function deleteType() {
 *******************************************************************/
 
 function returnHome() {
-  window.location.href = "./home.html";
+  window.location = "./home.html";
   return false;
 }
 

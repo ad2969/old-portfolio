@@ -28,15 +28,26 @@ function readCookie(name) {
 contactbutt.addEventListener( 'click', pullContactMenu, false);
 
 window.onload = () => {
-  if(!readCookie("loaded")) {
+  if(!readCookie("home-loaded")) {
+    modalClosedFlag = 0;
     modalback.style.display = "block";
     setTimeout(() => { openModal() }, 1000);
-    createCookie("loaded", "1", 1000);
+    createCookie("home-loaded", "1", 1000);
   }
   else {
     if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
-      setTimeout(() => { play.classList.toggle('active') }, 1500); }
-    else { setTimeout(() => { play.classList.toggle('active') }, 3000); }
+      setTimeout( () => { title.style.opacity = "1" }, 100 );
+      setTimeout( () => { showText( mainDiv, words[0], maxLength ) }, 1500 );
+      setTimeout( () => { switchText() }, switchDelay + 1500 );
+      setTimeout( () => { play.classList.toggle('active') }, 1500);
+    }
+    else {
+      setTimeout( () => { title.style.opacity = "1" }, 1000 );
+      setTimeout( () => { showText( mainDiv, words[0], maxLength ) }, 2000 );
+      setTimeout( () => { switchText() }, switchDelay + 2000 );
+      setTimeout( () => { play.classList.toggle('active') }, 3000);
+    }
+    modalClosedFlag = 1;
     menu.style.display = "flex";
     updateScene();
     window.addEventListener('resize', updateScene);

@@ -45,57 +45,57 @@ function glitchEffect() {
 *******************************************************************************/
 
 window.onload = () => {
-  if(!readCookie("loaded"))
+  if(!readCookie("index-loaded"))
   {
-    brandimg.classList.toggle('active');
+    setTimeout(() => { brandimg.classList.toggle('active'); }, 2000);
     // GLITCH EFFECT ON MAIN LOGO
     setTimeout(() => {
       document.getElementsByClassName('brand-img-left')[0].classList.toggle('active');
       document.getElementsByClassName('brand-img-right')[0].classList.toggle('active');
       glitchback1.classList.toggle('active');
       glitchback2.classList.toggle('active');
-    }, 2700);
+    }, 4700);
     setTimeout(() => {
       document.getElementsByClassName('brand-img-left')[0].classList.toggle('active');
       document.getElementsByClassName('brand-img-right')[0].classList.toggle('active');
       glitchback1.classList.toggle('active');
       glitchback2.classList.toggle('active');
-    }, 2900);
+    }, 4900);
     setTimeout(() => {
       document.getElementsByClassName('brand-img-left')[0].classList.toggle('active2');
       document.getElementsByClassName('brand-img-right')[0].classList.toggle('active2');
       glitchback1.classList.toggle('active');
       glitchback2.classList.toggle('active');
-    }, 3300);
+    }, 5300);
     setTimeout(() => {
       document.getElementsByClassName('brand-img-left')[0].classList.toggle('active2');
       document.getElementsByClassName('brand-img-right')[0].classList.toggle('active2');
       glitchback1.classList.toggle('active');
       glitchback2.classList.toggle('active');
-    }, 3800);
+    }, 5800);
 
     // OTHER FADEIN ANIMATIONS
     setTimeout(() => {
       glitchEffect();
       contactbutt.style.visibility = "visible";
       document.getElementsByClassName('contact-button')[0].addEventListener( 'click', pullContactMenu, false);
-    }, 4400);
+    }, 6400);
     setTimeout(() => {
       name1.classList.toggle('active');
-    }, 4500);
+    }, 6500);
     setTimeout(() => {
       blinky.classList.toggle('active');
       canvasdiv.style.opacity = "1";
       credsbox.style.opacity = "1";
-    }, 5000);
+    }, 7000);
     setTimeout(() => {
       play.classList.toggle('active');
-    }, 5500);
+    }, 7500);
     setTimeout(() => {
       typeOut();
-    }, 6500);
+    }, 8500);
 
-    createCookie("loaded", "1", 1000);
+    createCookie("index-loaded", "1", 1000);
   }
   else
   {
