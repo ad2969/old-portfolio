@@ -430,8 +430,7 @@ function nextPageTransition() {
     namediv.classList.add('fadeout');
   }, 500);
   if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
-    if( namediv.classList[1] == '1' ) setTimeout(() => { returnHome() }, 1200);
-    else if ( namediv.classList[1] == '2' ) setTimeout(() => { returnHome() }, 1200);
+    setTimeout(() => { returnHome() }, 1200);
   }
   else {
     setTimeout(() => { line.style.width = "10vw" }, 1500);
