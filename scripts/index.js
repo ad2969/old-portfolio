@@ -411,7 +411,7 @@ function deleteType() {
       Fadeout Animations
 *******************************************************************/
 
-function returnHome() {
+function redirectHome() {
   location.href = "./home.html";
   return false;
 }
@@ -430,20 +430,20 @@ function nextPageTransition() {
     namediv.classList.add('fadeout');
   }, 500);
   if( window.innerWidth <= 800 && window.innerHeight >= 501 ) {
-    setTimeout(() => { returnHome() }, 1200);
+    setTimeout(() => { redirectHome() }, 1200);
   }
   else {
     setTimeout(() => { line.style.width = "10vw" }, 1500);
     setTimeout(() => { line.style.transform = "translate(-50%, -50%) rotate(450deg)" }, 2200);
     setTimeout(() => { line.style.width = "8vw" }, 2200);
 
-    if( !readCookie("loaded") ) setTimeout(() => { returnHome() }, 3200);
+    if( !readCookie("loaded") ) setTimeout(() => { redirectHome() }, 3200);
     else {
       setTimeout(() => {
         line.classList.toggle('quicker');
         line.style.width = "0"
       }, 3200);
-      setTimeout(() => { returnHome() }, 3500);
+      setTimeout(() => { redirectHome() }, 3500);
     }
   }
 }

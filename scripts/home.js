@@ -259,7 +259,7 @@ function updateScene() {
     Transition Anims
 *******************************************************************************/
 
-function returnIndex() {
+function redirectIndex() {
   location.href = "./index.html";
   return false;
 }
@@ -290,7 +290,7 @@ function prevPageTransition() {
     menu.classList.add('fadeout-anims');
   }, 500);
   setTimeout(() => { menu.style.display = "none" }, 1000)
-  setTimeout(() => { returnIndex() }, 1200);
+  setTimeout(() => { redirectIndex() }, 1200);
 }
 
 function nextPageTransition() {

@@ -27,6 +27,10 @@ function readCookie(name) {
 
 contactbutt.addEventListener( 'click', pullContactMenu, false);
 
+document.getElementById('body-container').ontouchend = (e) => {
+    e.preventDefault();
+};
+
 window.onload = () => {
   if(!readCookie("home-loaded")) {
     modalClosedFlag = 0;
