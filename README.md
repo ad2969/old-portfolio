@@ -13,20 +13,22 @@ The project was started as an attempt to self-learn the basic concepts of web de
   • CSS Sprites
   • Website Responsiveness (RWD, Media Queries)
   • Cross-Browser Compatibility
-  • Sass . SCSS
+  • Sass
   • (in progress) Bootstrap
   
 ⦿ JavaScript, ECMAScript 6
   • OOP - Object Oriented Programming
   • Callback Functions, Recursion
 
-  • (in progress) ReactJS
+  • ReactJS
     ○ Building the environment using Babel and Webpack
 
-  • jQuery
   • three.js
     ○ Using 3D models to increase interactivity and visuals
-    ○ particle.js used as a part of animation
+
+  • GSAP TweenMax
+    ○ Animating particles and DOM objects to increase interactivity and visuals
+  
   
   
 </pre>
