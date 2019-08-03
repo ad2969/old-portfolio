@@ -25,3 +25,15 @@ and (max-width: 800px) {
 and (max-width: 600px) {
   html { font-size: 6px }
 }
+
+.redirect-body { background-color: black }
+.redirect {
+  font-size: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.redirect a { color: #3bba9c }
+.redirect a:hover { color: #408da6 }
