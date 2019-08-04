@@ -3,7 +3,7 @@ import React from 'react';
 import SimpleHeader from '../header/simpleHeader';
 
 import ThreeBackground from './threeBackground';
-import ThreeExample from './threeExample';
+// import ThreeExample from './threeExample';
 
 import TitleOne from './title1';
 import TitleTwo from './title2';
