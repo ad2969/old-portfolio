@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d9e5e214-1116-420f-accd-585e5fc9856c/deploy-status)](https://app.netlify.com/sites/ad2969/deploys)
 
-﻿# personal-website ⦿○•
+# Personal Website ⦿○•
 Prototype for my personal website, all hard-coded using HTML, JavaScript, and CSS.\
 The project was started as an attempt to self-learn the basic concepts of web development and design, sparked by my interest in JavaScript during a separate personal project involving script injection. With plans to eventually branch out to the use of SQL and PHP to build a more complex site, I have listed below the following languages, concepts, and libraries learnt during the building of the website:
 
@@ -28,9 +28,6 @@ The project was started as an attempt to self-learn the basic concepts of web de
   • three.js
     ○ Using 3D models to increase interactivity and visuals
 
-  • GSAP TweenMax
-    ○ Animating particles and DOM objects to increase interactivity and visuals
-
 
 
 </pre>
@@ -38,6 +35,6 @@ The project was started as an attempt to self-learn the basic concepts of web de
 - [x] Build Main Page
 - [x] Build Project Page (use grids)
 - [ ] Build Timeline Page (parallax scrolling)
-- [ ] Start Blog Posts
+- [ ] Construct Blog
 - [ ] File Hosting (projects)
 - [ ] \(Optional) Build Photography Page
