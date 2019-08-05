@@ -24,21 +24,21 @@ class LandingPage extends React.Component {
 
         <SimpleHeader />
 
-        <div className="landing--container landing--bound">
-          <div className="landing--icons">
+        <div className="landing">
+          <div className="landing__icons">
             <a href="https://www.linkedin.com/in/clarence-adrian" target="_blank" rel="noopener noreferrer"><LinkedInIcon /></a>
             <a href="https://codepen.io/ad2969/" target="_blank" rel="noopener noreferrer"><CodepenIcon /></a>
             <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"><TwitterIcon /></a>
           </div>
-          <div className="landing--name">Clarence Adrian</div>
-          <div className="landing--title">
-            <div className="landing--title-svg a"><TitleOne/></div>
-            <div className="landing--title-svg b"><TitleTwo/></div>
-            <div className="landing--title-svg c"><TitleThree/></div>
+          <div className="landing__name">Clarence Adrian</div>
+          <div className="landing__title">
+            <div className="landing__title__svg a"><TitleOne/></div>
+            <div className="landing__title__svg b"><TitleTwo/></div>
+            <div className="landing__title__svg c"><TitleThree/></div>
           </div>
-          <p className="landing--desc">
+          <p className="landing__desc">
             Currently located in Vancouver, BC, and actively looking for Co-Op and Intern opportunities
-            as a <span className="colortext_green">Full-Stack Developer / Software Engineer</span>
+            as a <span className="t--green">Full-Stack Developer / Software Engineer</span>
           </p>
         </div>
       </div>

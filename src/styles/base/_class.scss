@@ -1,0 +1,17 @@
+@import './variables';
+
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+}
+
+.vertical-center {
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+}
+
+.t--green { color: $green; }
+
+.t--blue { color: $blue; }

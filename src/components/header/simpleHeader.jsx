@@ -12,9 +12,9 @@ class SimpleHeader extends React.Component {
     return (
       <div className="header">
         <Link to="/landing">
-        <div onClick={circleClick} id="header_logo" className="header_logo circleclick--effect"><Logo /></div>
+        <div onClick={circleClick} id="header__logo" className="header__logo circleclick--effect"><Logo /></div>
         </Link>
-        <div className="header_menu"><MenuButton /></div>
+        <div className="header__navbutton"><MenuButton /></div>
       </div>
     );
   }
