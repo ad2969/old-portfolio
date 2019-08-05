@@ -1,0 +1,53 @@
+.circleclick--effect::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -35px 0 0 -35px;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	content: '';
+	opacity: 0;
+	pointer-events: none;
+}
+
+.circleclick--effect::before,
+.circleclick--effect::after {
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.circleclick--click::before {
+	-webkit-animation: anim-effect-circleclick-1 0.5s forwards;
+	animation: anim-effect-circleclick-1 0.5s forwards;
+}
+
+.circleclick--click::after {
+	-webkit-animation: anim-effect-circleclick-2 0.5s forwards;
+	animation: anim-effect-circleclick-2 0.5s forwards;
+}
+
+@keyframes anim-effect-circleclick-1 {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale3d(0.8, 0.8, 1);
+		transform: scale3d(0.8, 0.8, 1);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: scale3d(1.5, 1.5, 1);
+		transform: scale3d(1.5, 1.5, 1);
+	}
+}
+
+@keyframes anim-effect-circleclick-2 {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale3d(0.8, 0.8, 1);
+		transform: scale3d(0.8, 0.8, 1);
+	}
+	50%, 100% {
+		opacity: 0;
+		-webkit-transform: scale3d(1.8, 1.8, 1);
+		transform: scale3d(1.8, 1.8, 1);
+	}
+}

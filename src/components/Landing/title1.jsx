@@ -12,13 +12,13 @@ class TitleOne extends React.Component {
       </g>
       <defs>
       <linearGradient id="paint0_linear" x1="391" y1="0" x2="391" y2="45" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#408DA6"/>
-      <stop offset="0.0001" stop-color="#3DA4A1"/>
-      <stop offset="1" stop-color="#3BBA9C"/>
+      <stop stopColor="#408DA6"/>
+      <stop offset="0.0001" stopColor="#3DA4A1"/>
+      <stop offset="1" stopColor="#3BBA9C"/>
       </linearGradient>
       <linearGradient id="paint1_linear" x1="-17.492" y1="30.0999" x2="799.508" y2="30.0999" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0246423" stop-color="#408DA6"/>
-      <stop offset="1" stop-color="#3BBA9C"/>
+      <stop offset="0.0246423" stopColor="#408DA6"/>
+      <stop offset="1" stopColor="#3BBA9C"/>
       </linearGradient>
       </defs>
       </svg>

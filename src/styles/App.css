@@ -1,6 +1,6 @@
 .header {
 	height: 15vh;
-	min-height: 9em;
+	max-height: 9em;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -12,8 +12,18 @@
 	position: absolute;
 	transition: all 0.3s;
 }
-.header_logo { left: 4% }
-.header_menu { right: 4% }
+.header_logo { left: 4vw }
+.header_menu { right: 4vw }
+@media only screen
+and (max-width: 400px) {
+	.header_logo { left: 5vw }
+	.header_menu { right: 5vw }
+}
+@media only screen
+and (min-width: 1700px) {
+	.header_logo { left: 2vw }
+	.header_menu { right: 2vw }
+}
 .header svg { max-height: 4em; max-width: 4em }
 
 .landing--bound {
