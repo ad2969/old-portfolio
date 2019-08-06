@@ -1,0 +1,29 @@
+@import 'base/variables';
+
+.header__navbutton {
+  path {
+    fill: none;
+    stroke: $black;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-width: 40px;
+    transition: all 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+  }
+
+  .logo__path--top, .logo__path--bottom {
+    stroke-dasharray: 240px 950px;
+  }
+  .logo__path--middle {
+    stroke-dasharray: 240px 240px;
+  }
+}
+
+.header__navbutton--active {
+  .logo__path--top, .logo__path--bottom {
+    stroke-dashoffset: -650px;
+  }
+  .logo__path--middle {
+    stroke-dasharray: 1px 220px;
+    stroke-dashoffset: -115px;
+  }
+}

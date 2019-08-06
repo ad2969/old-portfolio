@@ -1,13 +1,15 @@
 /* BASE - Base Variable files, Mixins and Placeholders.
 ========================================================================== */
-@import './base/class.scss';
+@import 'base/class.scss';
 
 /* COMPONENTS - Reusable modules.
 ========================================================================== */
 
-@import './components/Landing.scss';
+@import 'components/Landing.scss';
+@import 'components/templates.scss';
 
 /* ANIMS - CSS Keyframe animations.
 ========================================================================== */
 
-@import './anims/anims.scss';
+@import 'anims/anims.scss';
+@import 'anims/menubutton.scss';

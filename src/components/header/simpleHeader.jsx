@@ -8,13 +8,19 @@ import { circleClick } from '../../functions/anims';
 
 class SimpleHeader extends React.Component {
 
+
   render() {
+    var menuActive = (this.props.isMenuOpen) ? "header__navbutton header__navbutton--active" : "header__navbutton";
+    var logoVisibility = (this.props.isTransition) ? {opacity: 0} : {opacity: 1};
+
     return (
       <div className="header">
         <Link to="/landing">
-        <div onClick={circleClick} id="header__logo" className="header__logo circleclick--effect"><Logo /></div>
+          <div className="header__logo" style={logoVisibility}>
+            <div onClick={circleClick} className="circleclick--effect"><Logo /></div>
+          </div>
         </Link>
-        <div className="header__navbutton"><MenuButton /></div>
+        <div onClick={this.props.toggleMenu} id="navbutton" className={menuActive}><MenuButton /></div>
       </div>
     );
   }

@@ -1,37 +1,4 @@
 
-// TEMPLATE HEADER
-
-.header {
-	height: 15vh;
-	max-height: 9em;
-	position: fixed;
-	top: 0;
-	width: 100%;
-
-	div {	&:hover { transform: scale(1.1); } }
-
-	svg { max-height: 4em; max-width: 4em; }
-
-	.header__logo, .header__navbutton {
-		bottom: 0;
-		cursor: pointer;
-		position: absolute;
-		transition: all 0.3s;
-	}
-	.header__logo {
-		left: 4vw;
-		@media screen and (max-width: 400px) { left: 5vw; }
-		@media screen and (min-width: 1700px) { left: 2vw; }
-	}
-	.header__navbutton {
-		right: 4vw;
-		@media screen and (max-width: 400px) { right: 5vw; }
-		@media screen and (min-width: 1700px) { right: 2vw; }
-	}
-}
-
-// LANDING PAGE COMPONENTS
-
 .landing {
 	left: 50%;
 	max-width: 65%;
@@ -40,6 +7,7 @@
 	top: 50%;
 	transform: translate(-50%, -50%);
 	width: 100%;
+	z-index: 1;
 
 	.landing__desc {
 		font-family: Merriweather Sans;
@@ -87,19 +55,3 @@
 		.c { visibility: hidden; }
 	}
 }
-
-// NAVMENU
-
-.navmenu {
-	height: 100%;
-	position: fixed;
-	width: 100%;
-}
-
-.navmenu__transition-box {
-	visibility: visible;
-}
-
-.nmtb1 { }
-.nmtb2 { }
-.nmtb3 { }

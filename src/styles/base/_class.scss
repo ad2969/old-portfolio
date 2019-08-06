@@ -1,4 +1,4 @@
-@import './variables';
+@import 'base/variables';
 
 .horizontal-center {
   display: flex;
@@ -13,5 +13,7 @@
 }
 
 .t--green { color: $green; }
-
 .t--blue { color: $blue; }
+
+.o--visible { visibility: visible; }
+.o--hidden { visibility: hidden; }

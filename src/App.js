@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './styles/App.scss';
 
 import LandingPage from './components/Landing/index';
-import AboutMePage from './components/AboutMe';
-import ProjectsPage from './components/Projects';
+import AboutMePage from './components/AboutMe/index';
+import ProjectsPage from './components/Projects/index';
 
 import * as ROUTES from './constants/routes';
 import './serviceWorker';
