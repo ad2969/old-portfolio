@@ -3,6 +3,8 @@ import React from 'react';
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
 
+import * as COLORS from '../../constants/colors';
+
 class AboutMePage extends React.Component {
   constructor() {
     super();
@@ -10,7 +12,12 @@ class AboutMePage extends React.Component {
       isMenuOpen: false,
       doMenuOpen: false,
       doMenuClose: false,
-      isMenuReady: true
+      isMenuReady: true,
+
+      isScrolling: false,
+      scrollPosition: 0,
+
+      headerColor: COLORS.DARK,
     };
   }
 
@@ -34,16 +41,42 @@ class AboutMePage extends React.Component {
     }
   }
 
-  componentDidMount() {
-      document.title = "<AD2969 /> About Me";
+  handleScroll = () => {
+    if(this.state.isScrolling) return;
+
+    const newPosition = window.scrollY;
+    if( newPosition > this.state.scrollPosition ) {
+      this.setState({isScrolling: true});
+      console.log("Scrolling to next!");
+    }
+    else if( newPosition < this.state.scrollPosition ) {
+      this.setState({isScrolling: true});
+      console.log("Scrolling to previous!");
+    }
+
+    setTimeout(() => {
+      this.setState({isScrolling: false});
+      console.log("Scrolling reset!");
+    }, 3000);
   }
+
+  componentDidMount() {
+    document.title = "<AD2969 /> About Me";
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
 
   render() {
     return(
-      <div className="page-container">
-        <SimpleHeader isMenuOpen  = {this.state.isMenuOpen}
+      <div className="page-container page-container--about" style={this.state.allowScrolling}>
+        <SimpleHeader isMenuOpen    = {this.state.isMenuOpen}
                       isTransition  = {!this.state.isMenuReady}
-                      toggleMenu  = {this.toggleMenu}
+                      toggleMenu    = {this.toggleMenu}
+                      color         = {this.state.headerColor}
         />
         <NavMenu  visible       = {this.state.isMenuOpen}
                   doOpen        = {this.state.doMenuOpen}
@@ -51,8 +84,27 @@ class AboutMePage extends React.Component {
                   isTransition  = {!this.state.isMenuReady}
         />
 
-        <div className="about-me">
+        <div className="section-container">
+          <div className="section">
+            <h1>I am a Section</h1>
+          </div>
         </div>
+        <div className="section-container">
+          <div className="section">
+            <h1>I am a Section</h1>
+          </div>
+        </div>
+        <div className="section-container">
+          <div className="section">
+            <h1>I am a Section</h1>
+          </div>
+        </div>
+        <div className="section-container">
+          <div className="section">
+            <h1>I am a Section</h1>
+          </div>
+        </div>
+
       </div>
     );
   }

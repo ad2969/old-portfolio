@@ -13,6 +13,8 @@ import LinkedInIcon from '../icons/linkedIn';
 import CodepenIcon from '../icons/codepen';
 import TwitterIcon from '../icons/twitter';
 
+import { circleClick } from '../../functions/anims';
+
 class LandingPage extends React.Component {
   constructor() {
     super();
@@ -64,9 +66,12 @@ class LandingPage extends React.Component {
 
         <div className="landing">
           <div className="landing__icons">
-            <a href="https://www.linkedin.com/in/clarence-adrian" target="_blank" rel="noopener noreferrer"><LinkedInIcon /></a>
-            <a href="https://codepen.io/ad2969/" target="_blank" rel="noopener noreferrer"><CodepenIcon /></a>
-            <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"><TwitterIcon /></a>
+            <a href="https://www.linkedin.com/in/clarence-adrian" target="_blank" rel="noopener noreferrer"
+               className="circleclick--effect" onClick={circleClick}><LinkedInIcon /></a>
+            <a href="https://codepen.io/ad2969/" target="_blank" rel="noopener noreferrer"
+               className="circleclick--effect" onClick={circleClick}><CodepenIcon /></a>
+            <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"
+               className="circleclick--effect" onClick={circleClick}><TwitterIcon /></a>
           </div>
           <div className="landing__name">Clarence Adrian</div>
           <div className="landing__title">

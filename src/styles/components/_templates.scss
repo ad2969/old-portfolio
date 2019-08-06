@@ -3,6 +3,7 @@
 .page-container {
 	background: $dark-bg;
 	height: 100vh;
+	max-width: 100%;
 	overflow: hidden;
 	position: fixed;
 	width: 100vw;
@@ -10,10 +11,14 @@
 
 // TEMPLATE HEADER
 
+.header--dark { background: $dark };
+.header--dark2 { background: $dark2 };
+.header--white { background: $white };
+
 .header {
-	height: 10vh;
-	max-height: 8em;
-	min-height: 7em;
+	height: $header-height;
+	max-height: $header-height--rem;
+	min-height: $header-height--rem - 2rem;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -21,10 +26,11 @@
 
 	div {	&:hover { transform: scale(1.1); } }
 
-	svg { height: 4em; max-width: 4em; }
+	svg { height: 4rem; max-width: 4rem; }
 
 	.header__logo, .header__navbutton {
-		bottom: 0;
+		top: 2rem;
+		max-height: 4rem;
 		cursor: pointer;
 		position: absolute;
 		transition: all 0.3s;
@@ -35,7 +41,7 @@
 		@media screen and (min-width: 1700px) { left: 2vw; }
 	}
 	.header__navbutton {
-		right: 3em;
+		right: 3rem;
 		z-index: 3;
 		@media screen and (max-width: 400px) { right: 5vw; }
 		@media screen and (min-width: 1700px) { right: 2vw; }
