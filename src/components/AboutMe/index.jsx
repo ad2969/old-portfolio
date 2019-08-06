@@ -27,9 +27,13 @@ class AboutMePage extends React.Component {
        doMenuOpen: prevState.isMenuOpen ? false : true,
        doMenuClose: prevState.isMenuOpen ? true : false,
        isMenuOpen: !prevState.isMenuOpen,
-       isMenuReady: false
+       isMenuReady: false,
+       headerColor: null,
      }));
-    setTimeout(() => {this.setState({isMenuReady: true})}, 3300);
+    setTimeout(() => {this.setState(prevState => ({
+      headerColor: prevState.isMenuOpen ? null : COLORS.DARK,
+      isMenuReady: true,
+    }))}, 3300);
   }
 
   componentDidUpdate() {
@@ -72,7 +76,7 @@ class AboutMePage extends React.Component {
 
   render() {
     return(
-      <div className="page-container page-container--about" style={this.state.allowScrolling}>
+      <div className="page-container page-container--about">
         <SimpleHeader isMenuOpen    = {this.state.isMenuOpen}
                       isTransition  = {!this.state.isMenuReady}
                       toggleMenu    = {this.toggleMenu}
