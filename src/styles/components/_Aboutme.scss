@@ -2,30 +2,18 @@
   height: unset;
   overflow-y: auto;
   position: unset;
-
-  div:nth-child(3) {
-    padding-top: $header-height--rem;
-    .section {
-      margin-top: 0;
-    }
-  }
 }
 
-.section-container {
-  background: $light;
-  height: 100vh;
-  position: relative;
-  text-align: center;
-  width: 100%;
+.fullpage-wrapper {
   z-index: 1;
 }
 
-.section {
-  border: 1px solid $black;
-  height: 100vh - 1.5 * $header-height;
-  margin-bottom: 0;
-  margin-left: 5%;
-  margin-top: $header-height / 2;
-  position: absolute;
-  width: 90%;
+.section-div {
+  border: 1px solid $white;
+  height: 88vh;
+  margin-bottom: 5vh;
+  margin-left: 15%;
+  margin-top: 5vh;
+  text-align: center;
+  width: 70%;
 }

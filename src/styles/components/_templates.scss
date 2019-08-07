@@ -10,18 +10,17 @@
 
 // TEMPLATE HEADER
 
-.header--dark, .headerr--dark2, .header--white {
+.header--black, .header--dark, .headerr--dark2, .header--white {
 	animation: swipe-down-in 0.5s ease-in;
 }
 
+.header--black { background: $black };
 .header--dark { background: $dark };
 .header--dark2 { background: $dark2 };
 .header--white { background: $white };
 
 .header {
 	height: $header-height;
-	max-height: $header-height--rem;
-	min-height: $header-height--rem - 2rem;
 	position: fixed;
 	top: 0;
 	transition: background 0.5s;

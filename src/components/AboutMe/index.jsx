@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactFullpage from "@fullpage/react-fullpage";
 
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
@@ -16,8 +17,6 @@ class AboutMePage extends React.Component {
 
       isScrolling: false,
       scrollPosition: 0,
-
-      headerColor: COLORS.DARK,
     };
   }
 
@@ -28,10 +27,8 @@ class AboutMePage extends React.Component {
        doMenuClose: prevState.isMenuOpen ? true : false,
        isMenuOpen: !prevState.isMenuOpen,
        isMenuReady: false,
-       headerColor: null,
      }));
     setTimeout(() => {this.setState(prevState => ({
-      headerColor: prevState.isMenuOpen ? null : COLORS.DARK,
       isMenuReady: true,
     }))}, 3300);
   }
@@ -73,14 +70,14 @@ class AboutMePage extends React.Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-
   render() {
     return(
       <div className="page-container page-container--about">
-        <SimpleHeader isMenuOpen    = {this.state.isMenuOpen}
-                      isTransition  = {!this.state.isMenuReady}
-                      toggleMenu    = {this.toggleMenu}
-                      color         = {this.state.headerColor}
+        <SimpleHeader isMenuOpen      = {this.state.isMenuOpen}
+                      isTransition    = {!this.state.isMenuReady}
+                      toggleMenu      = {this.toggleMenu}
+                      colorpalette    = {COLORS.OCEANPALETTE}
+                      backgroundColor = {COLORS.OCEANPALETTE.dark}
         />
         <NavMenu  visible       = {this.state.isMenuOpen}
                   doOpen        = {this.state.doMenuOpen}
@@ -88,26 +85,41 @@ class AboutMePage extends React.Component {
                   isTransition  = {!this.state.isMenuReady}
         />
 
-        <div className="section-container">
-          <div className="section">
-            <h1>I am a Section</h1>
-          </div>
-        </div>
-        <div className="section-container">
-          <div className="section">
-            <h1>I am a Section</h1>
-          </div>
-        </div>
-        <div className="section-container">
-          <div className="section">
-            <h1>I am a Section</h1>
-          </div>
-        </div>
-        <div className="section-container">
-          <div className="section">
-            <h1>I am a Section</h1>
-          </div>
-        </div>
+        <ReactFullpage
+          scrollOverflow={true}
+          sectionsColor={[ COLORS.CRYPTOPALETTE.medium,
+                           COLORS.CRYPTOPALETTE.color1,
+                           COLORS.CRYPTOPALETTE.color2,
+                           COLORS.CRYPTOPALETTE.medium,
+                           COLORS.CRYPTOPALETTE.medium,
+                           COLORS.CRYPTOPALETTE.medium ]}
+          render={({ state, fullpageApi }) => {
+            return (
+              <div id="fullpage-wrapper">
+                <div className="section about-1">
+                  <div className="section-div">
+                    <h1>I am a Section</h1>
+                  </div>
+                </div>
+                <div className="section about-2">
+                  <div className="section-div">
+                    <h1>I am a Section</h1>
+                  </div>
+                </div>
+                <div className="section about-3">
+                  <div className="section-div">
+                    <h1>I am a Section</h1>
+                  </div>
+                </div>
+                <div className="section about-4">
+                  <div className="section-div">
+                    <h1>I am a Section</h1>
+                  </div>
+                </div>
+              </div>
+            );
+          }}
+          />
 
       </div>
     );

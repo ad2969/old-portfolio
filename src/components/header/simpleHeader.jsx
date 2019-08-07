@@ -26,6 +26,9 @@ class SimpleHeader extends React.Component {
         case COLORS.WHITE:
           headerClass = "header header--white";
           break;
+        case COLORS.BLACK:
+          headerClass = "header header--black";
+          break;
         default: break;
       }
     }
@@ -34,10 +37,17 @@ class SimpleHeader extends React.Component {
       <div className={headerClass}>
         <Link to="/landing">
           <div className="header__logo" style={logoVisibility}>
-            <div onClick={circleClick} className="circleclick--effect"><Logo /></div>
+            <div onClick={circleClick} className="circleclick--effect">
+              <Logo color1={this.props.colorpalette.color1} color2={this.props.colorpalette.color2}/>
+            </div>
           </div>
         </Link>
-        <div onClick={this.props.toggleMenu} id="navbutton" className={menuActive}><MenuButton /></div>
+        <div onClick={this.props.toggleMenu} id="navbutton" className={menuActive}>
+          <MenuButton color1={this.props.colorpalette.color1}
+                      color2={this.props.colorpalette.color2}
+                      color3={this.props.backgroundColor}
+          />
+        </div>
       </div>
     );
   }

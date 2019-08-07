@@ -16,8 +16,8 @@ class LinkedInIcon extends React.Component {
       <use href="#linkedin" transform="scale(0.00196078)"/>
       </pattern>
       <linearGradient id="paint0_linear" x1="0" y1="37.4999" x2="75" y2="37.4999" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0246423" stopColor="#408DA6"/>
-      <stop offset="1" stopColor="#3BBA9C"/>
+      <stop offset="0.0246423" stopColor={this.props.color2}/>
+      <stop offset="1" stopColor={this.props.color1}/>
       </linearGradient>
       <linearGradient id="LI_paint" x1="-19" y1="37.4999" x2="56" y2="37.4999" gradientUnits="userSpaceOnUse">
       <stop offset="0.0246423" stopColor="#408DA6"/>

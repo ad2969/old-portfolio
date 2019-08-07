@@ -15,6 +15,8 @@ import TwitterIcon from '../icons/twitter';
 
 import { circleClick } from '../../functions/anims';
 
+import * as COLORS from '../../constants/colors';
+
 class LandingPage extends React.Component {
   constructor() {
     super();
@@ -54,9 +56,11 @@ class LandingPage extends React.Component {
     return(
       <div className="page-container">
         <ThreeBackground />
-        <SimpleHeader isMenuOpen  = {this.state.isMenuOpen}
-                      isTransition  = {!this.state.isMenuReady}
-                      toggleMenu  = {this.toggleMenu}
+        <SimpleHeader isMenuOpen      = {this.state.isMenuOpen}
+                      isTransition    = {!this.state.isMenuReady}
+                      toggleMenu      = {this.toggleMenu}
+                      colorpalette    = {COLORS.OCEANPALETTE}
+                      backgroundColor = {COLORS.OCEANPALETTE.dark}
         />
         <NavMenu  visible       = {this.state.isMenuOpen}
                   doOpen        = {this.state.doMenuOpen}
@@ -67,11 +71,17 @@ class LandingPage extends React.Component {
         <div className="landing">
           <div className="landing__icons">
             <a href="https://www.linkedin.com/in/clarence-adrian" target="_blank" rel="noopener noreferrer"
-               className="circleclick--effect" onClick={circleClick}><LinkedInIcon /></a>
+               className="circleclick--effect" onClick={circleClick}>
+               <LinkedInIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
+            </a>
             <a href="https://codepen.io/ad2969/" target="_blank" rel="noopener noreferrer"
-               className="circleclick--effect" onClick={circleClick}><CodepenIcon /></a>
+               className="circleclick--effect" onClick={circleClick}>
+               <CodepenIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
+            </a>
             <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"
-               className="circleclick--effect" onClick={circleClick}><TwitterIcon /></a>
+               className="circleclick--effect" onClick={circleClick}>
+               <TwitterIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
+            </a>
           </div>
           <div className="landing__name">Clarence Adrian</div>
           <div className="landing__title">
