@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router";
 
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
@@ -19,73 +20,32 @@ import * as COLORS from '../../constants/colors';
 import menuColor from '../../functions/menuColor';
 
 class LandingPage extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isMenuOpen: false,
-      doMenuOpen: false,
-      doMenuClose: false,
-      isMenuReady: true,
-
-      menuColorFocus: 0,
-    };
-  }
-
-  toggleMenu = () => {
-    if(this.state.isMenuReady === false) return;
-    this.setState(prevState => ({
-       doMenuOpen: prevState.isMenuOpen ? false : true,
-       doMenuClose: prevState.isMenuOpen ? true : false,
-       isMenuOpen: !prevState.isMenuOpen,
-       isMenuReady: false
-     }));
-    setTimeout(() => {this.setState({isMenuReady: true})}, 3300);
-  }
-
-  setMenuFocus = (event) => {
-    this.setState({
-      menuColorFocus: event.currentTarget.dataset.focusid
-    }, () => {console.log(this.state.menuColorFocus)});
-  }
-
-  resetMenuFocus = (event) => {
-    this.setState({
-      menuColorFocus: 0
-    }, () => {console.log(this.state.menuColorFocus)});
-  }
-
-  componentDidUpdate() {
-    if(this.state.doMenuOpen | this.state.doMenuClose) {
-      this.setState(prevState => ({
-        doMenuOpen: false,
-        doMenuClose: false,
-      }));
-    }
-  }
-
   componentDidMount() {
       document.title = "<AD2969 /> Landing Page";
   }
+  componentWillUnmount() {
+    if (this.props.location !== this.props.prevLocation && this.props.isMenuOpen) this.props.toggleMenu();
+  }
 
   render() {
-    var {color1, color2, bcolor} = menuColor(this.state.menuColorFocus);
+    var {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
 
     return(
       <div className="page-container">
         <ThreeBackground />
-        <SimpleHeader isMenuOpen      = {this.state.isMenuOpen}
-                      isTransition    = {!this.state.isMenuReady}
-                      toggleMenu      = {this.toggleMenu}
+        <SimpleHeader isMenuOpen      = {this.props.isMenuOpen}
+                      isTransition    = {!this.props.isMenuReady}
+                      toggleMenu      = {this.props.toggleMenu}
                       color1          = {color1}
                       color2          = {color2}
                       backgroundColor = {bcolor}
         />
-        <NavMenu  visible       = {this.state.isMenuOpen}
-                  doOpen        = {this.state.doMenuOpen}
-                  doClose       = {this.state.doMenuClose}
-                  isTransition  = {!this.state.isMenuReady}
-                  setFocus      = {this.setMenuFocus}
-                  resetFocus    = {this.resetMenuFocus}
+        <NavMenu  visible       = {this.props.isMenuOpen}
+                  doOpen        = {this.props.doMenuOpen}
+                  doClose       = {this.props.doMenuClose}
+                  isTransition  = {!this.props.isMenuReady}
+                  setFocus      = {this.props.setMenuFocus}
+                  resetFocus    = {this.props.resetMenuFocus}
         />
 
         <div className="landing">
@@ -119,4 +79,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage
+export default withRouter(LandingPage)

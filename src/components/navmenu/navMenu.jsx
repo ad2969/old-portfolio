@@ -8,7 +8,7 @@ class NavMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMenuVisible: false,
+      isMenuVisible: this.props.visible,
       menuFocus: 0,
     }
   }
