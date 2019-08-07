@@ -10,7 +10,7 @@ import TitleOne from './title1';
 import TitleTwo from './title2';
 import TitleThree from './title3';
 import LinkedInIcon from '../icons/linkedIn';
-import CodepenIcon from '../icons/codepen';
+import GithubIcon from '../icons/github';
 import TwitterIcon from '../icons/twitter';
 
 import { circleClick } from '../../functions/anims';
@@ -76,11 +76,11 @@ class LandingPage extends React.Component {
             </a>
             <a href="https://codepen.io/ad2969/" target="_blank" rel="noopener noreferrer"
                className="circleclick--effect" onClick={circleClick}>
-               <CodepenIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
+               <TwitterIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
             </a>
             <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"
                className="circleclick--effect" onClick={circleClick}>
-               <TwitterIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
+               <GithubIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
             </a>
           </div>
           <div className="landing__name">Clarence Adrian</div>
@@ -90,8 +90,8 @@ class LandingPage extends React.Component {
             <div className="landing__title__svg c"><TitleThree/></div>
           </div>
           <p className="landing__desc">
-            Currently located in Vancouver, BC, and actively looking for Co-Op and Intern opportunities
-            as a <span className="t--green">Full-Stack Developer / Software Engineer</span>
+            Currently undergoing my undergraduate studies in Vancouver, Canada, and actively looking for Co-Op and Intern opportunities
+            as a <span className="t--green t--bold">Full-Stack Developer / Software Engineer</span>
           </p>
         </div>
       </div>

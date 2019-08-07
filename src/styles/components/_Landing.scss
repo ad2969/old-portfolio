@@ -11,7 +11,7 @@
 
 	.landing__desc {
 		font-family: Merriweather Sans;
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 		font-style: normal;
 		font-weight: normal;
 		letter-spacing: 0.05em;
@@ -32,15 +32,17 @@
 			transition: all 0.3s;
 			&:hover {	transform: scale(0.9); }
 		}
-		svg { max-height: 8em; max-width: 8em; }
+		svg { max-height: 7.5em; max-width: 7.5em; }
 	}
 
 	.landing__name {
-		font-family: Montserrat;
-		font-size: 6rem;
+		font-family: Merriweather Sans;
+		font-size: 5rem;
 		font-style: normal;
 		font-weight: bold;
+		letter-spacing: 0.2em;
 		line-height: 1.3;
+		text-transform: uppercase;
 	}
 	.landing__title {
 		.landing__title__svg {
@@ -48,7 +50,12 @@
 			position: absolute;
 			transform: translateX(-50%);
 
-			svg { max-width: 60vw; }
+			svg {
+				max-width: 40vw;
+				@media screen and (max-width: 500px)
+											and (min-height: 500px)
+											{ max-width: 70vw; }
+			}
 		}
 		.a { visibility: visible; }
 		.b { visibility: hidden; }
