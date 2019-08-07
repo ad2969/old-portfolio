@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { withRouter } from "react-router";
 
 import './styles/App.scss';
 
@@ -59,11 +58,7 @@ class App extends React.Component {
 
         <Route exact path = {ROUTES.HOME}
                render = {() =>
-                 <LandingPage  doRedirect     = {this.state.doRedirect}
-                               prevLocation   = {this.state.currentLocation}
-                               redirect       = {this.redirect}
-
-                               isMenuOpen     = {this.state.isMenuOpen}
+                 <LandingPage  isMenuOpen     = {this.state.isMenuOpen}
                                doMenuOpen     = {this.state.doMenuOpen}
                                doMenuClose    = {this.state.doMenuClose}
                                isMenuReady    = {this.state.isMenuReady}
@@ -77,11 +72,7 @@ class App extends React.Component {
         />
         <Route exact path = {ROUTES.LANDING}
                render = {() =>
-                 <LandingPage  doRedirect     = {this.state.doRedirect}
-                               prevLocation   = {this.state.currentLocation}
-                               redirect       = {this.redirect}
-
-                               isMenuOpen     = {this.state.isMenuOpen}
+                 <LandingPage  isMenuOpen     = {this.state.isMenuOpen}
                                doMenuOpen     = {this.state.doMenuOpen}
                                doMenuClose    = {this.state.doMenuClose}
                                isMenuReady    = {this.state.isMenuReady}
@@ -95,11 +86,7 @@ class App extends React.Component {
         />
         <Route exact path = {ROUTES.ABOUT_ME}
                render = {() =>
-                 <AboutMePage  doRedirect     = {this.state.doRedirect}
-                               prevLocation   = {this.state.currentLocation}
-                               redirect       = {this.redirect}
-
-                               isMenuOpen     = {this.state.isMenuOpen}
+                 <AboutMePage  isMenuOpen     = {this.state.isMenuOpen}
                                doMenuOpen     = {this.state.doMenuOpen}
                                doMenuClose    = {this.state.doMenuClose}
                                isMenuReady    = {this.state.isMenuReady}
@@ -111,7 +98,20 @@ class App extends React.Component {
                  />
                }
         />
-        <Route exact path={ROUTES.PROJECTS} component={ProjectsPage} />
+        <Route exact path = {ROUTES.PROJECTS}
+               render = {() =>
+                 <ProjectsPage  isMenuOpen     = {this.state.isMenuOpen}
+                                doMenuOpen     = {this.state.doMenuOpen}
+                                doMenuClose    = {this.state.doMenuClose}
+                                isMenuReady    = {this.state.isMenuReady}
+                                menuColorFocus = {this.state.menuColorFocus}
+
+                                toggleMenu     = {this.toggleMenu}
+                                setMenuFocus   = {this.setMenuFocus}
+                                resetMenuFocus = {this.resetMenuFocus}
+                 />
+               }
+        />
 
       </Router>
     );

@@ -3,7 +3,6 @@ import React from 'react';
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
 
-import * as COLORS from '../../constants/colors';
 import menuColor from '../../functions/menuColor';
 
 class ProjectsPage extends React.Component {

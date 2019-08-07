@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 
-import * as COLORS from '../../constants/colors';
-
 class NavMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -89,7 +87,7 @@ class NavMenu extends React.Component {
                 <span className="menu-item__label">Learn about what I do</span>
               </span>
             </Link>
-            <Link data-focusid="4" className="menu-item"
+            <span data-focusid="4" className="menu-item"
                onMouseOver={this.props.setFocus} onMouseOut={this.props.resetFocus}>
               <span className="menu-item__indication"
                     style={hidden}>>&nbsp;</span>
@@ -97,7 +95,7 @@ class NavMenu extends React.Component {
                 <span className="menu-item__name menu-item__name-4">RESUME</span>
                 <span className="menu-item__label">Hiring? I'm open to opportunities</span>
               </span>
-            </Link>
+            </span>
           </nav>
         </div>
 
