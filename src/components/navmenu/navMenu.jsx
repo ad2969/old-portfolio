@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { withRouter } from "react-router";
+
+import * as COLORS from '../../constants/colors';
 
 class NavMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isMenuVisible: false,
+      menuFocus: 0,
     }
   }
 
@@ -44,19 +49,58 @@ class NavMenu extends React.Component {
     }
 
   componentDidUpdate() {
-    console.log("NavMenu Updated!", this.props);
     if(this.props.doOpen) this.openMenu();
     else if(this.props.doClose) this.closeMenu();
   }
 
   render() {
-    var containerstyle = this.props.isTransition ? {visibility: "visible"} : {visibility: "hidden"};
-    var menuStyle = this.state.isMenuVisible ? {visibility: "visible"} : {visibility: "hidden"};
+    const containerstyle = this.props.isTransition ? {visibility: "visible"} : {visibility: "hidden"};
+    const menuStyle = this.state.isMenuVisible ? {visibility: "visible"} : {visibility: "hidden"};
+    const hidden = {display: "none"};
 
     return(
       <div className="navmenu-container">
         <div className="navmenu" id="navmenu" style={menuStyle}>
+          <nav className="menu-container">
+            <Link data-focusid="1" className="menu-item" to="/landing"
+               onMouseOver={this.props.setFocus} onMouseOut={this.props.resetFocus}>
+              <span className="menu-item__indication"
+                    style={this.props.location.pathname === "/landing" ? {} : hidden}>>&nbsp;</span>
+              <span className="menu-item-2">
+                <span className="menu-item__name menu-item__name-1">HOME</span>
+                <span className="menu-item__label">Explore my homepage</span>
+              </span>
+            </Link>
+            <Link data-focusid="2" className="menu-item" to="/about"
+               onMouseOver={this.props.setFocus} onMouseOut={this.props.resetFocus}>
+              <span className="menu-item__indication"
+                    style={this.props.location.pathname === "/about" ? {} : hidden}>>&nbsp;</span>
+              <span className="menu-item-2">
+                <span className="menu-item__name menu-item__name-2">ABOUT ME</span>
+                <span className="menu-item__label">Find out about who runs this website</span>
+              </span>
+            </Link>
+            <Link data-focusid="3" className="menu-item" to="/projects"
+               onMouseOver={this.props.setFocus} onMouseOut={this.props.resetFocus}>
+              <span className="menu-item__indication"
+                    style={this.props.location.pathname === "/projects" ? {} : hidden}>>&nbsp;</span>
+              <span className="menu-item-2">
+                <span className="menu-item__name menu-item__name-3">PROJECTS</span>
+                <span className="menu-item__label">Learn about what I do</span>
+              </span>
+            </Link>
+            <Link data-focusid="4" className="menu-item"
+               onMouseOver={this.props.setFocus} onMouseOut={this.props.resetFocus}>
+              <span className="menu-item__indication"
+                    style={hidden}>>&nbsp;</span>
+              <span className="menu-item-2">
+                <span className="menu-item__name menu-item__name-4">RESUME</span>
+                <span className="menu-item__label">Hiring? I'm open to opportunities</span>
+              </span>
+            </Link>
+          </nav>
         </div>
+
         <div className="navmenu__transition-box" style={containerstyle}>
           <div className="nmtb nmtb1 o--hidden" id="nmtb1"></div>
           <div className="nmtb nmtb2 o--hidden" id="nmtb2"></div>
@@ -71,4 +115,4 @@ class NavMenu extends React.Component {
   }
 }
 
-export default NavMenu
+export default withRouter(NavMenu)

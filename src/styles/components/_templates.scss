@@ -32,10 +32,10 @@
 	svg { height: 4rem; max-width: 4rem; }
 
 	.header__logo, .header__navbutton {
-		top: 2rem;
-		max-height: 4rem;
 		cursor: pointer;
+		max-height: 4rem;
 		position: absolute;
+		top: 2rem;
 		transition: all 0.3s;
 	}
 	.header__logo {
@@ -57,17 +57,94 @@
 .navmenu-container {
 	position: fixed;
 	z-index: 2;
+
 	.navmenu {
+		align-items: center;
 		background-color: $dark;
+		display: flex;
 		height: 100vh;
 		position: fixed;
 		width: 100vw;
 		z-index: 1;
 	}
+	.menu-item {
+		display: flex;
+		flex-direction: row;
+		text-decoration: none;
+		padding-bottom: 2rem;
+	}
+	.menu-container {
+		margin-left: 10%;
+	}
+	.menu-item__indication {
+		color: $white;
+		font-family: 'Merriweather Sans', sans-serif;
+		font-size: 3.6rem;
+		font-weight: bold;
+	}
+	.menu-item-2 {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		font-family: 'Merriweather Sans', sans-serif;
+		position: relative;
+		text-align: left;
+		&:hover {
+			.menu-item__label { color: $white; }
+			.menu-item__name::before { transform: translate3d(100%, 0, 0); }
+			.menu-item__name::after { transform: translate3d(0, 0, 0); }
+		}
+	}
+
+	.menu-item__name, .menu-item__label {
+		display: inline-block;
+		position: relative;
+	}
+	.menu-item__name {
+		color: $white;
+		font-size: 3.6rem;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+		line-height: 4rem;
+		overflow: hidden;
+		text-transform: uppercase;
+
+		&::before, &::after {
+			box-sizing: border-box;
+			content: '';
+			left: 0;
+			position: absolute;
+			transform: translate3d(-100%, 0, 0);
+			transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+			width: 100%;
+		}
+		&::before {
+			height: 100%;
+			top: 0;
+		}
+		&::after {
+			height: 20%;
+			top: 40%;
+		}
+	}
+
+	.menu-item__name-1::before, .menu-item__name-1::after { background: $scific1; }
+	.menu-item__name-2::before, .menu-item__name-2::after { background: $scific2; }
+	.menu-item__name-3::before, .menu-item__name-3::after { background: $scific3; }
+	.menu-item__name-4::before, .menu-item__name-4::after { background: $scific4; }
+	.menu-item__name-5::before, .menu-item__name-5::after { background: $scific5; }
+
+	.menu-item__label {
+		color: $grey;
+		font-size: 1.4rem;
+		letter-spacing: 0.1em;
+		line-height: 2.5rem;
+		transition: color 0.7s ease-in;
+	}
 
 	.navmenu__transition-box {
-		position: fixed;
 		height: 100vh;
+		position: fixed;
 		width: 100vw;
 		z-index: 2;
 		.nmtb {

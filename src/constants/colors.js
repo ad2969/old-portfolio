@@ -14,3 +14,14 @@ export const CRYPTOPALETTE = { light   : "#ffffff",
                                medium  : "#111111",
                                color1  : "#752AFF",
                                color2  : "#FF2842" };
+
+export const SCIFIPALETTE = { color1  : "#cb0c59",
+                              color1g : "#fff966",
+                              color2  : "#22a0b6",
+                              color2g : "#357aff",
+                              color3  : "#00ff9f",
+                              color3g : "#21c3e7",
+                              color4  : "#feff99",
+                              color4g : "#ff8a00",
+                              color5  : "#0c4383",
+                              color5g : "#a32eff" };

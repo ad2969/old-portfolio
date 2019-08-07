@@ -5,6 +5,7 @@ import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
 
 import * as COLORS from '../../constants/colors';
+import menuColor from '../../functions/menuColor';
 
 class AboutMePage extends React.Component {
   constructor() {
@@ -14,6 +15,8 @@ class AboutMePage extends React.Component {
       doMenuOpen: false,
       doMenuClose: false,
       isMenuReady: true,
+
+      menuColorFocus: 0,
 
       isScrolling: false,
       scrollPosition: 0,
@@ -31,6 +34,18 @@ class AboutMePage extends React.Component {
     setTimeout(() => {this.setState(prevState => ({
       isMenuReady: true,
     }))}, 3300);
+  }
+
+  setMenuFocus = (event) => {
+    this.setState({
+      menuColorFocus: event.currentTarget.dataset.focusid
+    }, () => {console.log(this.state.menuColorFocus)});
+  }
+
+  resetMenuFocus = (event) => {
+    this.setState({
+      menuColorFocus: 0
+    }, () => {console.log(this.state.menuColorFocus)});
   }
 
   componentDidUpdate() {
@@ -63,26 +78,26 @@ class AboutMePage extends React.Component {
 
   componentDidMount() {
     document.title = "<AD2969 /> About Me";
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
   }
 
   render() {
+    var {color1, color2, bcolor} = menuColor(this.state.menuColorFocus);
+
     return(
       <div className="page-container page-container--about">
         <SimpleHeader isMenuOpen      = {this.state.isMenuOpen}
                       isTransition    = {!this.state.isMenuReady}
                       toggleMenu      = {this.toggleMenu}
-                      colorpalette    = {COLORS.OCEANPALETTE}
-                      backgroundColor = {COLORS.OCEANPALETTE.dark}
+                      color1          = {color1}
+                      color2          = {color2}
+                      backgroundColor = {bcolor}
         />
         <NavMenu  visible       = {this.state.isMenuOpen}
                   doOpen        = {this.state.doMenuOpen}
                   doClose       = {this.state.doMenuClose}
                   isTransition  = {!this.state.isMenuReady}
+                  setFocus      = {this.setMenuFocus}
+                  resetFocus    = {this.resetMenuFocus}
         />
 
         <ReactFullpage
