@@ -111,7 +111,7 @@ class ProjectsPage extends React.Component {
 
           <div className="projects-nav" style={showNav}>
 
-            <a className="navtext navtext--left">Find more of my projects</a>
+            <span className="navtext navtext--left">Find more of my projects!</span>
             <span data-navid="1"
                   className={this.state.carouselFocus === 1 ? "navbutton navbutton--current" : "navbutton"}
                   onClick={this.navigateTo}></span>
@@ -128,8 +128,8 @@ class ProjectsPage extends React.Component {
                   className={this.state.carouselFocus === 5 ? "navbutton navbutton--current" : "navbutton"}
                   onClick={this.navigateTo}></span>
             <span className="navtext--right">
-              <a href="https://github.com/ad2969" target="_blank" className="navtext">Github</a>
-              <a href="https://codepen.io/ad2969/" target="_blank" className="navtext">Codepen</a>
+              <a href="https://github.com/ad2969" target="_blank" rel="noopener noreferrer" className="navtext">Github</a>
+              <a href="https://codepen.io/ad2969/" target="_blank" rel="noopener noreferrer" className="navtext">Codepen</a>
             </span>
 
           </div>
