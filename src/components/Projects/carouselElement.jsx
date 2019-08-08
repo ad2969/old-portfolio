@@ -1,7 +1,5 @@
 import React from 'react';
 
-import CarouselGrid from './carouselGrid';
-
 class CarouselElement extends React.Component {
   constructor() {
     super();
@@ -21,7 +19,6 @@ class CarouselElement extends React.Component {
 
     const imgDisplay = this.state.imgZoom ? {transform: "scale(1.1)"} : {}
 
-    const gridDisplay = this.props.lock ? {} : {display: "none"};
     const entryDisplay = this.props.lock ? {display: "none"} : {};
     return(
       <div className="carousel-element">
@@ -38,7 +35,6 @@ class CarouselElement extends React.Component {
           </img>
 
         </div>
-        <CarouselGrid style={gridDisplay}/>
       </div>
     );
   }
