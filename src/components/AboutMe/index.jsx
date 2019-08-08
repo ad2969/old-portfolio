@@ -8,6 +8,14 @@ import NavMenu from '../navmenu/navMenu';
 import COLORS from '../../styles/base/_variables.scss';
 import menuColor from '../../functions/menuColor';
 
+const colorArray = [
+  '#7f00ff',
+  '#ff00ff',
+  '#0000ff',
+  '#007fff',
+  '#00ffff'
+];
+
 class AboutMePage extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +23,27 @@ class AboutMePage extends React.Component {
       isScrolling: false,
       scrollPosition: 0,
     };
+  }
+
+  componentDidMount() {
+    document.title = "<AD2969 /> About Me";
+    this.props.resetMenuFocus(this.props.menuId);
+
+    const covers = document.getElementsByClassName('about__cover');
+    const texts = document.getElementsByClassName('about__text');
+
+    for( let i = 0; i < covers.length; i++ ) {
+      covers[i].style.backgroundColor = this.randomColor();
+      setTimeout( () => {
+        covers[i].classList.toggle('active');
+        texts[i].classList.toggle('active');
+      }, i * 50);
+    }
+
+  }
+
+  randomColor = () => {
+    return colorArray[Math.floor(Math.random()*colorArray.length)];
   }
 
   handleScroll = () => {
@@ -34,11 +63,6 @@ class AboutMePage extends React.Component {
       this.setState({isScrolling: false});
       console.log("Scrolling reset!");
     }, 3000);
-  }
-
-  componentDidMount() {
-    document.title = "<AD2969 /> About Me";
-    this.props.resetMenuFocus(this.props.menuId);
   }
 
   componentWillUnmount() {
@@ -80,12 +104,116 @@ class AboutMePage extends React.Component {
               <div id="fullpage-wrapper">
                 <div className="section about-1">
                   <div className="section-div">
-                    <h1>I am a Section</h1>
-                  </div>
-                </div>
+
+                    <div className="about__welcome">
+                      <h1>Welcome to <span className="about__text--colored">My Profile!</span></h1>
+                    </div>
+
+                    <ul>
+                    <li>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">My name is Clarence Adrian,</span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">and I am a second year student</span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">at the University of British Columbia,</span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">which is located in <span className="about__text--colored">Vancouver, Canada</span></span>
+                    </div>
+                    </div>
+                    </li>
+
+                    <li>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">Currently studying as an electrical engineer,</span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">I am also a passionate student</span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">of <span className="about__text--colored">web and software development</span></span>
+                    </div>
+                    </div>
+                    </li>
+
+                    </ul>
+                    </div>
+                    </div>
                 <div className="section about-2">
                   <div className="section-div">
-                    <h1>I am a Section</h1>
+                    <ul>
+
+                    <li className="section2--about">
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">I am currently looking for</span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">Co-Op and internship opportunities</span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">as a <span className="about__text--colored">full-stack developer</span></span>
+                    </div>
+                    </div>
+                    </li>
+
+                    <li>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">If you know someone <span className="about__text--colored">currently hiring,</span></span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">want to <span className="about__text--colored">start a project with me,</span></span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">or simply want to <span className="about__text--colored">chat over some coffee,</span></span>
+                    </div>
+                    </div>
+                    <div>
+                    <div className="about__line">
+                    <div className="about__cover"></div>
+                    <span className="about__text">I would be delighted to get in touch!</span>
+                    </div>
+                    </div>
+                    </li>
+
+                    </ul>
                   </div>
                 </div>
                 <div className="section about-3">
