@@ -8,6 +8,7 @@ import CarouselElement from './carouselElement';
 
 import menuColor from '../../functions/menuColor';
 import variables from '../../styles/base/_variables.scss';
+import * as ID from '../../constants/routes';
 
 import cryptoData from '../../assets/project-files/cryptoBlockchainProjects';
 import engData from '../../assets/project-files/engineeringProjects';
@@ -101,11 +102,11 @@ class ProjectsPage extends React.Component {
           <div className="carousel__scene">
             <div className="carousel" style={carouselStyle}>
 
-              <CarouselElement data={cryptoData}/>
-              <CarouselElement data={ethData}/>
-              <CarouselElement data={engData}/>
-              <CarouselElement data={mlaiData}/>
-              <CarouselElement data={mobileWebData}/>
+              <CarouselElement data={cryptoData} link={"/projects/" + ID.PROJECTS_C}/>
+              <CarouselElement data={ethData} link={"/projects/" + ID.PROJECTS_H}/>
+              <CarouselElement data={engData} link={"/projects/" + ID.PROJECTS_E}/>
+              <CarouselElement data={mlaiData} link={"/projects/" + ID.PROJECTS_M}/>
+              <CarouselElement data={mobileWebData} link={"/projects/" + ID.PROJECTS_A}/>
             </div>
           </div>
 

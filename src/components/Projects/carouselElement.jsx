@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class CarouselElement extends React.Component {
   constructor() {
@@ -24,10 +25,11 @@ class CarouselElement extends React.Component {
       <div className="carousel-element">
         <div className="carousel-entry" style={entryDisplay}>
 
-          <div onMouseOver={this.scaleImage}
-               onMouseOut={this.scaleImageDown}>
-               {this.props.data.title}
-          </div>
+          <Link onMouseOver={this.scaleImage}
+                onMouseOut={this.scaleImageDown}
+                to={this.props.link}>
+                {this.props.data.title}
+          </Link>
 
           <img src={require(`${this.props.data.imgLink}`)}
                alt="main"

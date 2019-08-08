@@ -61,7 +61,8 @@
     position: absolute;
     width: 100%;
 
-    div {
+    a {
+      color: $white;
       cursor: pointer;
       font-family: 'Montserrat';
       font-size: 6.5rem;
@@ -71,6 +72,7 @@
       overflow-wrap: normal;
       position: absolute;
       text-align: center;
+      text-decoration: none;
       z-index: 2;
 
       @media only screen and (max-width: 500px) {
@@ -80,27 +82,6 @@
     img {
       max-height: 120%;
       transition: transform 0.5s ease;
-    }
-  }
-
-  .carousel-grid {
-    display: grid;
-    grid-gap: 5% 2%;
-    grid-template-columns: 15% 15% 15% 15% 15% 15%;
-    grid-template-rows: 30% 30% 30%;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-
-    .carousel-grid__element {
-      align-items: center;
-      background: $white;
-      border-style: solid;
-      color: $black;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      width: 100%;
     }
   }
 }
@@ -183,5 +164,47 @@
     right: 0;
     @media only screen and (max-width: 500px) {
       right: unset; padding: unset; top: 14rem; }
+  }
+}
+
+
+// PROJECTS GRID
+
+.project-grid-container {
+  height: 60%;
+  margin: 15vh auto;
+  position: relative;
+  width: 70%;
+}
+.project-grid {
+  display: grid;
+  grid-gap: 5% 2%;
+  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+  grid-template-rows: 30% 30% 30%;
+  height: 100%;
+  transition: all 0.5s;
+  width: 100%;
+
+  .project-grid__element {
+    align-items: center;
+    background: $white;
+    color: $black;
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    margin: 25% auto;
+    width: 50%;
+  }
+}
+
+.project-grid__exit {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2.5rem;
+  padding: 3rem;
+  text-align: center;
+  a {
+    color: $white;
+    cursor: pointer;
+    text-decoration: none;
   }
 }

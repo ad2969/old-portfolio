@@ -6,6 +6,7 @@ import './styles/App.scss';
 import LandingPage from './components/Landing/index';
 import AboutMePage from './components/AboutMe/index';
 import ProjectsPage from './components/Projects/index';
+import ProjectsGrid from './components/Projects/projectsGrid';
 
 import * as ROUTES from './constants/routes';
 import './serviceWorker';
@@ -116,6 +117,8 @@ class App extends React.Component {
                  />
                }
         />
+
+        <Route exact path = {ROUTES.PROJECTSID} component={ProjectsGrid} />
 
       </Router>
     );
