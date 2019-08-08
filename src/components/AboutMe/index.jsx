@@ -47,7 +47,7 @@ class AboutMePage extends React.Component {
   }
 
   render() {
-    var {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
+    const {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
 
     return(
       <div className="page-container page-container--about">

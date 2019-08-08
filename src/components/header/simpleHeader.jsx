@@ -10,11 +10,12 @@ class SimpleHeader extends React.Component {
 
 
   render() {
-    var menuActive = (this.props.isMenuOpen) ? "header__navbutton header__navbutton--active" : "header__navbutton";
-    var logoVisibility = (this.props.isTransition | this.props.isMenuOpen) ? {opacity: 0} : {opacity: 1};
+    const menuActive = (this.props.isMenuOpen) ? "header__navbutton header__navbutton--active" : "header__navbutton";
+    const logoVisibility = (this.props.isTransition | this.props.isMenuOpen) ? {opacity: 0} : {opacity: 1};
+    const disableDisplay = this.props.disable ? "header o--fadeout" : "header";
 
     return (
-      <div className="header">
+      <div className={disableDisplay}>
         <Link to="/landing">
           <div className="header__logo" style={logoVisibility}>
             <div onClick={circleClick} className="circleclick--effect">

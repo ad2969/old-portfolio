@@ -4,10 +4,16 @@ import { withRouter } from "react-router";
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
 
-import CarouselGrid from './carouselGrid';
+import CarouselElement from './carouselElement';
 
 import menuColor from '../../functions/menuColor';
 import variables from '../../styles/base/_variables.scss';
+
+import cryptoData from '../../assets/project-files/cryptoBlockchainProjects';
+import engData from '../../assets/project-files/engineeringProjects';
+import ethData from '../../assets/project-files/ethicalHackProjects';
+import mlaiData from '../../assets/project-files/machineAiProjects';
+import mobileWebData from '../../assets/project-files/mobileWebProjects';
 
 class ProjectsPage extends React.Component {
   constructor() {
@@ -15,7 +21,6 @@ class ProjectsPage extends React.Component {
     this.state = {
       projectCategories: 5,
       carouselFocus: 3,
-      allowScroll: true,
     };
   }
 
@@ -45,6 +50,12 @@ class ProjectsPage extends React.Component {
     }
   }
 
+  navigateTo = (event) => {
+    this.setState({
+      carouselFocus: parseInt(event.currentTarget.dataset.navid, 10)
+    });
+  }
+
   componentDidMount() {
       document.title = "<AD2969 /> My Projects";
       this.props.resetMenuFocus(this.props.menuId);
@@ -59,8 +70,8 @@ class ProjectsPage extends React.Component {
     const angle = 360/variables.carouselfaces * (this.state.carouselFocus - 1);
     const carouselStyle = {transform: "translateZ(-" + variables.carouseldepth + ") " +
                           "rotateY(-" + (angle) + "deg)"};
-    const displayNavigation = this.state.allowScroll ? {} : {display: "none"};
 
+    const showNav = this.props.isMenuOpen || !this.props.isMenuReady ? {display: "none"} : {};
     var {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
 
     return(
@@ -83,18 +94,44 @@ class ProjectsPage extends React.Component {
 
         <div className="projects">
           <div className="carousel__nav"></div>
-          <div className="carousel__button-left" style={displayNavigation}
+          <div className="carousel__button-left"
                onClick={this.focusPrev}> &lt; </div>
-          <div className="carousel__button-right" style={displayNavigation}
+          <div className="carousel__button-right"
                onClick={this.focusNext}> &gt; </div>
           <div className="carousel__scene">
             <div className="carousel" style={carouselStyle}>
-              <CarouselGrid />
-              <CarouselGrid />
-              <CarouselGrid />
-              <CarouselGrid />
-              <CarouselGrid />
+
+              <CarouselElement data={cryptoData}/>
+              <CarouselElement data={ethData}/>
+              <CarouselElement data={engData}/>
+              <CarouselElement data={mlaiData}/>
+              <CarouselElement data={mobileWebData}/>
             </div>
+          </div>
+
+          <div className="projects-nav" style={showNav}>
+
+            <a className="navtext navtext--left">Find more of my projects</a>
+            <span data-navid="1"
+                  className={this.state.carouselFocus === 1 ? "navbutton navbutton--current" : "navbutton"}
+                  onClick={this.navigateTo}></span>
+            <span data-navid="2"
+                  className={this.state.carouselFocus === 2 ? "navbutton navbutton--current" : "navbutton"}
+                  onClick={this.navigateTo}></span>
+            <span data-navid="3"
+                  className={this.state.carouselFocus === 3 ? "navbutton navbutton--current" : "navbutton"}
+                  onClick={this.navigateTo}></span>
+            <span data-navid="4"
+                  className={this.state.carouselFocus === 4 ? "navbutton navbutton--current" : "navbutton"}
+                  onClick={this.navigateTo}></span>
+            <span data-navid="5"
+                  className={this.state.carouselFocus === 5 ? "navbutton navbutton--current" : "navbutton"}
+                  onClick={this.navigateTo}></span>
+            <span className="navtext--right">
+              <a href="https://github.com/ad2969" target="_blank" className="navtext">Github</a>
+              <a href="https://codepen.io/ad2969/" target="_blank" className="navtext">Codepen</a>
+            </span>
+
           </div>
         </div>
       </div>

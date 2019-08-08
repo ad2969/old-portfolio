@@ -3,7 +3,7 @@ import React from 'react';
 class CarouselGrid extends React.Component {
   render() {
     return(
-      <div className="carousel-grid">
+      <div className="carousel-grid" style={this.props.style}>
         <div className="carousel-grid__element cge-a">A</div>
         <div className="carousel-grid__element cge-b">A</div>
         <div className="carousel-grid__element cge-c">A</div>

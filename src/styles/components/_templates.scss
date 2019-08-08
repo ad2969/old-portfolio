@@ -18,13 +18,16 @@
 	height: $header-height;
 	position: fixed;
 	top: 0;
-	transition: background 0.5s;
+	transition: opacity 0.5s;
 	width: 100%;
 	z-index: 10;
 
 	div {	&:hover { transform: scale(1.1); } }
 
-	svg { height: 4rem; max-width: 4rem; }
+	svg {
+		height: 4rem; max-width: 4rem;
+		@media screen and (max-width: 600px) { height: 8rem; max-width: 6rem; }
+	}
 
 	.header__logo, .header__navbutton {
 		cursor: pointer;
@@ -35,13 +38,13 @@
 	}
 	.header__logo {
 		left: 3em;
-		@media screen and (max-width: 400px) { left: 5vw; }
+		@media screen and (max-width: 400px) { left: 6vw; }
 		@media screen and (min-width: 1700px) { left: 2vw; }
 	}
 	.header__navbutton {
 		right: 3rem;
 		z-index: 3;
-		@media screen and (max-width: 400px) { right: 5vw; }
+		@media screen and (max-width: 400px) { right: 6vw; }
 		@media screen and (min-width: 1700px) { right: 2vw; }
 		svg { transform: scale(1.2); }
 	}

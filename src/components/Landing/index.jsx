@@ -29,7 +29,7 @@ class LandingPage extends React.Component {
   }
 
   render() {
-    var {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
+    const {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
 
     return(
       <div className="page-container">
@@ -73,7 +73,7 @@ class LandingPage extends React.Component {
           </div>
           <p className="landing__desc">
             Currently undergoing my undergraduate studies in Vancouver, Canada, and actively looking for Co-Op and Intern opportunities
-            as a <span className="t--green t--bold">Full-Stack Developer / Software Engineer</span>
+            as a <span className="t--blue t--bold">Full-Stack Developer / Software Engineer</span>
           </p>
         </div>
       </div>
