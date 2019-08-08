@@ -28,3 +28,9 @@ $scific5: #0c4383;
 // OBJECT SIZES
 $loader-size: 3rem;
 $header-height: 13vh;
+
+$project-categories: 5; // minus 1
+$carousel-faces: 8;
+$carousel-depth: 100vw;
+:export { carouseldepth: $carousel-depth;
+          carouselfaces: $carousel-faces; }

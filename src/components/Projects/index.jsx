@@ -3,49 +3,43 @@ import React from 'react';
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
 
+import CarouselGrid from './carouselGrid';
+
 import menuColor from '../../functions/menuColor';
+import variables from '../../styles/base/_variables.scss';
 
 class ProjectsPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      isMenuOpen: false,
-      doMenuOpen: false,
-      doMenuClose: false,
-      isMenuReady: true,
-
-      menuColorFocus: 0,
+      projectCategories: 5,
+      carouselFocus: 3,
+      allowScroll: true,
     };
   }
 
-  toggleMenu = () => {
-    if(this.state.isMenuReady === false) return;
-    this.setState(prevState => ({
-       doMenuOpen: prevState.isMenuOpen ? false : true,
-       doMenuClose: prevState.isMenuOpen ? true : false,
-       isMenuOpen: !prevState.isMenuOpen,
-       isMenuReady: false
-     }));
-    setTimeout(() => {this.setState({isMenuReady: true})}, 3300);
-  }
-
-  setMenuFocus = (event) => {
-    this.setState({
-      menuColorFocus: event.currentTarget.dataset.focusid
-    }, () => {console.log(this.state.menuColorFocus)});
-  }
-
-  resetMenuFocus = (event) => {
-    this.setState({
-      menuColorFocus: 0
-    }, () => {console.log(this.state.menuColorFocus)});
-  }
-
-  componentDidUpdate() {
-    if(this.state.doMenuOpen | this.state.doMenuClose) {
+  focusPrev = () => {
+    if(this.state.carouselFocus <= 1) {
+      this.setState({
+        carouselFocus: this.state.projectCategories
+      });
+    }
+    else {
       this.setState(prevState => ({
-        doMenuOpen: false,
-        doMenuClose: false,
+        carouselFocus: prevState.carouselFocus - 1
+      }));
+    }
+  }
+
+  focusNext = () => {
+    if(this.state.carouselFocus >= this.state.projectCategories) {
+      this.setState({
+        carouselFocus: 1
+      });
+    }
+    else {
+      this.setState(prevState => ({
+        carouselFocus: prevState.carouselFocus + 1
       }));
     }
   }
@@ -55,26 +49,45 @@ class ProjectsPage extends React.Component {
   }
 
   render() {
-    var {color1, color2, bcolor} = menuColor(this.state.menuColorFocus);
+    const angle = 360/variables.carouselfaces * (this.state.carouselFocus - 1);
+    const carouselStyle = {transform: "translateZ(-" + variables.carouseldepth + ") " +
+                          "rotateY(-" + (angle) + "deg)"};
+    const displayNavigation = this.state.allowScroll ? {} : {display: "none"};
+
+    var {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
 
     return(
       <div className="page-container">
-        <SimpleHeader isMenuOpen  = {this.state.isMenuOpen}
-                      isTransition  = {!this.state.isMenuReady}
-                      toggleMenu  = {this.toggleMenu}
+        <SimpleHeader isMenuOpen      = {this.props.isMenuOpen}
+                      isTransition    = {!this.props.isMenuReady}
+                      toggleMenu      = {this.props.toggleMenu}
                       color1          = {color1}
                       color2          = {color2}
                       backgroundColor = {bcolor}
         />
-        <NavMenu  visible       = {this.state.isMenuOpen}
-                  doOpen        = {this.state.doMenuOpen}
-                  doClose       = {this.state.doMenuClose}
-                  isTransition  = {!this.state.isMenuReady}
-                  setFocus      = {this.setMenuFocus}
-                  resetFocus    = {this.resetMenuFocus}
+        <NavMenu  visible       = {this.props.isMenuOpen}
+                  doOpen        = {this.props.doMenuOpen}
+                  doClose       = {this.props.doMenuClose}
+                  isTransition  = {!this.props.isMenuReady}
+                  setFocus      = {this.props.setMenuFocus}
+                  resetFocus    = {this.props.resetMenuFocus}
         />
 
         <div className="projects">
+          <div className="carousel__nav"></div>
+          <div className="carousel__button-left" style={displayNavigation}
+               onClick={this.focusPrev}> &lt; </div>
+          <div className="carousel__button-right" style={displayNavigation}
+               onClick={this.focusNext}> &gt; </div>
+          <div className="carousel__scene">
+            <div className="carousel" style={carouselStyle}>
+              <CarouselGrid />
+              <CarouselGrid />
+              <CarouselGrid />
+              <CarouselGrid />
+              <CarouselGrid />
+            </div>
+          </div>
         </div>
       </div>
     );
