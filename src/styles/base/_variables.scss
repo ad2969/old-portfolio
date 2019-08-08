@@ -14,12 +14,24 @@ $light: #707793;
 $green: #3bba9c;
 $blue: #408da6;
 
+  // crypto
+$cryptoc1: #752AFF;
+$cryptoc2: #FF2842;
+$cryptodark: #171717;
+$cryptolight: #848484;
+$cryptomedium: #2B2B2B;
+
   // scifi
-$scific1: #cb0c59;
-$scific2: #22a0b6;
-$scific3: #00ff9f;
+$scific1: #00ff9f;
+$scific1g: #21c3e7;
+$scific2: #cb0c59;
+$scific2g: #fff966;
+$scific3: #22a0b6;
+$scific3g: #357aff;
 $scific4: #feff99;
+$scific4g: #ff8a00;
 $scific5: #0c4383;
+$scific5g: #a32eff;
 
 
 // FONTSIZE
@@ -32,5 +44,26 @@ $header-height: 13vh;
 $project-categories: 5; // minus 1
 $carousel-faces: 8;
 $carousel-depth: 100vw;
-:export { carouseldepth: $carousel-depth;
+
+
+:export { dark: $dark-bg;
+
+          cryptoc1      : $cryptoc1;
+          cryptoc2      : $cryptoc2;
+          cryptocdark   : $cryptodark;
+          cryptolight   : $cryptolight;
+          cryptomedium  : $cryptomedium;
+
+          scific1   : $scific1;
+          scific1g  : $scific1g;
+          scific2   : $scific2;
+          scific2g  : $scific2g;
+          scific3   : $scific3;
+          scific3g  : $scific3g;
+          scific4   : $scific4;
+          scific4g  : $scific4g;
+          scific5   : $scific5;
+          scific5g  : $scific5g;
+
+          carouseldepth: $carousel-depth;
           carouselfaces: $carousel-faces; }

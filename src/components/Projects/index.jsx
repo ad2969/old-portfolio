@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router";
 
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
@@ -46,6 +47,12 @@ class ProjectsPage extends React.Component {
 
   componentDidMount() {
       document.title = "<AD2969 /> My Projects";
+      this.props.resetMenuFocus(this.props.menuId);
+  }
+
+  componentWillUnmount() {
+    if (this.props.location !== this.props.prevLocation && this.props.isMenuOpen)
+      this.props.toggleMenu();
   }
 
   render() {
@@ -65,7 +72,8 @@ class ProjectsPage extends React.Component {
                       color2          = {color2}
                       backgroundColor = {bcolor}
         />
-        <NavMenu  visible       = {this.props.isMenuOpen}
+        <NavMenu  menuId        = {this.props.menuId}
+                  visible       = {this.props.isMenuOpen}
                   doOpen        = {this.props.doMenuOpen}
                   doClose       = {this.props.doMenuClose}
                   isTransition  = {!this.props.isMenuReady}
@@ -94,4 +102,4 @@ class ProjectsPage extends React.Component {
   }
 }
 
-export default ProjectsPage
+export default withRouter(ProjectsPage)

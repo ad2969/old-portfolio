@@ -16,15 +16,16 @@ import TwitterIcon from '../icons/twitter';
 
 import { circleClick } from '../../functions/anims';
 
-import * as COLORS from '../../constants/colors';
 import menuColor from '../../functions/menuColor';
 
 class LandingPage extends React.Component {
   componentDidMount() {
-      document.title = "<AD2969 /> Landing Page";
+    document.title = "<AD2969 /> Landing Page";
+    this.props.resetMenuFocus(this.props.menuId);
   }
   componentWillUnmount() {
-    if (this.props.location !== this.props.prevLocation && this.props.isMenuOpen) this.props.toggleMenu();
+    if (this.props.location !== this.props.prevLocation && this.props.isMenuOpen)
+      this.props.toggleMenu();
   }
 
   render() {
@@ -40,7 +41,8 @@ class LandingPage extends React.Component {
                       color2          = {color2}
                       backgroundColor = {bcolor}
         />
-        <NavMenu  visible       = {this.props.isMenuOpen}
+        <NavMenu  menuId        = {this.props.menuId}
+                  visible       = {this.props.isMenuOpen}
                   doOpen        = {this.props.doMenuOpen}
                   doClose       = {this.props.doMenuClose}
                   isTransition  = {!this.props.isMenuReady}
@@ -52,15 +54,15 @@ class LandingPage extends React.Component {
           <div className="landing__icons">
             <a href="https://www.linkedin.com/in/clarence-adrian" target="_blank" rel="noopener noreferrer"
                className="circleclick--effect" onClick={circleClick}>
-               <LinkedInIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
+               <LinkedInIcon color1={color1} color2={color2}/>
             </a>
             <a href="https://codepen.io/ad2969/" target="_blank" rel="noopener noreferrer"
                className="circleclick--effect" onClick={circleClick}>
-               <TwitterIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
+               <TwitterIcon color1={color1} color2={color2}/>
             </a>
             <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"
                className="circleclick--effect" onClick={circleClick}>
-               <GithubIcon color1={COLORS.OCEANPALETTE.color1} color2={COLORS.OCEANPALETTE.color2}/>
+               <GithubIcon color1={color1} color2={color2}/>
             </a>
           </div>
           <div className="landing__name">Clarence Adrian</div>

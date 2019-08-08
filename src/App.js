@@ -24,13 +24,13 @@ class App extends React.Component {
   }
 
   toggleMenu = () => {
+    console.log("toggle menu");
     if(this.state.isMenuReady === false) return;
     this.setState(prevState => ({
        doMenuOpen: prevState.isMenuOpen ? false : true,
        doMenuClose: prevState.isMenuOpen ? true : false,
        isMenuOpen: !prevState.isMenuOpen,
        isMenuReady: false,
-       menuColorFocus: 0
      }));
     setTimeout(() => {this.setState({isMenuReady: true})}, 3300);
   }
@@ -39,8 +39,8 @@ class App extends React.Component {
     this.setState({ menuColorFocus: event.currentTarget.dataset.focusid });
   }
 
-  resetMenuFocus = (event) => {
-    this.setState({ menuColorFocus: 0 });
+  resetMenuFocus = (menuId) => {
+    this.setState({ menuColorFocus: menuId });
   }
 
   componentDidUpdate() {
@@ -58,7 +58,8 @@ class App extends React.Component {
 
         <Route exact path = {ROUTES.HOME}
                render = {() =>
-                 <LandingPage  isMenuOpen     = {this.state.isMenuOpen}
+                 <LandingPage  menuId         = "0"
+                               isMenuOpen     = {this.state.isMenuOpen}
                                doMenuOpen     = {this.state.doMenuOpen}
                                doMenuClose    = {this.state.doMenuClose}
                                isMenuReady    = {this.state.isMenuReady}
@@ -72,7 +73,8 @@ class App extends React.Component {
         />
         <Route exact path = {ROUTES.LANDING}
                render = {() =>
-                 <LandingPage  isMenuOpen     = {this.state.isMenuOpen}
+                 <LandingPage  menuId         = "0"
+                               isMenuOpen     = {this.state.isMenuOpen}
                                doMenuOpen     = {this.state.doMenuOpen}
                                doMenuClose    = {this.state.doMenuClose}
                                isMenuReady    = {this.state.isMenuReady}
@@ -86,7 +88,8 @@ class App extends React.Component {
         />
         <Route exact path = {ROUTES.ABOUT_ME}
                render = {() =>
-                 <AboutMePage  isMenuOpen     = {this.state.isMenuOpen}
+                 <AboutMePage  menuId         = "1"
+                               isMenuOpen     = {this.state.isMenuOpen}
                                doMenuOpen     = {this.state.doMenuOpen}
                                doMenuClose    = {this.state.doMenuClose}
                                isMenuReady    = {this.state.isMenuReady}
@@ -100,7 +103,8 @@ class App extends React.Component {
         />
         <Route exact path = {ROUTES.PROJECTS}
                render = {() =>
-                 <ProjectsPage  isMenuOpen     = {this.state.isMenuOpen}
+                 <ProjectsPage  menuId         = "2"
+                                isMenuOpen     = {this.state.isMenuOpen}
                                 doMenuOpen     = {this.state.doMenuOpen}
                                 doMenuClose    = {this.state.doMenuClose}
                                 isMenuReady    = {this.state.isMenuReady}

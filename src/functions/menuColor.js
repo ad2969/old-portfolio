@@ -1,32 +1,33 @@
-import * as COLORS from '../constants/colors';
+import COLORS from '../styles/base/_variables.scss';
+
 
 export default function menuColor(menuColorFocus) {
   var color1, color2, bcolor;
   switch(menuColorFocus) {
+    case "0":
+      color1 = COLORS.scific1;
+      color2 = COLORS.scific1g;
+      break;
     case "1":
-      color1 = COLORS.SCIFIPALETTE.color1;
-      color2 = COLORS.SCIFIPALETTE.color1g;
+      color1 = COLORS.scific2;
+      color2 = COLORS.scific1g;
       break;
     case "2":
-      color1 = COLORS.SCIFIPALETTE.color2;
-      color2 = COLORS.SCIFIPALETTE.color2g;
+      color1 = COLORS.scific3;
+      color2 = COLORS.scific3g;
       break;
     case "3":
-      color1 = COLORS.SCIFIPALETTE.color3;
-      color2 = COLORS.SCIFIPALETTE.color3g;
+      color1 = COLORS.scific4;
+      color2 = COLORS.scific4g;
       break;
     case "4":
-      color1 = COLORS.SCIFIPALETTE.color4;
-      color2 = COLORS.SCIFIPALETTE.color4g;
-      break;
-    case "5":
-      color1 = COLORS.SCIFIPALETTE.color5;
-      color2 = COLORS.SCIFIPALETTE.color5g;
+      color1 = COLORS.scific5;
+      color2 = COLORS.scific5g;
       break;
     default:
-      color1 = COLORS.OCEANPALETTE.color1;
-      color2 = COLORS.OCEANPALETTE.color2;
-      bcolor = COLORS.OCEANPALETTE.dark;
+      color1 = COLORS.scific1;
+      color2 = COLORS.scific1g;
+      bcolor = COLORS.dark;
       break;
   }
   return {color1, color2, bcolor};

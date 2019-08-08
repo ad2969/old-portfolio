@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
 
-import * as COLORS from '../../constants/colors';
+import COLORS from '../../styles/base/_variables.scss';
 import menuColor from '../../functions/menuColor';
 
 class AboutMePage extends React.Component {
@@ -38,12 +38,13 @@ class AboutMePage extends React.Component {
 
   componentDidMount() {
     document.title = "<AD2969 /> About Me";
+    this.props.resetMenuFocus(this.props.menuId);
   }
 
   componentWillUnmount() {
-    if (this.props.location !== this.props.prevLocation && this.props.isMenuOpen) this.props.toggleMenu();
+    if (this.props.location !== this.props.prevLocation && this.props.isMenuOpen)
+      this.props.toggleMenu();
   }
-
 
   render() {
     var {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
@@ -57,7 +58,8 @@ class AboutMePage extends React.Component {
                       color2          = {color2}
                       backgroundColor = {bcolor}
         />
-        <NavMenu  visible       = {this.props.isMenuOpen}
+        <NavMenu  menuId        = {this.props.menuId}
+                  visible       = {this.props.isMenuOpen}
                   doOpen        = {this.props.doMenuOpen}
                   doClose       = {this.props.doMenuClose}
                   isTransition  = {!this.props.isMenuReady}
@@ -67,12 +69,12 @@ class AboutMePage extends React.Component {
 
         <ReactFullpage
           scrollOverflow={true}
-          sectionsColor={[ COLORS.CRYPTOPALETTE.medium,
-                           COLORS.CRYPTOPALETTE.color1,
-                           COLORS.CRYPTOPALETTE.color2,
-                           COLORS.CRYPTOPALETTE.medium,
-                           COLORS.CRYPTOPALETTE.medium,
-                           COLORS.CRYPTOPALETTE.medium ]}
+          sectionsColor={[ COLORS.crpytomedium,
+                           COLORS.crpytoc1,
+                           COLORS.crpytoc2,
+                           COLORS.crpytomedium,
+                           COLORS.crpytomedium,
+                           COLORS.crpytomedium ]}
           render={({ state, fullpageApi }) => {
             return (
               <div id="fullpage-wrapper">
