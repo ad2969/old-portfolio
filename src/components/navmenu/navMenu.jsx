@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 
+import softwareResume from '../../assets/generic-software.pdf'
+
 class NavMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -86,15 +88,16 @@ class NavMenu extends React.Component {
                 <span className="menu-item__label">Learn about what I do</span>
               </span>
             </Link>
-            <span data-focusid="3" className="menu-item"
+            <a href={softwareResume} target="_blank" rel="noopener noreferrer"
+               data-focusid="3" className="menu-item"
                onMouseOver={this.props.setFocus} onMouseOut={() => {this.props.resetFocus(this.props.menuId)}}>
               <span className="menu-item__indication"
                     style={hidden}>>&nbsp;</span>
               <span className="menu-item-2">
                 <span className="menu-item__name menu-item__name-4">RESUME</span>
-                <span className="menu-item__label">Hiring? I'm open to opportunities</span>
+                <span className="menu-item__label">Hiring? I'm open to opportunities!</span>
               </span>
-            </span>
+            </a>
           </nav>
         </div>
 

@@ -10,7 +10,7 @@ export default function menuColor(menuColorFocus) {
       break;
     case "1":
       color1 = COLORS.scific2;
-      color2 = COLORS.scific1g;
+      color2 = COLORS.scific2g;
       break;
     case "2":
       color1 = COLORS.scific3;

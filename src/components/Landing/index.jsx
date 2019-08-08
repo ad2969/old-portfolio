@@ -67,13 +67,14 @@ class LandingPage extends React.Component {
           </div>
           <div className="landing__name">Clarence Adrian</div>
           <div className="landing__title">
-            <div className="landing__title__svg a"><TitleOne/></div>
-            <div className="landing__title__svg b"><TitleTwo/></div>
-            <div className="landing__title__svg c"><TitleThree/></div>
+            <div className="landing__title__svg a"><TitleOne color1={color1} color2={color2}/></div>
+            <div className="landing__title__svg b"><TitleTwo color1={color1} color2={color2}/></div>
+            <div className="landing__title__svg c"><TitleThree color1={color1} color2={color2}/></div>
           </div>
           <p className="landing__desc">
             Currently undergoing my undergraduate studies in Vancouver, Canada, and actively looking for Co-Op and Intern opportunities
-            as a <span className="t--blue t--bold">Full-Stack Developer / Software Engineer</span>
+            as a <span className="t--bold" style={{color: color2}}>Full-Stack Developer</span>
+            <span className="t--bold" style={{color: color1}}>/ Software Engineer</span>
           </p>
         </div>
       </div>

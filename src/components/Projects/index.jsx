@@ -21,40 +21,31 @@ class ProjectsPage extends React.Component {
     super();
     this.state = {
       projectCategories: 5,
-      carouselFocus: 3,
     };
   }
 
   focusPrev = () => {
-    if(this.state.carouselFocus <= 1) {
-      this.setState({
-        carouselFocus: this.state.projectCategories
-      });
+    const currentFocus = this.props.carouselFocus;
+    if(currentFocus <= 1) {
+      this.props.setCarouselFocus(this.state.projectCategories);
     }
     else {
-      this.setState(prevState => ({
-        carouselFocus: prevState.carouselFocus - 1
-      }));
+      this.props.setCarouselFocus(currentFocus - 1);
     }
   }
 
   focusNext = () => {
-    if(this.state.carouselFocus >= this.state.projectCategories) {
-      this.setState({
-        carouselFocus: 1
-      });
+    const currentFocus = this.props.carouselFocus;
+    if(currentFocus >= this.state.projectCategories) {
+      this.props.setCarouselFocus(1);
     }
     else {
-      this.setState(prevState => ({
-        carouselFocus: prevState.carouselFocus + 1
-      }));
+      this.props.setCarouselFocus(currentFocus + 1);
     }
   }
 
   navigateTo = (event) => {
-    this.setState({
-      carouselFocus: parseInt(event.currentTarget.dataset.navid, 10)
-    });
+    this.props.setCarouselFocus(parseInt(event.currentTarget.dataset.navid, 10));
   }
 
   componentDidMount() {
@@ -68,7 +59,7 @@ class ProjectsPage extends React.Component {
   }
 
   render() {
-    const angle = 360/variables.carouselfaces * (this.state.carouselFocus - 1);
+    const angle = 360/variables.carouselfaces * (this.props.carouselFocus - 1);
     const carouselStyle = {transform: "translateZ(-" + variables.carouseldepth + ") " +
                           "rotateY(-" + (angle) + "deg)"};
 
@@ -112,21 +103,21 @@ class ProjectsPage extends React.Component {
 
           <div className="projects-nav" style={showNav}>
 
-            <span className="navtext navtext--left">Find more of my projects!</span>
+            <span className="navtext navtext--left">Summarize My Projects!</span>
             <span data-navid="1"
-                  className={this.state.carouselFocus === 1 ? "navbutton navbutton--current" : "navbutton"}
+                  className={this.props.carouselFocus === 1 ? "navbutton navbutton--current" : "navbutton"}
                   onClick={this.navigateTo}></span>
             <span data-navid="2"
-                  className={this.state.carouselFocus === 2 ? "navbutton navbutton--current" : "navbutton"}
+                  className={this.props.carouselFocus === 2 ? "navbutton navbutton--current" : "navbutton"}
                   onClick={this.navigateTo}></span>
             <span data-navid="3"
-                  className={this.state.carouselFocus === 3 ? "navbutton navbutton--current" : "navbutton"}
+                  className={this.props.carouselFocus === 3 ? "navbutton navbutton--current" : "navbutton"}
                   onClick={this.navigateTo}></span>
             <span data-navid="4"
-                  className={this.state.carouselFocus === 4 ? "navbutton navbutton--current" : "navbutton"}
+                  className={this.props.carouselFocus === 4 ? "navbutton navbutton--current" : "navbutton"}
                   onClick={this.navigateTo}></span>
             <span data-navid="5"
-                  className={this.state.carouselFocus === 5 ? "navbutton navbutton--current" : "navbutton"}
+                  className={this.props.carouselFocus === 5 ? "navbutton navbutton--current" : "navbutton"}
                   onClick={this.navigateTo}></span>
             <span className="navtext--right">
               <a href="https://github.com/ad2969" target="_blank" rel="noopener noreferrer" className="navtext">Github</a>

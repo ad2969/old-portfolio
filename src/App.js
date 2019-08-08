@@ -21,6 +21,7 @@ class App extends React.Component {
       isMenuReady: true,
 
       menuColorFocus: 0,
+      carouselFocus: 3,
     };
   }
 
@@ -42,6 +43,10 @@ class App extends React.Component {
 
   resetMenuFocus = (menuId) => {
     this.setState({ menuColorFocus: menuId });
+  }
+
+  setCarouselFocus = (carouselId) => {
+    this.setState({ carouselFocus: carouselId })
   }
 
   componentDidUpdate() {
@@ -111,9 +116,13 @@ class App extends React.Component {
                                 isMenuReady    = {this.state.isMenuReady}
                                 menuColorFocus = {this.state.menuColorFocus}
 
+
                                 toggleMenu     = {this.toggleMenu}
                                 setMenuFocus   = {this.setMenuFocus}
                                 resetMenuFocus = {this.resetMenuFocus}
+
+                                carouselFocus     = {this.state.carouselFocus}
+                                setCarouselFocus  = {this.setCarouselFocus}
                  />
                }
         />

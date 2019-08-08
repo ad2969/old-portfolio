@@ -32,12 +32,15 @@ class AboutMePage extends React.Component {
     const covers = document.getElementsByClassName('about__cover');
     const texts = document.getElementsByClassName('about__text');
 
+    const timeDelay = this.props.isMenuOpen ? 3300 : 0;
+    console.log(this.props.isMenuOpen);
+
     for( let i = 0; i < covers.length; i++ ) {
       covers[i].style.backgroundColor = this.randomColor();
       setTimeout( () => {
         covers[i].classList.toggle('active');
         texts[i].classList.toggle('active');
-      }, i * 50);
+      }, i * 50 + timeDelay);
     }
 
   }
@@ -106,7 +109,7 @@ class AboutMePage extends React.Component {
                   <div className="section-div">
 
                     <div className="about__welcome">
-                      <h1>Welcome to <span className="about__text--colored">My Profile!</span></h1>
+                      <h1>Welcome to <span className="about__text--colored2">My Profile!</span></h1>
                     </div>
 
                     <ul>
@@ -217,13 +220,13 @@ class AboutMePage extends React.Component {
                   </div>
                 </div>
                 <div className="section about-3">
-                  <div className="section-div">
-                    <h1>I am a Section</h1>
+                  <div className="section-div" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    <h1>THIS WEB IS STILL A WORK-IN-PROGRESS</h1>
                   </div>
                 </div>
                 <div className="section about-4">
-                  <div className="section-div">
-                    <h1>I am a Section</h1>
+                  <div className="section-div" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    <h1>THIS WEB IS STILL A WORK-IN-PROGRESS</h1>
                   </div>
                 </div>
               </div>

@@ -12,8 +12,8 @@ class TitleOne extends React.Component {
       </g>
       <defs>
       <linearGradient id="paint0_linear" x1="10" y1="29.9999" x2="831" y2="29.9999" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0246423" stopColor="#408DA6"/>
-      <stop offset="1" stopColor="#3BBA9C"/>
+      <stop offset="0.0246423" stopColor={this.props.color2}/>
+      <stop offset="1" stopColor={this.props.color1}/>
       </linearGradient>
       </defs>
       </svg>
