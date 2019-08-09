@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as ID from '../../constants/routes';
+import * as ID from 'constants/routes';
 
-import crypto from '../../assets/project-files/cryptoBlockchainProjects';
-import eng from '../../assets/project-files/engineeringProjects';
-import hax from '../../assets/project-files/ethicalHackProjects';
-import mlai from '../../assets/project-files/machineAiProjects';
-import mobileWeb from '../../assets/project-files/mobileWebProjects';
+import crypto from 'assets/project-files/cryptoBlockchainProjects';
+import eng from 'assets/project-files/engineeringProjects';
+import hax from 'assets/project-files/ethicalHackProjects';
+import mlai from 'assets/project-files/machineAiProjects';
+import mobileWeb from 'assets/project-files/mobileWebProjects';
 
 class CarouselGrid extends React.Component {
 

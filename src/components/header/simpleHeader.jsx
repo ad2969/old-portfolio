@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../icons/logo';
 import MenuButton from '../icons/menuButton';
 
-import { circleClick } from '../../functions/anims';
+import { circleClick } from 'functions/anims';
 
 class SimpleHeader extends React.Component {
 

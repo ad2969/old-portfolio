@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 
-import softwareResume from '../../assets/generic-software.pdf'
+import softwareResume from 'assets/generic-software.pdf'
 
 class NavMenu extends React.Component {
   constructor(props) {

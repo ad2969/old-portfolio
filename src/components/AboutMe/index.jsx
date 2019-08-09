@@ -5,8 +5,8 @@ import { withRouter } from "react-router";
 import SimpleHeader from '../header/simpleHeader';
 import NavMenu from '../navmenu/navMenu';
 
-import COLORS from '../../styles/base/_variables.scss';
-import menuColor from '../../functions/menuColor';
+import COLORS from 'styles/base/_variables.scss';
+import menuColor from 'functions/menuColor';
 
 const colorArray = [
   '#7f00ff',
@@ -220,13 +220,15 @@ class AboutMePage extends React.Component {
                   </div>
                 </div>
                 <div className="section about-3">
-                  <div className="section-div" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                  <div className="section-div" style={{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
                     <h1>THIS WEB IS STILL A WORK-IN-PROGRESS</h1>
+                    <h1>See an older version <a href="2019-ad2969.netlify.com">here</a></h1>
                   </div>
                 </div>
                 <div className="section about-4">
-                  <div className="section-div" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                  <div className="section-div" style={{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
                     <h1>THIS WEB IS STILL A WORK-IN-PROGRESS</h1>
+                    <h1>See an older version <a href="2019-ad2969.netlify.com">here</a></h1>
                   </div>
                 </div>
               </div>

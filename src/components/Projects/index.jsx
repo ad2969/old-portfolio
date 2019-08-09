@@ -6,15 +6,17 @@ import NavMenu from '../navmenu/navMenu';
 
 import CarouselElement from './carouselElement';
 
-import menuColor from '../../functions/menuColor';
-import variables from '../../styles/base/_variables.scss';
-import * as ID from '../../constants/routes';
+import menuColor from 'functions/menuColor';
+import variables from 'styles/base/_variables.scss';
+import * as ID from 'constants/routes';
 
-import cryptoData from '../../assets/project-files/cryptoBlockchainProjects';
-import engData from '../../assets/project-files/engineeringProjects';
-import ethData from '../../assets/project-files/ethicalHackProjects';
-import mlaiData from '../../assets/project-files/machineAiProjects';
-import mobileWebData from '../../assets/project-files/mobileWebProjects';
+import cryptoData from 'assets/project-files/cryptoBlockchainProjects';
+import engData from 'assets/project-files/engineeringProjects';
+import ethData from 'assets/project-files/ethicalHackProjects';
+import mlaiData from 'assets/project-files/machineAiProjects';
+import mobileWebData from 'assets/project-files/mobileWebProjects';
+
+import softwareResume from 'assets/generic-software.pdf'
 
 class ProjectsPage extends React.Component {
   constructor() {
@@ -103,7 +105,7 @@ class ProjectsPage extends React.Component {
 
           <div className="projects-nav" style={showNav}>
 
-            <span className="navtext navtext--left">Summarize My Projects!</span>
+            <a href={softwareResume} target="_blank" rel="noopener noreferrer" className="navtext navtext--left">Summarize My Projects!</a>
             <span data-navid="1"
                   className={this.props.carouselFocus === 1 ? "navbutton navbutton--current" : "navbutton"}
                   onClick={this.navigateTo}></span>

@@ -14,9 +14,8 @@ import LinkedInIcon from '../icons/linkedIn';
 import GithubIcon from '../icons/github';
 import TwitterIcon from '../icons/twitter';
 
-import { circleClick } from '../../functions/anims';
-
-import menuColor from '../../functions/menuColor';
+import { circleClick } from 'functions/anims';
+import menuColor from 'functions/menuColor';
 
 class LandingPage extends React.Component {
   componentDidMount() {
