@@ -8,6 +8,11 @@
   z-index: 1;
 }
 
+.section {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
 .section-div {
   border: 1px solid $white;
   height: 88vh;

@@ -55,11 +55,11 @@ class LandingPage extends React.Component {
                className="circleclick--effect" onClick={circleClick}>
                <LinkedInIcon color1={color1} color2={color2}/>
             </a>
-            <a href="https://codepen.io/ad2969/" target="_blank" rel="noopener noreferrer"
+            <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"
                className="circleclick--effect" onClick={circleClick}>
                <TwitterIcon color1={color1} color2={color2}/>
             </a>
-            <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/ad2969" target="_blank" rel="noopener noreferrer"
                className="circleclick--effect" onClick={circleClick}>
                <GithubIcon color1={color1} color2={color2}/>
             </a>
