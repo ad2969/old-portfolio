@@ -5,6 +5,7 @@ import './styles/App.scss';
 
 import LandingPage from './components/Landing/index';
 import AboutMePage from './components/AboutMe/index';
+import Hello from './components/Temp/hello';
 import ProjectsPage from './components/Projects/index';
 import ProjectsGrid from './components/Projects/projectsGrid';
 
@@ -124,6 +125,11 @@ class App extends React.Component {
                                 carouselFocus     = {this.state.carouselFocus}
                                 setCarouselFocus  = {this.setCarouselFocus}
                  />
+               }
+        />
+        <Route exact path = {ROUTES.HELLO}
+               render = {() =>
+                 <Hello />
                }
         />
 
