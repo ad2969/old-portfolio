@@ -18,7 +18,15 @@ and (max-width: 1000px) {
   html { font-size: 11px }
 }
 @media only screen
+and (max-height: 600px) and (min-width: 800px) {
+  html { font-size: 11px }
+}
+@media only screen
 and (max-width: 800px) {
+  html { font-size: 8px }
+}
+@media only screen
+and (max-height: 500px) and (min-width: 800px) {
   html { font-size: 8px }
 }
 @media only screen
