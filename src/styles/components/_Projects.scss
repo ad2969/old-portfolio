@@ -185,9 +185,9 @@
   transition: all 0.5s;
   width: 100%;
 
-  @media only screen and (min-aspect-ratio: 9 / 4) {
-    grid-gap: 5% 1.5%;
-    grid-template-columns: 13% 13% 13% 13% 13% 13% 13%;
+  @media only screen and (min-aspect-ratio: 9 / 4) and (max-width: 1000px) {
+    grid-gap: 5% 0.5%;
+    grid-template-columns: 12% 12% 12% 12% 12% 12% 12% 12%;
     grid-template-rows: 45% 45% 0%;
   }
   @media only screen and (max-aspect-ratio: 4 / 3) {
@@ -216,12 +216,12 @@
     background: $white;
     color: $black;
     display: flex;
-    height: 50%;
     justify-content: center;
     margin: 25% auto;
+    max-height: 60%;
+    max-width: 60%;
     opacity: 0.3;
     transition: all 0.5s ease;
-    width: 50%;
   }
 
   .project-grid__element--active {
