@@ -3,7 +3,6 @@ export const LANDING    = '/landing';
 export const ABOUT_ME   = '/about';
 export const PROJECTS   = '/projects';
 export const PROJECTSID = '/projects/:id';
-export const HELLO      = '/hello';
 
 export const PROJECTS_E = 'eng';
 export const PROJECTS_C = 'crypto';

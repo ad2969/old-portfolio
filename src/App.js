@@ -127,11 +127,6 @@ class App extends React.Component {
                  />
                }
         />
-        <Route exact path = {ROUTES.HELLO}
-               render = {() =>
-                 <Hello />
-               }
-        />
 
         <Route exact path = {ROUTES.PROJECTSID} component={ProjectsGrid} />
 
