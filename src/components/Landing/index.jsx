@@ -42,7 +42,7 @@ class LandingPage extends React.Component {
     const isFrontend = this.state.isFrontend
     let three;
     if(isFrontend) three = <ThreeBackground />;
-    else three = <img src="../../assets/media/aurora.jpg" alt="aurora" />;
+    else three = <img class="background-image" src={require('../../assets/media/aurora.jpg')} alt="aurora" />;
 
     const {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
 
