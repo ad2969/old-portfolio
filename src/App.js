@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import './styles/App.scss';
 
@@ -63,19 +63,7 @@ class App extends React.Component {
       <Router>
 
         <Route exact path = {ROUTES.HOME}
-               render = {() =>
-                 <LandingPage  menuId         = "0"
-                               isMenuOpen     = {this.state.isMenuOpen}
-                               doMenuOpen     = {this.state.doMenuOpen}
-                               doMenuClose    = {this.state.doMenuClose}
-                               isMenuReady    = {this.state.isMenuReady}
-                               menuColorFocus = {this.state.menuColorFocus}
-
-                               toggleMenu     = {this.toggleMenu}
-                               setMenuFocus   = {this.setMenuFocus}
-                               resetMenuFocus = {this.resetMenuFocus}
-                 />
-               }
+               render = {() => <Redirect to = {ROUTES.LANDING} /> }
         />
         <Route exact path = {ROUTES.LANDING}
                render = {() =>
