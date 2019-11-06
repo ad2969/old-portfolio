@@ -18,6 +18,17 @@ import { circleClick } from 'functions/anims';
 import menuColor from 'functions/menuColor';
 
 class LandingPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isFrontend: true }
+  }
+
+  changeFrontend = () => {
+    this.setState((prevState) => {
+      return { isFrontend: !prevState.isFrontend }
+    })
+  }
+
   componentDidMount() {
     document.title = "<AD2969 /> Landing Page";
     this.props.resetMenuFocus(this.props.menuId);
@@ -28,11 +39,16 @@ class LandingPage extends React.Component {
   }
 
   render() {
+    const isFrontend = this.state.isFrontend
+    let three;
+    if(isFrontend) three = <ThreeBackground />;
+    else three = "";
+
     const {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
 
     return(
       <div className="page-container">
-        <ThreeBackground />
+        {three}
         <SimpleHeader isMenuOpen      = {this.props.isMenuOpen}
                       isTransition    = {!this.props.isMenuReady}
                       toggleMenu      = {this.props.toggleMenu}
@@ -75,6 +91,14 @@ class LandingPage extends React.Component {
             as a <span className="t--bold" style={{color: color2}}>Full-Stack Developer</span>
             <span className="t--bold" style={{color: color1}}>/ Software Engineer</span>
           </p>
+        </div>
+        <div class="b--bottom-right">
+          <span style={{paddingLeft: "1.5rem"}}>PROGRAM</span>
+          <label class="switch">
+            <input type="checkbox" checked={isFrontend} onChange={this.changeFrontend}></input>
+            <span class="slider round"></span>
+          </label>
+          <span style={{paddingRight: "1.5rem"}}>DESIGN</span>
         </div>
       </div>
     );
