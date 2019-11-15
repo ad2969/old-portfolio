@@ -92,11 +92,11 @@ class LandingPage extends React.Component {
             <span className="t--bold" style={{color: color1}}>/ Software Engineer</span>
           </p>
         </div>
-        <div class="b--bottom-right">
+        <div className="b--bottom-right">
           <span style={{paddingLeft: "1.5rem"}}>PROGRAM</span>
-          <label class="switch">
+          <label className="switch">
             <input type="checkbox" checked={isFrontend} onChange={this.changeFrontend}></input>
-            <span class="slider round"></span>
+            <span className="slider round"></span>
           </label>
           <span style={{paddingRight: "1.5rem"}}>DESIGN</span>
         </div>
