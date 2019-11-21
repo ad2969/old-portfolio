@@ -9,7 +9,7 @@ const style = {
   left: 0,
   top: 0,
 	overflow: "hidden",
-	background: "linear-gradient(#000000, #2b2b2b)"
+	background: "linear-gradient(#000000, #2b2b2b)",
 }
 
 //****** COLORS
@@ -321,7 +321,7 @@ class ThreeBackground extends React.Component {
 
   render() {
     return(
-      <div id="canvas" style={style}></div>
+      <div id="canvas" style={{...style, visibility: this.props.show ? "visible" : "hidden"}}></div>
     );
   }
 }

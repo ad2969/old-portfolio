@@ -61,3 +61,11 @@ input:checked + .slider:before {
 .slider.round:before {
  border-radius: 50%;
 }
+
+.b--bottom-right {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  right: 0;
+}

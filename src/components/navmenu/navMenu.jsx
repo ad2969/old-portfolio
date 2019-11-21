@@ -13,13 +13,13 @@ class NavMenu extends React.Component {
   }
 
   openMenu = () => {
-    console.log("OPEN MENU!");
+    // console.log("OPEN MENU!");
     setTimeout(() => { this.setState({ isMenuVisible : true }) }, 1100);
     this.transitionMenu();
   }
 
   closeMenu = () => {
-    console.log("CLOSE MENU!");
+    // console.log("CLOSE MENU!");
     setTimeout(() => { this.setState({ isMenuVisible : false }) }, 1100);
     this.transitionMenu();
   }

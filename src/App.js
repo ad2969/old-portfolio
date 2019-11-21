@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   toggleMenu = () => {
-    console.log("toggle menu");
+    // console.log("toggle menu");
     if(this.state.isMenuReady === false) return;
     this.setState(prevState => ({
        doMenuOpen: prevState.isMenuOpen ? false : true,
