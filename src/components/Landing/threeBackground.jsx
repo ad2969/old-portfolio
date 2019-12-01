@@ -2,18 +2,19 @@ import React from 'react';
 import * as THREE from 'three';
 
 const style = {
-	backgroundColor: "black",
+	backgroundColor: "white",
 	position: "absolute",
 	width: "100%",
 	height: "100%",
   left: 0,
   top: 0,
 	overflow: "hidden",
-	background: "linear-gradient(#000000, #2b2b2b)",
+	background: "linear-gradient(#ffffff, #d3d3d3)",
 }
 
 //****** COLORS
 const Colors = {
+	white : 0xffffff,
   cloud : 0x2b2b2b,
   grey  : 0x848484,
   black : 0x000000
@@ -113,10 +114,10 @@ class ThreeBackground extends React.Component {
 
     function createLights() {
       // Gradient Lighting
-      hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.5)
+      hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.7)
 
       // Ambient Lighting
-      ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
 
       // Directional Lighting
       shadowLight = new THREE.DirectionalLight(0xffffff, 0.7);
@@ -200,7 +201,7 @@ class ThreeBackground extends React.Component {
     var Cloud = function(){
       this.mesh = new THREE.Object3D();
       var geom  = new THREE.CubeGeometry(20, 20, 20);
-      var mat   = new THREE.MeshPhongMaterial({ color: Colors.cloud });
+      var mat   = new THREE.MeshPhongMaterial({ color: Colors.white });
 
       var numBlocs = 3 + Math.floor(Math.random() * 3);
       for( var i = 0; i < numBlocs; i++ ) {
