@@ -23,6 +23,8 @@ class ProjectsPage extends React.Component {
     super();
     this.state = {
       projectCategories: 5,
+      mounted: false,
+      mountedFinish: false
     };
   }
 
@@ -53,6 +55,13 @@ class ProjectsPage extends React.Component {
   componentDidMount() {
       document.title = "<AD2969 /> My Projects";
       this.props.resetMenuFocus(this.props.menuId);
+      
+      setTimeout(() => {
+        this.setState({ mounted: true });
+      }, this.props.isMenuOpen ? 3500 : 500);
+      setTimeout(() => {
+        this.setState({ mountedFinish: true });
+      }, this.props.isMenuOpen ? 3800 : 800);
   }
 
   componentWillUnmount() {
@@ -60,7 +69,15 @@ class ProjectsPage extends React.Component {
       this.props.toggleMenu();
   }
 
+  exitProjects() {
+    this.setState({
+      mounted: false
+    }, () => {this.props.doMenuOpen()})
+  }
+
   render() {
+    const pageContainerClass = this.state.mounted ? "page-container page-container--grey" : "page-container";
+
     const angle = 360/variables.carouselfaces * (this.props.carouselFocus - 1);
     const carouselStyle = {transform: "translateZ(-" + variables.carouseldepth + ") " +
                           "rotateY(-" + (angle) + "deg)"};
@@ -69,7 +86,7 @@ class ProjectsPage extends React.Component {
     var {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
 
     return(
-      <div className="page-container">
+      <div className={pageContainerClass}>
         <SimpleHeader isMenuOpen      = {this.props.isMenuOpen}
                       isTransition    = {!this.props.isMenuReady}
                       toggleMenu      = {this.props.toggleMenu}
@@ -86,7 +103,7 @@ class ProjectsPage extends React.Component {
                   resetFocus    = {this.props.resetMenuFocus}
         />
 
-        <div className="projects">
+        <div className = { this.state.mountedFinish ? "projects" : "projects o--fadeout" }>
           <div className="carousel__nav"></div>
           <div className="carousel__button-left"
                onClick={this.focusPrev}> &lt; </div>
@@ -94,7 +111,6 @@ class ProjectsPage extends React.Component {
                onClick={this.focusNext}> &gt; </div>
           <div className="carousel__scene">
             <div className="carousel" style={carouselStyle}>
-
               <CarouselElement data={cryptoData} link={"/projects/" + ID.PROJECTS_C}/>
               <CarouselElement data={ethData} link={"/projects/" + ID.PROJECTS_H}/>
               <CarouselElement data={engData} link={"/projects/" + ID.PROJECTS_E}/>
@@ -128,6 +144,7 @@ class ProjectsPage extends React.Component {
 
           </div>
         </div>
+        }
       </div>
     );
   }

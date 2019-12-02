@@ -51,19 +51,19 @@
 }
 
 .about__text--colored {
-  color: $scific2g;
+  color: $gradient-green-d;
 }
 .about__text--colored2 {
-  color: $scific2;
+  color: $gradient-green;
 }
 .about__text--highlighted {
-  background-color: $scific2;
+  background-color: $gradient-green;
   color: $white;
   cursor: pointer;
 
   &:hover {
     background-color: $white;
-    color: $scific2;
+    color: $gradient-green;
   }
 }
 

@@ -40,11 +40,11 @@
 }
 
 input:checked + .slider {
- background-color: $blue;
+ background-color: $gradient-green;
 }
 
 input:focus + .slider {
- box-shadow: 0 0 1px $blue;
+ box-shadow: 0 0 1px $gradient-green;
 }
 
 input:checked + .slider:before {

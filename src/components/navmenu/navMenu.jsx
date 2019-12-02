@@ -80,7 +80,7 @@ class NavMenu extends React.Component {
               </span>
             </Link>
             <Link data-focusid="2" className="menu-item" to="/projects"
-               onMouseOver={this.props.setFocus} onMouseOut={() => {this.props.resetFocus(this.props.menuId)}}>
+                  onMouseOver={this.props.setFocus} onMouseOut={() => {this.props.resetFocus(this.props.menuId)}}>
               <span className="menu-item__indication"
                     style={this.props.location.pathname === "/projects" ? {} : hidden}>>&nbsp;</span>
               <span className="menu-item-2">

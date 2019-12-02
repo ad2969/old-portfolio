@@ -8,13 +8,8 @@ import ThreeBackground from './threeBackground';
 // import ThreeExample from './threeExample';
 
 import TitleOne from './title1';
-import TitleTwo from './title2';
-import TitleThree from './title3';
-import LinkedInIcon from '../icons/linkedIn';
-import GithubIcon from '../icons/github';
-import TwitterIcon from '../icons/twitter';
+import Resume from './resume';
 
-import { circleClick } from 'functions/anims';
 import menuColor from 'functions/menuColor';
 
 class LandingPage extends React.Component {
@@ -63,31 +58,14 @@ class LandingPage extends React.Component {
         />
 
         <div className="landing">
-          <div className="landing__icons">
-            <a href="https://www.linkedin.com/in/clarence-adrian" target="_blank" rel="noopener noreferrer"
-               className="circleclick--effect" onClick={circleClick}>
-               <LinkedInIcon color1={color1} color2={color2}/>
-            </a>
-            <a href="https://twitter.com/ad2969" target="_blank" rel="noopener noreferrer"
-               className="circleclick--effect" onClick={circleClick}>
-               <TwitterIcon color1={color1} color2={color2}/>
-            </a>
-            <a href="https://github.com/ad2969" target="_blank" rel="noopener noreferrer"
-               className="circleclick--effect" onClick={circleClick}>
-               <GithubIcon color1={color1} color2={color2}/>
-            </a>
-          </div>
+          <div className="landing__name--intro">Hi My Name Is</div>
           <div className="landing__name">Clarence Adrian</div>
           <div className="landing__title">
             <div className="landing__title__svg a"><TitleOne color1={color1} color2={color2}/></div>
-            <div className="landing__title__svg b"><TitleTwo color1={color1} color2={color2}/></div>
-            <div className="landing__title__svg c"><TitleThree color1={color1} color2={color2}/></div>
           </div>
-          <p className="landing__desc">
-            Currently undergoing my undergraduate studies in Vancouver, Canada, and actively looking for Co-Op and Intern opportunities
-            as a <span className="t--bold" style={{color: color2}}>Full-Stack Developer</span>
-            <span className="t--bold" style={{color: color1}}>/ Software Engineer</span>
-          </p>
+          <div className="landing__desc landing__icons">
+            <Resume color1={color1} color2={color2}/>
+          </div>
         </div>
         <div className="b--bottom-right">
           <span style={{paddingLeft: "1.5rem"}}>PROGRAM</span>

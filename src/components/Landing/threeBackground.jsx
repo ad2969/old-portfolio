@@ -24,15 +24,12 @@ const Colors = {
 const options = {
   speed           : 0.00001,
   cloudSpeed      : 0.0001,
-  cameraPosition  : 100,
-
-  worldRadius     : 600,
-  worldLength     : 800
+	numClouds				: 15
 };
 
 const worldOpt = {
-  radius: 600,
-  length: 800
+  radius: 300,
+  length: 400
 }
 
 const groundOpt = {
@@ -44,8 +41,8 @@ const groundOpt = {
 
 const cameraOpt = {
   position_x: 0,
-  position_y: 100,
-  position_z: 200,
+  position_y: 250,
+  position_z: 800,
 
   fieldOfView : 50,
   nearPlane   : 0.1,
@@ -114,7 +111,7 @@ class ThreeBackground extends React.Component {
 
     function createLights() {
       // Gradient Lighting
-      hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.7)
+      hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x00000, 0.7)
 
       // Ambient Lighting
       ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
@@ -236,7 +233,7 @@ class ThreeBackground extends React.Component {
     var Sky = function() {
       this.mesh = new THREE.Object3D();
 
-      this.numClouds  = 20;
+      this.numClouds  = options.numClouds;
       this.clouds     = [];
       var stepAngle   = Math.PI * 2 / this.numClouds;
 
@@ -245,11 +242,11 @@ class ThreeBackground extends React.Component {
         var newCloud  = new Cloud();
         this.clouds.push(newCloud);
         var angle     = stepAngle * i;
-        var height    = worldOpt.radius + 150 + Math.random() * 200;
+        var height    = worldOpt.radius + 150 + Math.random() * 400;
         var scale     = 1 + Math.random() * 2;
         newCloud.mesh.position.y = Math.sin(angle) * height;
         newCloud.mesh.position.x = Math.cos(angle) * height;
-        newCloud.mesh.position.z = -300 - Math.random() * 500;
+        newCloud.mesh.position.z = 300 - Math.random() * 300;
         newCloud.mesh.rotation.z = angle + Math.PI / 2;
         newCloud.mesh.scale.set(scale, scale, scale);
         this.mesh.add(newCloud.mesh);

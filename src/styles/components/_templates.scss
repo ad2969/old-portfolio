@@ -1,11 +1,18 @@
 
 .page-container {
-	background: $dark-bg;
+	background: $white;
+	color: $black;
 	height: 100vh;
 	max-width: 100%;
 	overflow: hidden;
 	position: fixed;
 	width: 100vw;
+	transition: all 0.3s;
+}
+.page-container--grey {
+	background: $dark;
+	color: $white;
+	transition: all 0.5s;
 }
 
 // TEMPLATE HEADER
@@ -58,7 +65,8 @@
 
 	.navmenu {
 		align-items: center;
-		background-color: $dark;
+		background-color: $white;
+		color: black;
 		display: flex;
 		height: 100vh;
 		position: fixed;
@@ -75,7 +83,7 @@
 		margin-left: 10%;
 	}
 	.menu-item__indication {
-		color: $white;
+		color: $black;
 		font-family: 'Merriweather Sans', sans-serif;
 		font-size: 3.6rem;
 		font-weight: bold;
@@ -88,7 +96,7 @@
 		position: relative;
 		text-align: left;
 		&:hover {
-			.menu-item__label { color: $white; }
+			.menu-item__label { color: $black; }
 			.menu-item__name::before { transform: translate3d(100%, 0, 0); }
 			.menu-item__name::after { transform: translate3d(0, 0, 0); }
 		}
@@ -99,7 +107,7 @@
 		position: relative;
 	}
 	.menu-item__name {
-		color: $white;
+		color: $black;
 		font-size: 3.6rem;
 		font-weight: bold;
 		letter-spacing: 0.1em;
@@ -111,7 +119,7 @@
 
 		&::before, &::after {
 			box-sizing: border-box;
-			content: '';
+	content: '';
 			left: 0;
 			position: absolute;
 			transform: translate3d(-100%, 0, 0);
@@ -128,11 +136,10 @@
 		}
 	}
 
-	.menu-item__name-1::before, .menu-item__name-1::after { background: $scific1; }
-	.menu-item__name-2::before, .menu-item__name-2::after { background: $scific2; }
-	.menu-item__name-3::before, .menu-item__name-3::after { background: $scific3; }
-	.menu-item__name-4::before, .menu-item__name-4::after { background: $scific4; }
-	.menu-item__name-5::before, .menu-item__name-5::after { background: $scific5; }
+	.menu-item__name-1::before, .menu-item__name-1::after { background: $gradient-green; }
+	.menu-item__name-2::before, .menu-item__name-2::after { background: $gradient-purple; }
+	.menu-item__name-3::before, .menu-item__name-3::after { background: $gradient-red; }
+	.menu-item__name-4::before, .menu-item__name-4::after { background: $gradient-yellow; }
 
 	.menu-item__label {
 		color: $grey;

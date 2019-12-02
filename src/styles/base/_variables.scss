@@ -4,39 +4,27 @@ $black: #000;
 $white: #fff;
 $grey: #565656;
 
-$dark-bg: #111;
-$dark2-bg: #2b2b2b;
-
-$dark: #2e3047;
-$dark2: #3c3f58;
-$medium: #43455c;
+$dark: #111;
+$dark2: #2b2b2b;
+$medium: #4345cc;
 $light: #707793;
 
-$green: #3bba9c;
-$blue: #408da6;
-
-  // crypto
-$cryptoc1: #752AFF;
-$cryptoc2: #FF2842;
+// crypto
+$cryptoc1: #752aff;
+$cryptoc2: #ff2843;
 $cryptodark: #171717;
 $cryptolight: #848484;
-$cryptomedium: #2B2B2B;
+$cryptomedium: #2b2b2b;
 
-  // scifi
-$scific1: #00ff9f;
-$scific1g: #21c3e7;
-$scific2: #e5748c;
-$scific2g: #d94c72;
-$scific3: #22a0b6;
-$scific3g: #357aff;
-$scific4: #feff99;
-$scific4g: #ff8a00;
-$scific5: #a32eff;
-$scific5g: #0c4383;
-
-
-// FONTSIZE
-
+// main color palette
+$gradient-green: #03dac5;
+$gradient-green-d: #03c4eb;
+$gradient-purple: #56cae9;
+$gradient-purple-d: #5680e9;
+$gradient-red: #e5748c;
+$gradient-red-d: #d83b61;
+$gradient-yellow: #feff99;
+$gradient-yellow-d: #f9fb00;
 
 // OBJECT SIZES
 $loader-size: 3rem;
@@ -47,24 +35,17 @@ $carousel-faces: 8;
 $carousel-depth: 100vw;
 
 
-:export { dark: $dark-bg;
+:export { dark: $dark;
+          dark2: $dark2;
 
-          cryptoc1      : $cryptoc1;
-          cryptoc2      : $cryptoc2;
-          cryptocdark   : $cryptodark;
-          cryptolight   : $cryptolight;
-          cryptomedium  : $cryptomedium;
-
-          scific1   : $scific1;
-          scific1g  : $scific1g;
-          scific2   : $scific2;
-          scific2g  : $scific2g;
-          scific3   : $scific3;
-          scific3g  : $scific3g;
-          scific4   : $scific4;
-          scific4g  : $scific4g;
-          scific5   : $scific5;
-          scific5g  : $scific5g;
+          colorset0a  : $gradient-green;
+          colorset0b  : $gradient-green-d;
+          colorset1a  : $gradient-purple;
+          colorset1b  : $gradient-purple-d;
+          colorset2a  : $gradient-red;
+          colorset2b  : $gradient-red-d;
+          colorset3a  : $gradient-yellow;
+          colorset3b  : $gradient-yellow-d;
 
           carouseldepth: $carousel-depth;
           carouselfaces: $carousel-faces; }

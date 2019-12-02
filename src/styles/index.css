@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+a {
+   text-decoration: none;
+}
+
 @media only screen
 and (max-width: 1000px) {
   html { font-size: 11px }

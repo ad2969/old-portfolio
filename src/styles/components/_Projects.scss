@@ -1,3 +1,7 @@
+.projects {
+  transition: all 0.5s;
+}
+
 .carousel__scene {
   /* border: 1px solid $white; */
   height: 65vh;
@@ -10,7 +14,7 @@
 
 .carousel__button-left, .carousel__button-right {
   align-items: center;
-  background: $dark-bg;
+  background: $dark;
   color: $grey;
   display: flex;
   font-size: 5rem;
@@ -113,7 +117,7 @@
       height: 3rem; width: 3rem; }
 
     &::before {
-      background: $scific3g;
+      background: $gradient-red-d;
       content: '';
       height: 100%;
       left: 0;
@@ -148,7 +152,7 @@
     @media only screen and (max-width: 500px) {
       font-size: 2rem; }
 
-    &:hover { color: $scific3g; }
+    &:hover { color: $gradient-red-d; }
   }
 
   .navtext--left {
@@ -211,7 +215,7 @@
     grid-template-rows: 13% 13% 13% 13% 13% 13% 13%;
   }
 
-  .project-grid__element {
+  .project-grid__element, .project-grid__element--active {
     align-items: center;
     background: $white;
     color: $black;
@@ -225,19 +229,8 @@
   }
 
   .project-grid__element--active {
-    align-items: center;
-    background: $white;
-    color: $black;
-    cursor: pointer;
-    display: flex;
-    height: 50%;
-    justify-content: center;
-    margin: 25% auto;
-    max-height: 60%;
-    max-width: 60%;
     opacity: 1;
     transition: all 0.3s ease;
-    width: 50%;
 
     &:hover {
       transform: scale(0.8);

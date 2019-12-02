@@ -5,28 +5,24 @@ export default function menuColor(menuColorFocus) {
   var color1, color2, bcolor;
   switch(menuColorFocus) {
     case "0":
-      color1 = COLORS.scific1;
-      color2 = COLORS.scific1g;
+      color1 = COLORS.colorset0a;
+      color2 = COLORS.colorset0b;
       break;
     case "1":
-      color1 = COLORS.scific2;
-      color2 = COLORS.scific2g;
+      color1 = COLORS.colorset1a;
+      color2 = COLORS.colorset1b;
       break;
     case "2":
-      color1 = COLORS.scific3;
-      color2 = COLORS.scific3g;
+      color1 = COLORS.colorset2a;
+      color2 = COLORS.colorset2b;
       break;
     case "3":
-      color1 = COLORS.scific4;
-      color2 = COLORS.scific4g;
-      break;
-    case "4":
-      color1 = COLORS.scific5;
-      color2 = COLORS.scific5g;
+      color1 = COLORS.colorset3a;
+      color2 = COLORS.colorset3b;
       break;
     default:
-      color1 = COLORS.scific1;
-      color2 = COLORS.scific1g;
+      color1 = COLORS.colorset0a;
+      color2 = COLORS.colorset0b;
       bcolor = COLORS.dark;
       break;
   }

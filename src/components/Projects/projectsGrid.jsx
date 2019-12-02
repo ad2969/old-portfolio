@@ -55,7 +55,7 @@ class CarouselGrid extends React.Component {
 
   render() {
     return(
-      <div className="page-container">
+      <div className="page-container page-container--grey">
       <div className="project-grid-container">
         <div className="project-grid">
           <img data-id = "17" alt="icon"
