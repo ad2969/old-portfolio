@@ -26,16 +26,20 @@ and (max-height: 600px) and (min-width: 800px) {
   html { font-size: 11px }
 }
 @media only screen
-and (max-width: 800px) {
+and (max-width: 800px) and (m) {
   html { font-size: 8px }
 }
 @media only screen
 and (max-height: 500px) and (min-width: 800px) {
-  html { font-size: 8px }
+  html { font-size: 10px }
 }
 @media only screen
 and (max-width: 600px) {
-  html { font-size: 6px }
+  html { font-size: 8px }
+}
+@media only screen
+and (max-width: 350px) {
+  html { font-size: 2vw }
 }
 
 .redirect-body { background-color: black }

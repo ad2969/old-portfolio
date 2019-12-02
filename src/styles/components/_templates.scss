@@ -114,8 +114,10 @@
 		line-height: 4rem;
 		overflow: hidden;
 		text-transform: uppercase;
-		@media only screen and (max-width: 800px) { font-size: 4rem; }
-		@media only screen and (max-width: 600px) { font-size: 5rem; }
+		@media only screen and (max-width: 800px) {
+			font-size: 6rem; line-height: 6rem; }
+		@media only screen and (max-width: 450px) {
+			font-size: 4.5rem; line-height: 5rem; }
 
 		&::before, &::after {
 			box-sizing: border-box;
@@ -148,7 +150,7 @@
 		line-height: 2.5rem;
 		transition: color 0.5s ease-in;
 		@media only screen and (max-width: 800px) { font-size: 2rem; line-height: 5rem; }
-		@media only screen and (max-width: 600px) { line-height: 7rem; }
+		@media only screen and (max-width: 450px) { font-size: 1.5rem; line-height: 4rem; }
 	}
 
 	.navmenu__transition-box {
