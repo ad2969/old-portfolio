@@ -4,3 +4,35 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+// FOR MEDIA QUERIES
+
+@mixin for-large-desktop {
+  @media only screen and
+  (min-width: 1700px) { @content; }
+}
+
+@mixin for-desktop {
+  @media only screen and
+  (max-width: 1000px) { @content; }
+}
+
+@mixin for-flat-desktop {
+  @media only screen and
+  (min-width: 800px) and (max-height: 600px) { @content; }
+}
+
+@mixin for-tiny-desktop {
+  @media only screen and
+  (max-width: 600px) { @content; }
+}
+
+@mixin for-mobile-landscape {
+  @media only screen and
+  (max-height: 400px) { @content; }
+}
+
+@mixin for-mobile-portrait {
+  @media only screen and
+  (max-width: 400px) { @content; }
+}

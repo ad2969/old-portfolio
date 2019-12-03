@@ -19,7 +19,6 @@
 		margin: auto;
 		max-width: 1300px;
 		padding-top: 3em;
-		@media only screen and (max-width: 800px) { font-size: 1.8rem; }
 	}
 
 	.landing__icons {
@@ -35,7 +34,11 @@
 		}
 		svg {
 			max-height: 7.5em; max-width: 7.5em;
-			@media only screen and (max-width: 800px) { max-height: 9em; max-width: 9em; }
+		}
+
+			@include for-tiny-desktop {
+				a { margin: 2em; }
+			svg { max-width: 25vw; width: 10em; }
 		}
 	}
 
@@ -64,10 +67,8 @@
 			transform: translateX(-50%);
 
 			svg {
-				max-width: 40vw;
-				@media screen and (max-width: 500px)
-											and (min-height: 500px)
-											{ max-width: 70vw; }
+				max-width: 50vw;
+				@include for-tiny-desktop { max-width: 70vw; }
 			}
 		}
 		.a { visibility: visible; }

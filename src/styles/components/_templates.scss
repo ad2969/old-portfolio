@@ -33,26 +33,27 @@
 
 	svg {
 		height: 4rem; max-width: 4rem;
-		@media screen and (max-width: 600px) { height: 8rem; max-width: 6rem; }
+		@include for-tiny-desktop { height: 6rem; max-width: 6rem; }
+		@include for-mobile-landscape { height: 6rem; max-width: 5rem; }
 	}
 
 	.header__logo, .header__navbutton {
 		cursor: pointer;
 		max-height: 4rem;
 		position: absolute;
-		top: 2rem;
+		top: 3rem;
 		transition: all 0.3s;
 	}
 	.header__logo {
-		left: 3em;
-		@media screen and (max-width: 400px) { left: 6vw; }
-		@media screen and (min-width: 1700px) { left: 2vw; }
+		left: 4rem;
+		@include for-mobile-portrait { left: 6vw; }
+		@include for-large-desktop { left: 2vw; }
 	}
 	.header__navbutton {
-		right: 3rem;
+		right: 4rem;
 		z-index: 3;
-		@media screen and (max-width: 400px) { right: 6vw; }
-		@media screen and (min-width: 1700px) { right: 2vw; }
+		@include for-mobile-portrait { right: 6vw; }
+		@include for-large-desktop { right: 2vw; }
 		svg { transform: scale(1.2); }
 	}
 }
@@ -114,10 +115,10 @@
 		line-height: 4rem;
 		overflow: hidden;
 		text-transform: uppercase;
-		@media only screen and (max-width: 800px) {
-			font-size: 6rem; line-height: 6rem; }
-		@media only screen and (max-width: 450px) {
+		@include for-mobile-portrait {
 			font-size: 4.5rem; line-height: 5rem; }
+		@include for-mobile-landscape {
+			font-size: 2.5rem; line-height: 2.5rem; }
 
 		&::before, &::after {
 			box-sizing: border-box;
@@ -149,8 +150,7 @@
 		letter-spacing: 0.1rem;
 		line-height: 2.5rem;
 		transition: color 0.5s ease-in;
-		@media only screen and (max-width: 800px) { font-size: 2rem; line-height: 5rem; }
-		@media only screen and (max-width: 450px) { font-size: 1.5rem; line-height: 4rem; }
+		@include for-mobile-landscape { font-size: 1.5rem; line-height: 3.5rem; }
 	}
 
 	.navmenu__transition-box {
@@ -174,8 +174,7 @@
 		.nmtb3 { left: 66vw; }
 	}
 
-	@media screen and (min-height: 400px)
-	and (max-width: 650px) {
+	@include for-tiny-desktop {
 		.nmtb {
 			height: 34vh;
 			left: 0;

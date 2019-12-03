@@ -39,7 +39,7 @@ class LandingPage extends React.Component {
     return(
       <div className="page-container">
         <ThreeBackground show = {isFrontend}/>
-        <img className="background-image" src={require('../../assets/media/aurora.jpg')} alt="aurora"
+        <img className="background-image" alt="aurora"
              style={{display: isFrontend | this.props.isMenuOpen ? "none" : "block"}} />
         <SimpleHeader isMenuOpen      = {this.props.isMenuOpen}
                       isTransition    = {!this.props.isMenuReady}
