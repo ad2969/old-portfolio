@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../icons/logo';
-import MenuButton from '../icons/menuButton';
+import Logo from 'components/icons/logo';
+import MenuButton from 'components/icons/menuButton';
 
 import { circleClick } from 'functions/anims';
 

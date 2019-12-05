@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from "react-router";
 
-import SimpleHeader from '../header/simpleHeader';
-import NavMenu from '../navmenu/navMenu';
+import SimpleHeader from 'components/header/simpleHeader';
+import NavMenu from 'components/navmenu/navMenu';
 
 import CarouselElement from './carouselElement';
 
@@ -55,7 +55,7 @@ class ProjectsPage extends React.Component {
   componentDidMount() {
       document.title = "<AD2969 /> My Projects";
       this.props.resetMenuFocus(this.props.menuId);
-      
+
       setTimeout(() => {
         this.setState({ mounted: true });
       }, this.props.isMenuOpen ? 3500 : 500);

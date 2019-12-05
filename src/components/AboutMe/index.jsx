@@ -3,8 +3,8 @@ import { withRouter } from "react-router";
 
 import ReactPageScroller from './reactPageScroller';
 
-import SimpleHeader from '../header/simpleHeader';
-import NavMenu from '../navmenu/navMenu';
+import SimpleHeader from 'components/header/simpleHeader';
+import NavMenu from 'components/navmenu/navMenu';
 
 import AboutOne from './firstComponent';
 import AboutTwo from './secondComponent';

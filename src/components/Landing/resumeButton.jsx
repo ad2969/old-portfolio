@@ -1,7 +1,7 @@
 import React from 'react';
 import softwareResume from 'assets/generic-software.pdf'
 
-class Resume extends React.Component {
+class ResumeButton extends React.Component {
   render() {
     return(
       <a href={softwareResume}>
@@ -20,4 +20,4 @@ class Resume extends React.Component {
   }
 }
 
-export default Resume
+export default ResumeButton

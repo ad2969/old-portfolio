@@ -1,14 +1,14 @@
 import React from 'react';
 import { withRouter } from "react-router";
 
-import SimpleHeader from '../header/simpleHeader';
-import NavMenu from '../navmenu/navMenu';
+import SimpleHeader from 'components/header/simpleHeader';
+import NavMenu from 'components/navmenu/navMenu';
 
+import WhiteBackground from 'assets/media/white.jpg'
 import ThreeBackground from './threeBackground';
 // import ThreeExample from './threeExample';
-
-import TitleOne from './title1';
-import Resume from './resume';
+import FullStackDeveloper from './titleFullstack';
+import ResumeButton from './resumeButton';
 
 import menuColor from 'functions/menuColor';
 
@@ -37,10 +37,10 @@ class LandingPage extends React.Component {
     const isFrontend = this.state.isFrontend;
     const {color1, color2, bcolor} = menuColor(this.props.menuColorFocus);
     return(
-      <div className="page-container">
+      <div className = "page-container">
         <ThreeBackground show = {isFrontend}/>
-        <img className="background-image" alt="aurora"
-             style={{display: isFrontend | this.props.isMenuOpen ? "none" : "block"}} />
+        <img className = "background-image" alt = "white" src = {WhiteBackground}
+             style = {{display: isFrontend | this.props.isMenuOpen ? "none" : "block"}} />
         <SimpleHeader isMenuOpen      = {this.props.isMenuOpen}
                       isTransition    = {!this.props.isMenuReady}
                       toggleMenu      = {this.props.toggleMenu}
@@ -57,23 +57,26 @@ class LandingPage extends React.Component {
                   resetFocus    = {this.props.resetMenuFocus}
         />
 
-        <div className="landing">
-          <div className="landing__name--intro">Hi My Name Is</div>
-          <div className="landing__name">Clarence Adrian</div>
-          <div className="landing__title">
-            <div className="landing__title__svg a"><TitleOne color1={color1} color2={color2}/></div>
+        <div className ="landing">
+          <div className = "landing__name--intro">Hello, I am</div>
+          <div className = "landing__name">Clarence Adrian</div>
+          <div className = "landing__title">
+            <div className = "landing__title__svg a"><FullStackDeveloper color1 = {color1} color2 = {color2}/></div>
           </div>
-          <div className="landing__desc landing__icons">
-            <Resume color1={color1} color2={color2}/>
+          <div className = "landing__desc landing__icons">
+            <ResumeButton color1 = {color1} color2 = {color2}/>
           </div>
         </div>
-        <div className="b--bottom-right">
-          <span style={{paddingLeft: "1.5rem"}}>PROGRAM</span>
-          <label className="switch">
-            <input type="checkbox" checked={isFrontend} onChange={this.changeFrontend}></input>
-            <span className="slider round"></span>
+        {/*<div class="mouse">
+          <div class="scroll"></div>
+        </div>*/}
+        <div className = "b--bottom-right">
+          <span style = {{paddingLeft: "1.5rem"}}>LQ</span>
+          <label className = "switch">
+            <input type = "checkbox" checked = {isFrontend} onChange = {this.changeFrontend}></input>
+            <span className = "slider round"></span>
           </label>
-          <span style={{paddingRight: "1.5rem"}}>DESIGN</span>
+          <span style = {{paddingRight: "1.5rem"}}>HQ</span>
         </div>
       </div>
     );

@@ -24,12 +24,12 @@ const Colors = {
 const options = {
   speed           : 0.00001,
   cloudSpeed      : 0.0001,
-	numClouds				: 15
+	numClouds				: 12
 };
 
 const worldOpt = {
-  radius: 300,
-  length: 400
+  radius: 150,
+  length: 200
 }
 
 const groundOpt = {
@@ -41,8 +41,8 @@ const groundOpt = {
 
 const cameraOpt = {
   position_x: 0,
-  position_y: 250,
-  position_z: 800,
+  position_y: 100,
+  position_z: 400,
 
   fieldOfView : 50,
   nearPlane   : 0.1,
@@ -242,11 +242,11 @@ class ThreeBackground extends React.Component {
         var newCloud  = new Cloud();
         this.clouds.push(newCloud);
         var angle     = stepAngle * i;
-        var height    = worldOpt.radius + 150 + Math.random() * 400;
+        var height    = worldOpt.radius + 100 + Math.random() * 300;
         var scale     = 1 + Math.random() * 2;
         newCloud.mesh.position.y = Math.sin(angle) * height;
         newCloud.mesh.position.x = Math.cos(angle) * height;
-        newCloud.mesh.position.z = 300 - Math.random() * 300;
+        newCloud.mesh.position.z = 0 - Math.random() * 300;
         newCloud.mesh.rotation.z = angle + Math.PI / 2;
         newCloud.mesh.scale.set(scale, scale, scale);
         this.mesh.add(newCloud.mesh);

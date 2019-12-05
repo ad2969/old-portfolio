@@ -1,4 +1,4 @@
-import COLORS from '../styles/base/_variables.scss';
+import COLORS from 'styles/base/_variables.scss';
 
 
 export default function menuColor(menuColorFocus) {

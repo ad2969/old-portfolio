@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TitleOne extends React.Component {
+class FullStackDeveloper extends React.Component {
   render() {
     return(
       <svg width="782" height="45" viewBox="0 0 782 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,4 +26,4 @@ class TitleOne extends React.Component {
   }
 }
 
-export default TitleOne
+export default FullStackDeveloper
