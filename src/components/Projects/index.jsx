@@ -99,7 +99,6 @@ class ProjectsPage extends React.Component {
                   doOpen        = {this.props.doMenuOpen}
                   doClose       = {this.props.doMenuClose}
                   isTransition  = {!this.props.isMenuReady}
-                  setFocus      = {this.props.setMenuFocus}
                   resetFocus    = {this.props.resetMenuFocus}
         />
 

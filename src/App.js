@@ -75,7 +75,6 @@ class App extends React.Component {
                                menuColorFocus = {this.state.menuColorFocus}
 
                                toggleMenu     = {this.toggleMenu}
-                               setMenuFocus   = {this.setMenuFocus}
                                resetMenuFocus = {this.resetMenuFocus}
                  />
                }
@@ -90,7 +89,6 @@ class App extends React.Component {
                                menuColorFocus = {this.state.menuColorFocus}
 
                                toggleMenu     = {this.toggleMenu}
-                               setMenuFocus   = {this.setMenuFocus}
                                resetMenuFocus = {this.resetMenuFocus}
                  />
                }
@@ -106,7 +104,6 @@ class App extends React.Component {
 
 
                                 toggleMenu     = {this.toggleMenu}
-                                setMenuFocus   = {this.setMenuFocus}
                                 resetMenuFocus = {this.resetMenuFocus}
 
                                 carouselFocus     = {this.state.carouselFocus}

@@ -61,8 +61,7 @@ class NavMenu extends React.Component {
       <div className="navmenu-container">
         <div className="navmenu" id="navmenu" style={menuStyle}>
           <nav className="menu-container">
-            <Link data-focusid="0" className="menu-item" to="/landing"
-               onMouseOver={this.props.setFocus} onMouseOut={() => {this.props.resetFocus(this.props.menuId)}}>
+            <Link data-focusid="0" className="menu-item" to="/landing">
               <span className="menu-item__indication"
                     style={this.props.location.pathname === "/landing" ? {} : hidden}>>&nbsp;</span>
               <span className="menu-item-2">
@@ -70,8 +69,7 @@ class NavMenu extends React.Component {
                 <span className="menu-item__label">Explore my homepage</span>
               </span>
             </Link>
-            <Link data-focusid="1" className="menu-item" to="/about"
-               onMouseOver={this.props.setFocus} onMouseOut={() => {this.props.resetFocus(this.props.menuId)}}>
+            <Link data-focusid="1" className="menu-item" to="/about">
               <span className="menu-item__indication"
                     style={this.props.location.pathname === "/about" ? {} : hidden}>>&nbsp;</span>
               <span className="menu-item-2">
@@ -79,8 +77,7 @@ class NavMenu extends React.Component {
                 <span className="menu-item__label">Find out about who runs this website</span>
               </span>
             </Link>
-            <Link data-focusid="2" className="menu-item" to="/projects"
-                  onMouseOver={this.props.setFocus} onMouseOut={() => {this.props.resetFocus(this.props.menuId)}}>
+            <Link data-focusid="2" className="menu-item" to="/projects">
               <span className="menu-item__indication"
                     style={this.props.location.pathname === "/projects" ? {} : hidden}>>&nbsp;</span>
               <span className="menu-item-2">
@@ -89,8 +86,7 @@ class NavMenu extends React.Component {
               </span>
             </Link>
             <a href={softwareResume} target="_blank" rel="noopener noreferrer"
-               data-focusid="3" className="menu-item"
-               onMouseOver={this.props.setFocus} onMouseOut={() => {this.props.resetFocus(this.props.menuId)}}>
+               data-focusid="3" className="menu-item">
               <span className="menu-item__indication"
                     style={hidden}>>&nbsp;</span>
               <span className="menu-item-2">

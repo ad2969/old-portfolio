@@ -242,11 +242,11 @@ class ThreeBackground extends React.Component {
         var newCloud  = new Cloud();
         this.clouds.push(newCloud);
         var angle     = stepAngle * i;
-        var height    = worldOpt.radius + 100 + Math.random() * 300;
+        var height    = worldOpt.radius + 150 + Math.random() * 200;
         var scale     = 1 + Math.random() * 2;
         newCloud.mesh.position.y = Math.sin(angle) * height;
         newCloud.mesh.position.x = Math.cos(angle) * height;
-        newCloud.mesh.position.z = 0 - Math.random() * 300;
+        newCloud.mesh.position.z = 0 - Math.random() * 200;
         newCloud.mesh.rotation.z = angle + Math.PI / 2;
         newCloud.mesh.scale.set(scale, scale, scale);
         this.mesh.add(newCloud.mesh);
